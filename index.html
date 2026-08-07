@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="format-detection" content="telephone=no">
-<title>Electric Link Ver.1.4.40  電気の世界体験版 Ver.1.4.62 Unified Board Fit</title>
+<title>Electric Link Ver.1.4.40  電気の世界体験版 Ver.1.4.67 Unified Board Fit</title>
 <style>
 :root{--bg:#06101b;--panel:#0b2032;--border:#28516b;--text:#eefaff;--muted:#9db8c7;--cyan:#63eafa;--yellow:#ffe34d;--red:#e53935;--blue:#1e88e5;--purple:#a86dff;--green:#57d783}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;min-height:;overscroll-behavior:none}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% 0,#173b58,#071522 46%,#03080e);color:var(--text);padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))}.app{width:min(980px,);margin:auto;display:grid;grid-template-columns:minmax(300px,500px) minmax(280px,1fr);gap:14px}.box{background:rgba(9,27,43,.96);border:1px solid var(--border);border-radius:20px;box-shadow:0 18px 54px #0008}.game{padding:9px;position:relative}canvas{display:block;width:;height:auto;border-radius:14px;background:#06111c;touch-action:none}.side{padding:17px}h1{margin:0;font-size:clamp(25px,4vw,39px)}.ver{font-size:12px;color:#9df7ff;border:1px solid #34788b;border-radius:999px;padding:3px 8px}.sub{margin:4px 0 13px;color:var(--muted)}.stageTabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0 14px}.stageTabs button{padding:7px 3px;min-height:38px}.stageTabs .active{background:#1c7187}.stageTabs .locked{opacity:.35}.card{background:#071725;border:1px solid #20445c;border-radius:14px;padding:12px;margin-top:10px}.partTitle{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:900}.partIcon{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:#15394f;font-size:23px}.rule{font-size:14px;line-height:1.65;margin-top:7px}.goal{color:var(--yellow);font-weight:900}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.stat{background:#071725;border:1px solid #20445c;border-radius:12px;padding:8px}.label{font-size:10px;color:var(--muted)}.value{font-size:21px;font-weight:900}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px}button{border:1px solid #347393;background:#123650;color:#fff;border-radius:12px;padding:10px;font-weight:800;cursor:pointer;min-height:44px}.primary{background:linear-gradient(135deg,#176985,#288da0)}.wide{grid-column:span 2}.message{min-height:27px;margin-top:10px;font-weight:900;color:#77f4ff}.legend{font-size:12px;line-height:1.7;color:#c9dce5}.legend b{color:#fff}.overlay{display:none;position:absolute;inset:9px;z-index:5;background:#02070de9;border-radius:14px;align-items:center;justify-content:center;text-align:center;padding:18px}.overlay.show{display:flex}.overlayCard{width:min(350px,94%);background:#0c2033;border:1px solid #39728e;border-radius:18px;padding:22px}.overlayCard h2{font-size:30px;margin:0 0 8px}.toast{position:absolute;left:50%;bottom:17px;transform:translateX(-50%);background:#06111eee;border:1px solid #4ca0c2;border-radius:999px;padding:8px 13px;font-size:13px;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1}.unlock{display:inline-block;margin-top:8px;color:#9fffb8}.small{font-size:11px;color:var(--muted);margin-top:9px}.tutorial{display:none;position:absolute;inset:9px;z-index:7;background:#02070df2;border-radius:14px;align-items:center;justify-content:center;padding:14px}.tutorial.show{display:flex}.tutorialCard{width:min(390px,96%);background:#0c2033;border:1px solid #4b87a2;border-radius:18px;padding:18px;text-align:left}.tutorialCard h2{margin:0 0 8px;font-size:25px}.tutorialDemo{height:150px;border:1px solid #2c5870;border-radius:13px;background:#06121d;margin:12px 0;position:relative;overflow:hidden;display:grid;place-items:center}.tutorialDemo canvas{width:;height:;border-radius:13px}.tutorialActions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bookOverlay{display:none;position:fixed;inset:0;z-index:20;background:#02070df2;align-items:center;justify-content:center;padding:14px}.bookOverlay.show{display:flex}.bookCard{width:min(700px,96vw);max-height:90vh;overflow:auto;background:#0c2033;border:1px solid #4b87a2;border-radius:20px;padding:18px}.bookGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.bookItem{background:#071725;border:1px solid #20445c;border-radius:14px;padding:12px}.bookIcon{display:none}.bookPreview{width:82px;height:82px;display:block;margin:2px auto 8px;border-radius:12px;background:#06111c;border:1px solid #24485d}.bookItem h3{margin:5px 0;text-align:center}.demoStatus{text-align:center;font-weight:900;color:#9ff7ff;margin-top:4px}@media(max-width:560px){.bookGrid{grid-template-columns:1fr}}
@@ -308,6 +308,65 @@ canvas{--board-aspect:.75}
 }
 </style>
 
+
+<style id="v1467-goal-readability">
+.goal{
+  color:inherit;
+  font-weight:inherit;
+}
+.goalInfo{
+  display:grid;
+  gap:8px;
+}
+.goalItem{
+  padding:9px 10px;
+  border:1px solid #244b61;
+  border-radius:10px;
+  background:#06131f;
+}
+.goalLabel{
+  display:block;
+  margin-bottom:3px;
+  color:#78b9c9;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.12em;
+}
+.goalValue{
+  display:block;
+  color:#eefbff;
+  font-size:13px;
+  font-weight:800;
+  line-height:1.45;
+}
+.goalItem.goalPrimary{
+  border-color:#3f8195;
+  background:#09202d;
+}
+.goalItem.goalPrimary .goalLabel{
+  color:#8cecff;
+}
+.goalItem.goalPrimary .goalValue{
+  color:#fff6ae;
+}
+.goalMeta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+.goalMeta .goalItem{
+  margin:0;
+}
+.goalPoint .goalValue{
+  color:#bfeeff;
+}
+@media(max-width:560px){
+  .goalItem{padding:8px 9px}
+  .goalLabel{font-size:9px}
+  .goalValue{font-size:12px}
+}
+</style>
+
 </head>
 
 <body>
@@ -322,7 +381,7 @@ canvas{--board-aspect:.75}
     <div id="titleContinue" class="titleContinue"></div>
   </div>
   <div class="titleCopyright">© 2026 ELECTRIC LINK. All Rights Reserved.</div>
-  <div class="titleVersion">ELECTRIC LINK / Ver.1.4.62</div>
+  <div class="titleVersion">ELECTRIC LINK / Ver.1.4.67</div>
 </div>
 
 <div class="app">
@@ -333,7 +392,7 @@ canvas{--board-aspect:.75}
   <div class="overlay" id="overlay"><div class="overlayCard"><h2 id="clearTitle">LIGHTS ON!</h2><p id="clearText"></p><div class="buttons"><button id="retry">もう一度</button><button class="primary" id="next">次のレベルへ</button></div></div></div>
 </section>
 <aside class="box side">
-  <h1>⚡ Electric Link <span class="ver">Ver.1.4.62 Unified Board Fit</span></h1>
+  <h1>⚡ Electric Link <span class="ver">Ver.1.4.67 Unified Board Fit</span></h1>
   <div class="sub">全100レベル。後半ほどT字分岐・実立体交差・一方通行・ダミーネットワークが複合します。</div>
   <div class="stageTabs" id="stageTabs"></div>
   <div class="stats"><div class="stat"><div class="label">LEVEL</div><div class="value" id="stageNo">1</div><span id="lapBadge" class="lapBadge hidden"></span></div><div class="stat"><div class="label">操作数</div><div class="value" id="moves">0</div></div></div><span id="status" hidden></span>
@@ -379,6 +438,7 @@ canvas{--board-aspect:.75}
     <button type="button" id="debugMarkAllCleared">全100をクリア済みに</button>
     <button type="button" id="debugMarkIntrosSeen">新要素説明を既読に</button>
     <button type="button" id="debugResetIntros">新要素説明を未読に戻す</button>
+    <button type="button" id="debugShowSolution">正解ルート表示</button>
     <button type="button" id="debugFullReset" class="debugDanger">全セーブを初期化</button>
   </div>
 </div>
@@ -441,7 +501,7 @@ const audioSettings={
  sfxVolume:Number(localStorage.getItem('electricLinkSfxVolume')||70)/100
 };
 let audioCtx=null,masterGain=null,bgmGain=null,bgmTimer=null,bgmStep=0,audioStartPromise=null;
-const MASTER_GAIN=1.75;      // Ver.1.4.62: 全体の基準音量
+const MASTER_GAIN=1.75;      // Ver.1.4.67: 全体の基準音量
 const BGM_SOURCE_GAIN=2.0;   // BGM音源そのものの聞こえやすさ
 
 function createAudioGraph(){
@@ -529,6 +589,7 @@ function buildMenuStages(){const root=$('menuStages');if(!root)return;root.inner
 function openMenu(){ensureAudio();sfx('click');updateAudioUi();updateDebugUi();$('menuOverlay').classList.add('show')}
 
 let level=1,moves=0,busy=false,board=[],connectedSet=new Set(),rawConnectedSet=new Set(),flowEdges=[],rawFlowEdges=[],startKey='',endKey='',required=[],selected={x:2,y:3},lastFrame=performance.now(),completionQueued=false;
+let debugSolutionVisible=false,debugSolutionEdges=[],debugSolutionCells=new Set();
 
 let levelStartSnapshot=null;
 
@@ -650,7 +711,7 @@ function detectCurrentStageParts(){
 }
 
 function showNewPartIntro(levelNo){
- // Ver.1.4.62:
+ // Ver.1.4.67:
  // 固定LEVEL表ではなく、完成した現在の盤面を実際に走査する。
  // そのステージに存在し、かつ未読のギミックだけを表示する。
  const presentKeys=detectCurrentStageParts();
@@ -753,47 +814,83 @@ function validateStageDefinitions(){
 }
 
 function getDimensions(n){
- // Ver.1.4.62: 6/7/8列を難易度とステージ番号で混在させる。
- // 8列はT字分岐・実立体交差・長いダミーネットワークを自然に作れる後半中心。
- if(n<=6)return{cols:6,rows:8};
- if(n<=10)return{cols:7,rows:8};
- if(n<=14)return{cols:7,rows:9};
- if(n<=20)return{cols:7,rows:10};
-
- // Lv21-30: 8列を初導入。まだ7列も多めに残す。
- if(n<=30)return{cols:(n%3===0?8:7),rows:10};
-
- // Lv31-50: 7x11 / 8x10 / 8x11 を混在。
- if(n<=50){
-   if(n%4===0)return{cols:8,rows:10};
-   return{cols:(n%2===0?8:7),rows:11};
- }
-
- // Lv51-70: 8列中心。ただし7列を混ぜて盤面の読み味を変える。
- if(n<=70)return{cols:(n%4===1?7:8),rows:11};
-
- // Lv71-85: 8x12 と 8x11/12 を混在。
- if(n<=85){
-   if(n%5===0)return{cols:7,rows:12};
-   return{cols:8,rows:(n%3===0?11:12)};
- }
-
- // Lv86-100: 8x12中心。数ステージだけ8x12を残して単調化を防ぐ。
- return{cols:(n%7===0?7:8),rows:12};
+ // Ver.1.4.67: LEVELが上がるほど盤面サイズが一方向に増える構成。
+ // 同じ帯で7列→8列→7列のように戻らない。
+ if(n<=10)return{cols:6,rows:8};
+ if(n<=20)return{cols:7,rows:8};
+ if(n<=30)return{cols:7,rows:9};
+ if(n<=40)return{cols:7,rows:10};
+ if(n<=50)return{cols:7,rows:11};
+ if(n<=60)return{cols:8,rows:11};
+ if(n<=70)return{cols:8,rows:12};
+ if(n<=80)return{cols:8,rows:12};
+ if(n<=90)return{cols:8,rows:12};
+ return{cols:8,rows:12};
 }
 function getDifficultyRule(n){
- // 100 LEVEL difficulty curve. Board size grows through 6/7/8 columns and caps at 8x12; complexity still comes primarily from topology.
- // Fixed blocks remain sparse because excessive fixed cells reveal the route instead of making it harder.
- if(n<=3)return{tier:1,label:'BASIC',tJunctionRange:[0,0],bridgeRange:[0,0],diodeRange:[0,0],complexityRange:[0,1],maxStraightRun:2,minTurns:3,minBacktracks:0,fixedTotalRange:[0,0],minBranches:0,minFakeDepth:2};
- if(n<=6)return{tier:2,label:'CURVE',tJunctionRange:[0,0],bridgeRange:[0,0],diodeRange:[0,0],complexityRange:[1,2],maxStraightRun:2,minTurns:6,minBacktracks:0,fixedTotalRange:[0,0],minBranches:1,minFakeDepth:3};
- if(n<=10)return{tier:3,label:'ROUTE',tJunctionRange:[0,0],bridgeRange:[0,1],diodeRange:[0,0],complexityRange:[2,3],maxStraightRun:2,minTurns:7,minBacktracks:0,fixedTotalRange:[0,1],minBranches:2,minFakeDepth:4};
- if(n<=12)return{tier:4,label:'BRANCH',tJunctionRange:[0,1],bridgeRange:[0,1],diodeRange:[0,0],complexityRange:[2,4],maxStraightRun:2,minTurns:8,minBacktracks:0,fixedTotalRange:[0,1],minBranches:2,minFakeDepth:5};
- if(n<=16)return{tier:5,label:'MIX',tJunctionRange:[0,2],bridgeRange:[0,2],diodeRange:[0,1],complexityRange:[3,6],maxStraightRun:2,minTurns:9,minBacktracks:0,fixedTotalRange:[0,2],minBranches:2,minFakeDepth:5};
- if(n<=24)return{tier:6,label:'EXPERT I',tJunctionRange:[1,3],bridgeRange:[0,3],diodeRange:[1,2],complexityRange:[6,9],maxStraightRun:1,minTurns:12,minBacktracks:1,fixedTotalRange:[1,2],minBranches:3,minFakeDepth:7};
- if(n<=40)return{tier:7,label:'ADVANCED',tJunctionRange:[1,2],bridgeRange:[0,3],diodeRange:[1,2],complexityRange:[6,9],maxStraightRun:1,minTurns:12,minBacktracks:1,fixedTotalRange:[0,2],minBranches:3,minFakeDepth:7};
- if(n<=60)return{tier:8,label:'EXPERT II',tJunctionRange:[1,3],bridgeRange:[0,3],diodeRange:[1,2],complexityRange:[7,10],maxStraightRun:1,minTurns:13,minBacktracks:1,fixedTotalRange:[1,2],minBranches:4,minFakeDepth:8};
- if(n<=80)return{tier:9,label:'MASTER',tJunctionRange:[1,3],bridgeRange:[1,3],diodeRange:[1,3],complexityRange:[8,11],maxStraightRun:1,minTurns:14,minBacktracks:2,fixedTotalRange:[1,3],minBranches:4,minFakeDepth:8};
- return{tier:10,label:'ULTIMATE',tJunctionRange:[1,3],bridgeRange:[1,4],diodeRange:[1,3],complexityRange:[9,12],maxStraightRun:1,minTurns:15,minBacktracks:2,fixedTotalRange:[1,3],minBranches:5,minFakeDepth:9};
+ // Ver.1.4.67: 100 LEVELを約10ステージごとの10帯に整理。
+ // 各帯で主な負荷を1つずつ追加し、難易度の急上昇を避ける。
+ // 固定ブロックはヒント化しやすいため全帯で少量に抑える。
+ if(n<=10)return{
+   tier:1,label:'やさしい',
+   tJunctionRange:[0,0],bridgeRange:[0,0],diodeRange:[0,0],
+   complexityRange:[0,2],maxStraightRun:2,minTurns:4,minBacktracks:0,
+   fixedTotalRange:[0,0],minBranches:1,minFakeDepth:3
+ };
+ if(n<=20)return{
+   tier:2,label:'やさしい',
+   tJunctionRange:[0,1],bridgeRange:[0,0],diodeRange:[0,0],
+   complexityRange:[1,3],maxStraightRun:2,minTurns:6,minBacktracks:0,
+   fixedTotalRange:[0,1],minBranches:2,minFakeDepth:4
+ };
+ if(n<=30)return{
+   tier:3,label:'ふつう',
+   tJunctionRange:[1,2],bridgeRange:[0,1],diodeRange:[0,0],
+   complexityRange:[3,5],maxStraightRun:2,minTurns:8,minBacktracks:0,
+   fixedTotalRange:[0,1],minBranches:2,minFakeDepth:5
+ };
+ if(n<=40)return{
+   tier:4,label:'ふつう',
+   tJunctionRange:[1,2],bridgeRange:[0,2],diodeRange:[0,1],
+   complexityRange:[4,6],maxStraightRun:2,minTurns:9,minBacktracks:0,
+   fixedTotalRange:[0,1],minBranches:3,minFakeDepth:5
+ };
+ if(n<=50)return{
+   tier:5,label:'むずかしい',
+   tJunctionRange:[1,2],bridgeRange:[0,2],diodeRange:[1,1],
+   complexityRange:[5,7],maxStraightRun:1,minTurns:10,minBacktracks:1,
+   fixedTotalRange:[0,2],minBranches:3,minFakeDepth:6
+ };
+ if(n<=60)return{
+   tier:6,label:'むずかしい',
+   tJunctionRange:[1,2],bridgeRange:[0,2],diodeRange:[1,2],
+   complexityRange:[6,8],maxStraightRun:1,minTurns:11,minBacktracks:1,
+   fixedTotalRange:[0,2],minBranches:4,minFakeDepth:7
+ };
+ if(n<=70)return{
+   tier:7,label:'とてもむずかしい',
+   tJunctionRange:[1,3],bridgeRange:[1,2],diodeRange:[1,2],
+   complexityRange:[7,9],maxStraightRun:1,minTurns:12,minBacktracks:1,
+   fixedTotalRange:[1,2],minBranches:4,minFakeDepth:7
+ };
+ if(n<=80)return{
+   tier:8,label:'とてもむずかしい',
+   tJunctionRange:[1,3],bridgeRange:[1,3],diodeRange:[1,2],
+   complexityRange:[8,10],maxStraightRun:1,minTurns:13,minBacktracks:2,
+   fixedTotalRange:[1,2],minBranches:4,minFakeDepth:8
+ };
+ if(n<=90)return{
+   tier:9,label:'超むずかしい',
+   tJunctionRange:[1,3],bridgeRange:[1,3],diodeRange:[1,3],
+   complexityRange:[9,11],maxStraightRun:1,minTurns:14,minBacktracks:2,
+   fixedTotalRange:[1,3],minBranches:5,minFakeDepth:8
+ };
+ return{
+   tier:10,label:'超むずかしい',
+   tJunctionRange:[2,3],bridgeRange:[1,4],diodeRange:[2,3],
+   complexityRange:[10,12],maxStraightRun:1,minTurns:15,minBacktracks:2,
+   fixedTotalRange:[1,3],minBranches:5,minFakeDepth:9
+ };
 }
 function chooseStructurePlan(n,generationSalt,rule){
  function seeded(seed){let s=seed>>>0;return()=>((s=(s*1664525+1013904223)>>>0)/4294967296)}
@@ -852,7 +949,7 @@ function straightPathIndices(path){
 }
 // Ver.1.4.41: deterministic base seeds for 100 stages. A generation cycle is added after LEVEL 100 clear.
 const STAGE_LAYOUT_SALTS=Array.from({length:100},(_,i)=>{
-  // Ver.1.4.62: 全100ステージの基礎シードを刷新。
+  // Ver.1.4.67: 全100ステージの基礎シードを刷新。
   // 旧セットと同じ盤面へ収束しないよう、列数・世代番号とは独立した新しいハッシュを使う。
   let x=((i+1)*2246822519+0x85ebca6b)>>>0;
   x^=x>>>15;x=Math.imul(x,3266489917)>>>0;x^=x>>>16;
@@ -1039,9 +1136,7 @@ function buildRequiredBranches(L,n){
        if(!L.parts[k]){
          // ダミー側も一本の回路として見せる。末端を片側1ポートのケーブルにはしない。
          // 最終セルは立体交差へ接続し、配線が突然切れた見た目を禁止する。
-         L.parts[k]=i===spur.length-1
-           ?{kind:'bridge',branchTail:true,dummyAfterLamp:true,decoyBridgeTerminal:true}
-           :{kind:'wire',branchTail:true,dummyAfterLamp:true};
+         L.parts[k]={kind:'wire',branchTail:true,dummyAfterLamp:true,branchTailEnd:i===spur.length-1};
        }
      }
      branches.push(spur);return true
@@ -1077,9 +1172,16 @@ function getLevel(n,generationSalt=0){
 }
 function tile(kind='empty',ports=[]){return{kind,ports:[...ports],rotation:0,on:false,state:0,group:'',flash:0,required:false,order:0,charged:false,charge:0,fixed:false,decoy:false}}
 function addPort(map,x,y,d){const k=K(x,y);if(!map.has(k))map.set(k,new Set());map.get(k).add(d)}
-function buildLevel(n,{manual=false,skipTutorial=false,generationSalt=null,regenDepth=0}={}){generationSalt=(generationSalt===null?((STAGE_LAYOUT_SALTS[n-1]||n*1009)+generationCycle*1000003):generationSalt);currentLevelSalt=generationSalt;stageTabPage=Math.floor((n-1)/10);level=n;moves=0;busy=false;completionQueued=false;ui.overlay.classList.remove('show'); if(skipTutorial)$('tutorial').classList.remove('show'); const dim=getDimensions(n);COLS=dim.cols;ROWS=dim.rows;cv.width=COLS*CELL;cv.height=ROWS*CELL;cv.style.setProperty('--board-aspect',String(COLS/ROWS));board=Array.from({length:ROWS},()=>Array.from({length:COLS},()=>tile()));let L=null,solutionBranches=[],bestCandidate=null;for(let attempt=0;attempt<140;attempt++){const salt=generationSalt+attempt;const candidate=getLevel(n,salt),candidateBranches=buildRequiredBranches(candidate,n),minT=candidate.difficultyRule.tJunctionRange[0],desiredT=candidate.difficultyRule.requiredTJunctions||0,actualT=candidateBranches.length;const qualityOK=actualT>=minT;if(!qualityOK)continue;candidate.difficultyRule={...candidate.difficultyRule,requiredTJunctions:actualT};const naturalScore=actualT*2+candidate.difficultyRule.requiredBridges+candidate.difficultyRule.targetDiodes;if(!bestCandidate||Math.abs(naturalScore-(candidate.difficultyRule.complexityRange[0]+candidate.difficultyRule.complexityRange[1])/2)<bestCandidate.delta){bestCandidate={candidate,branches:candidateBranches,delta:Math.abs(naturalScore-(candidate.difficultyRule.complexityRange[0]+candidate.difficultyRule.complexityRange[1])/2)}}if(actualT>=desiredT||attempt>45){L=candidate;solutionBranches=candidateBranches;break}}if(!L&&bestCandidate){L=bestCandidate.candidate;solutionBranches=bestCandidate.branches}if(!L){L=getLevel(n,generationSalt+140);L.difficultyRule={...L.difficultyRule,requiredTJunctions:0};solutionBranches=[];console.warn(`LEVEL ${n}: 品質優先でT字を省略しました`)}const map=new Map();for(let i=0;i<L.path.length-1;i++){const[a,b]=L.path[i],[c,d]=L.path[i+1],dx=c-a,dy=d-b,dir=dx===1?1:dx===-1?3:dy===1?2:0;addPort(map,a,b,dir);addPort(map,c,d,OPP[dir])}for(const branch of solutionBranches){for(let i=0;i<branch.length-1;i++){const[a,b]=branch[i],[c,d]=branch[i+1],dx=c-a,dy=d-b,dir=dx===1?1:dx===-1?3:dy===1?2:0;addPort(map,a,b,dir);addPort(map,c,d,OPP[dir])}}
+function buildLevel(n,{manual=false,skipTutorial=false,generationSalt=null,regenDepth=0}={}){debugSolutionVisible=false;debugSolutionEdges=[];debugSolutionCells=new Set();generationSalt=(generationSalt===null?((STAGE_LAYOUT_SALTS[n-1]||n*1009)+generationCycle*1000003):generationSalt);currentLevelSalt=generationSalt;stageTabPage=Math.floor((n-1)/10);level=n;moves=0;busy=false;completionQueued=false;ui.overlay.classList.remove('show'); if(skipTutorial)$('tutorial').classList.remove('show'); const dim=getDimensions(n);COLS=dim.cols;ROWS=dim.rows;cv.width=COLS*CELL;cv.height=ROWS*CELL;cv.style.setProperty('--board-aspect',String(COLS/ROWS));board=Array.from({length:ROWS},()=>Array.from({length:COLS},()=>tile()));let L=null,solutionBranches=[],bestCandidate=null;for(let attempt=0;attempt<140;attempt++){const salt=generationSalt+attempt;const candidate=getLevel(n,salt),candidateBranches=buildRequiredBranches(candidate,n),minT=candidate.difficultyRule.tJunctionRange[0],desiredT=candidate.difficultyRule.requiredTJunctions||0,actualT=candidateBranches.length;const qualityOK=actualT>=minT;if(!qualityOK)continue;candidate.difficultyRule={...candidate.difficultyRule,requiredTJunctions:actualT};const naturalScore=actualT*2+candidate.difficultyRule.requiredBridges+candidate.difficultyRule.targetDiodes;if(!bestCandidate||Math.abs(naturalScore-(candidate.difficultyRule.complexityRange[0]+candidate.difficultyRule.complexityRange[1])/2)<bestCandidate.delta){bestCandidate={candidate,branches:candidateBranches,delta:Math.abs(naturalScore-(candidate.difficultyRule.complexityRange[0]+candidate.difficultyRule.complexityRange[1])/2)}}if(actualT>=desiredT||attempt>45){L=candidate;solutionBranches=candidateBranches;break}}if(!L&&bestCandidate){L=bestCandidate.candidate;solutionBranches=bestCandidate.branches}if(!L){L=getLevel(n,generationSalt+140);L.difficultyRule={...L.difficultyRule,requiredTJunctions:0};solutionBranches=[];console.warn(`LEVEL ${n}: 品質優先でT字を省略しました`)}const map=new Map();for(let i=0;i<L.path.length-1;i++){const[a,b]=L.path[i],[c,d]=L.path[i+1],dx=c-a,dy=d-b,dir=dx===1?1:dx===-1?3:dy===1?2:0;addPort(map,a,b,dir);addPort(map,c,d,OPP[dir])}for(const branch of solutionBranches){for(let i=0;i<branch.length-1;i++){const[a,b]=branch[i],[c,d]=branch[i+1],dx=c-a,dy=d-b,dir=dx===1?1:dx===-1?3:dy===1?2:0;addPort(map,a,b,dir);addPort(map,c,d,OPP[dir])}}
+ // Ver.1.4.67: デバッグ用に生成時の正解ネットワークを保持する。
+ // 本線 + 必須T字分岐を対象にし、ランダムなダミー配線は含めない。
+ const debugPaths=[L.path,...solutionBranches];
+ for(const p of debugPaths){
+   for(const cell of p)debugSolutionCells.add(K(...cell));
+   for(let i=0;i<p.length-1;i++)debugSolutionEdges.push([p[i][0],p[i][1],p[i+1][0],p[i+1][1]])
+ }
  startKey=K(...L.path[0]);endKey=K(...L.path[L.path.length-1]);required=[];
- for(const [k,set] of map){const[x,y]=k.split(',').map(Number);let kind='wire';if(k===startKey)kind='plus';else if(k===endKey)kind='minus';if(L.parts[k])kind=L.parts[k].kind;const autoNetworkBridge=(kind==='wire'&&set.size===4);if(autoNetworkBridge)kind='bridge';const spec=L.parts[k];const t=tile(kind,(kind==='bridge'&&spec?.decoyBridgeTerminal)?[0,1,2,3]:[...set]);if(autoNetworkBridge){t.effectiveBridge=true;t.autoNetworkBridge=true;t.requiredBridge=true;}if(kind==='lamp'){t.required=spec?.required!==false;t.order=spec?.order||0;t.charged=false;t.charge=0}if(kind==='diode'){const idx=L.path.findIndex(p=>K(...p)===k);if(idx>0&&idx<L.path.length-1){const[px,py]=L.path[idx-1],[cx,cy]=L.path[idx],[nx,ny]=L.path[idx+1];t.input=px-cx===1?1:px-cx===-1?3:py-cy===1?2:0;t.forward=nx-cx===1?1:nx-cx===-1?3:ny-cy===1?2:0}}board[y][x]=t;if(kind==='lamp'&&t.required)required.push(k)}
+ for(const [k,set] of map){const[x,y]=k.split(',').map(Number);let kind='wire';if(k===startKey)kind='plus';else if(k===endKey)kind='minus';if(L.parts[k])kind=L.parts[k].kind;const autoNetworkBridge=(kind==='wire'&&set.size===4);if(autoNetworkBridge)kind='bridge';const spec=L.parts[k];const t=tile(kind,[...set]);if(autoNetworkBridge){t.effectiveBridge=true;t.autoNetworkBridge=true;t.requiredBridge=true;}if(kind==='lamp'){t.required=spec?.required!==false;t.order=spec?.order||0;t.charged=false;t.charge=0}if(kind==='diode'){const idx=L.path.findIndex(p=>K(...p)===k);if(idx>0&&idx<L.path.length-1){const[px,py]=L.path[idx-1],[cx,cy]=L.path[idx],[nx,ny]=L.path[idx+1];t.input=px-cx===1?1:px-cx===-1?3:py-cy===1?2:0;t.forward=nx-cx===1?1:nx-cx===-1?3:ny-cy===1?2:0}}board[y][x]=t;if(kind==='lamp'&&t.required)required.push(k)}
  // 立体交差は「両軸利用」が成立する交差点だけ採用する。
  // 主経路が水平なら上下に、主経路が垂直なら左右に独立したダミー経路を通す。
  // 一方向しか使われない＋型は生成しない。候補が無ければ0個でも採用する。
@@ -1094,6 +1196,8 @@ function buildLevel(n,{manual=false,skipTutorial=false,generationSalt=null,regen
    return null
  }
  function canBuildPerpendicularCross(x,y,axis){
+   // 立体交差は画面端では成立しない。最低でも上下左右1マスを持つ内側セル限定。
+   if(x<=0||y<=0||x>=COLS-1||y>=ROWS-1)return false;
    const cells=axis==='h'
      ? [[x,y-3],[x,y-2],[x,y-1],[x,y+1],[x,y+2],[x,y+3]]
      : [[x-3,y],[x-2,y],[x-1,y],[x+1,y],[x+2,y],[x+3,y]];
@@ -1162,6 +1266,33 @@ function buildLevel(n,{manual=false,skipTutorial=false,generationSalt=null,regen
    t.decoy=true;
    board[y][x]=t;
  }
+ // T字ダミー枝の末端を1ポートで切らない。
+ // 隣接するダミーセルへ必ず1本つなぎ、末端が偽立体交差になる旧処理は廃止。
+ for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){
+   const t=board[y][x],spec=L.parts[K(x,y)];
+   if(!t||t.kind!=='wire'||!spec?.branchTailEnd||t.ports.length!==1)continue;
+   const back=t.ports[0];
+   const choices=[0,1,2,3].filter(d=>{
+     if(d===back)return false;
+     const nx=x+DIRS[d][0],ny=y+DIRS[d][1];
+     if(!insideCell(nx,ny))return false;
+     const u=board[ny][nx];
+     return u&&u.kind==='wire'&&u.decoy&&!u.fixed
+   });
+   if(!choices.length)continue;
+   const d=choices[(x*17+y*31+n+(L.generationSalt||0))%choices.length];
+   const nx=x+DIRS[d][0],ny=y+DIRS[d][1],u=board[ny][nx];
+   t.ports=[back,d];
+   const incoming=OPP[d];
+   const onwardChoices=[0,1,2,3].filter(q=>{
+     if(q===incoming)return false;
+     const ax=nx+DIRS[q][0],ay=ny+DIRS[q][1];
+     return insideCell(ax,ay)
+   });
+   const onward=onwardChoices.length?onwardChoices[(nx*13+ny*19+n)%onwardChoices.length]:(incoming+2)%4;
+   u.ports=[incoming,onward];
+   u.decoy=true;u.branchTailContinuation=true;
+ }
  const fixedRange=rule.fixedTotalRange||[0,0];
  const fixedSpan=fixedRange[1]-fixedRange[0]+1;
  const targetFixed=fixedRange[0]+((n*17+(L.generationSalt||0)*7)%Math.max(1,fixedSpan));
@@ -1186,7 +1317,7 @@ function buildLevel(n,{manual=false,skipTutorial=false,generationSalt=null,regen
  }
  rule.actualFixedCount=placedFixed;
 
- // Ver.1.4.62: ライト構造を最終確定してから解答検証する。
+ // Ver.1.4.67: ライト構造を最終確定してから解答検証する。
  // 1) 表示番号は必ず 1,2,3... の連番に正規化する。
  //    T字分岐で同じ番号が複数ある場合は、そのグループを同じ番号のまま維持する。
  function normalizeRequiredLampOrders(){
@@ -1207,6 +1338,16 @@ function buildLevel(n,{manual=false,skipTutorial=false,generationSalt=null,regen
    }
    const orders=[...new Set(required.map(k=>{const[x,y]=k.split(',').map(Number);return board[y][x].order}))].sort((a,b)=>a-b);
    for(let i=0;i<orders.length;i++)if(orders[i]!==i+1)issues.push(`番号欠番:${orders.join(',')}`);
+
+   // 本線上の番号は必ず昇順。T字で同番号が複数あっても次番号は本線側同番号の後ろに置く。
+   let lastOrder=0;
+   for(const [px,py] of L.path){
+     const t=board[py][px];
+     if(!t||t.kind!=='lamp'||!t.required)continue;
+     const order=Number(t.order)||1;
+     if(order<lastOrder)issues.push(`本線番号逆転:${lastOrder}->${order}@${K(px,py)}`);
+     lastOrder=Math.max(lastOrder,order);
+   }
    return issues
  }
  normalizeRequiredLampOrders();
@@ -1216,6 +1357,12 @@ function buildLevel(n,{manual=false,skipTutorial=false,generationSalt=null,regen
    if(regenDepth<24)return buildLevel(n,{manual,skipTutorial,generationSalt:(L.generationSalt||generationSalt)+211,regenDepth:regenDepth+1});
    console.error(`LEVEL ${n}: ライト構造再生成の上限に到達。別シードへ移行します`);
    return buildLevel(n,{manual,skipTutorial,generationSalt:(L.generationSalt||generationSalt)+10037,regenDepth:0});
+ }
+ const bridgeTopologyOK=validateEffectiveBridges();
+ if(!bridgeTopologyOK){
+   console.warn(`LEVEL ${n}: 画面端または不成立の立体交差を検出したため再生成`,{generationSalt:L.generationSalt});
+   if(regenDepth<24)return buildLevel(n,{manual,skipTutorial,generationSalt:(L.generationSalt||generationSalt)+307,regenDepth:regenDepth+1});
+   return buildLevel(n,{manual,skipTutorial,generationSalt:(L.generationSalt||generationSalt)+12049,regenDepth:0});
  }
 
  // 完成形が本当に解けることを初期回転前に検証する。
@@ -1228,7 +1375,7 @@ function buildLevel(n,{manual=false,skipTutorial=false,generationSalt=null,regen
    console.error(`LEVEL ${n}: 解答保証再生成の上限に到達しました。別シードで再試行します`);
    return buildLevel(n,{manual,skipTutorial,generationSalt:(L.generationSalt||generationSalt)+7919,regenDepth:0});
  }
- // Ver.1.4.62: 初期回転は毎回同じ決定論的配置にする。
+ // Ver.1.4.67: 初期回転は毎回同じ決定論的配置にする。
  // さらに盤面全体の「隣接ポート接続数」ができるだけ少なくなる向きを選び、
  // 可能な限りバラバラな状態から開始する。固定・ライト・電源・ゴール・立体交差は回転しない。
  function visualConnectionCount(){
@@ -1357,6 +1504,7 @@ function validateEffectiveBridges(){
  for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){
    const t=board[y][x];
    if(!t||t.kind!=='bridge')continue;
+   if(x<=0||y<=0||x>=COLS-1||y>=ROWS-1){issues.push(`${K(x,y)}:画面端`);continue}
    if(!t.effectiveBridge){issues.push(`${K(x,y)}:片軸/未認定`);continue}
    const h=axisDepth(x,y,1,2)&&axisDepth(x,y,3,2);
    const v=axisDepth(x,y,0,2)&&axisDepth(x,y,2,2);
@@ -1418,7 +1566,7 @@ function gateVisibleFlow(raw){
  const seen=new Set([startKey]),edges=[],q=[startKey];
  while(q.length){
    const k=q.shift(),[x,y]=k.split(',').map(Number),tileHere=board[y][x];
-   // 未点灯の必須ライトに到達したら、表示上の電流はそこで止める。
+   // 未点灯の必須ライトはゲート。現在番号の全ライトが点灯するまで、その先（次番号を含む）へ電気を通さない。
    if(tileHere?.kind==='lamp'&&tileHere.required&&!tileHere.charged)continue;
    for(const item of adj.get(k)||[]){
      edges.push(item.e);
@@ -1432,9 +1580,9 @@ function checkCircuit(){
  const gated=gateVisibleFlow(raw);connectedSet=gated.seen;flowEdges=gated.edges;
  const lampsOK=required.every(k=>{
    const[x,y]=k.split(',').map(Number),lamp=board[y][x];
-   return rawConnectedSet.has(k)&&lamp.charged
+   return connectedSet.has(k)&&lamp.charged
  });
- const clear=rawConnectedSet.has(endKey)&&lampsOK;
+ const clear=connectedSet.has(endKey)&&lampsOK;
  ui.status.textContent='';
  if(clear&&!busy&&!completionQueued){completionQueued=true;complete()}
  draw()
@@ -1458,7 +1606,7 @@ function updateCharging(dt){
  // 前段が切れた場合、その番号以降は消灯して再ロック。
  let previousBroken=false;
  for(const order of orders){
-   const group=groups.get(order),allRawConnected=group.every(({k})=>rawConnectedSet.has(k));
+   const group=groups.get(order),allRawConnected=group.every(({k})=>connectedSet.has(k));
    if(previousBroken||(!allRawConnected&&group.some(({lamp})=>lamp.charged))){
      previousBroken=true;
      for(const {lamp} of group){
@@ -1480,7 +1628,7 @@ function updateCharging(dt){
      }
      continue
    }
-   const allConnected=group.every(({k})=>rawConnectedSet.has(k));
+   const allConnected=group.every(({k})=>connectedSet.has(k));
    if(!allConnected){
      for(const {lamp} of group){if(lamp.charge>0){lamp.charge=0;changed=true}}
      continue
@@ -1509,13 +1657,64 @@ async function complete(){busy=true;clearedStages.add(level);saveClearedStages()
 }ui.overlay.classList.add('show');requestBoardRefit();busy=false}
 function wait(ms){return new Promise(r=>setTimeout(r,ms))}
 function interact(x,y){if(busy)return;const t=board[y]?.[x];if(!t||t.kind==='empty'||t.kind==='plus'||t.kind==='minus'||t.kind==='lamp'||t.kind==='bridge')return;if(t.fixed){selected={x,y};sfx('blocked');ui.msg.textContent='🔒 このブロックは固定されているため回転できません';draw();return}if(t.kind==='wire'||t.kind==='diode'){rotatePorts(t);moves++;sfx('rotate');ui.msg.textContent=t.kind==='diode'?'一方通行パネルの向きを変更しました':'ケーブルを回転しました'}selected={x,y};updateInfo();checkCircuit()}
-function updateInfo(){const R=getDifficultyRule(level),fixed=board.flat().filter(t=>t.fixed).length;ui.stage.textContent=level;
+function getPlayerStageBrief(n){
+ const R=getDifficultyRule(n);
+ const points={
+   1:'基本操作に慣れよう',
+   2:'分岐先を見比べよう',
+   3:'立体交差を見落とさない',
+   4:'一方通行の向きに注意',
+   5:'戻るルートも候補に入れよう',
+   6:'ダミーに惑わされず番号順を追おう',
+   7:'複数ギミックの組み合わせを読む',
+   8:'長いルートを全体で捉えよう',
+   9:'分岐と交差を慎重に見極めよう',
+   10:'すべてのルールを使って攻略しよう'
+ };
+ return{
+   difficulty:R.label,
+   point:points[R.tier]||'回路全体をよく観察しよう'
+ }
+}
+function updateInfo(){
+ const R=getDifficultyRule(level),brief=getPlayerStageBrief(level);
+ ui.stage.textContent=level;
  if(ui.lap){
    const lap=generationCycle+1;
    ui.lap.textContent=`${lap}周目`;
    ui.lap.classList.toggle('hidden',lap<=1);
  }
- ui.moves.textContent=moves;ui.icon.textContent=level>=7?'🔒':getLevel(level).icon;ui.name.textContent=level>=7?`${getLevel(level).name}（${COLS}×${ROWS}）`:getLevel(level).name;ui.rule.textContent=level>=7?`${getLevel(level).rule} 鍵付きブロックは回転できません。`:getLevel(level).rule;ui.goal.textContent=getLevel(level).goal+`／盤面 ${COLS}×${ROWS}${fixed?`／固定 ${fixed}個`:''}／${R.label}：T字${R.tJunctionRange[0]}〜${R.tJunctionRange[1]}・立体交差0〜${R.bridgeRange[1]}（縦横2系統が成立した交差点のみ）・一方通行${R.diodeRange[0]}〜${R.diodeRange[1]}（品質優先）`;ui.how.textContent=getLevel(level).how}
+ ui.moves.textContent=moves;
+
+ const info=getLevel(level);
+ ui.icon.textContent=level>=7?'🔒':info.icon;
+ ui.name.textContent=level>=7?`${info.name}（${COLS}×${ROWS}）`:info.name;
+ ui.rule.textContent=level>=7?`${info.rule} 鍵付きブロックは回転できません。`:info.rule;
+
+ // プレイヤーに必要な情報だけを表示する。
+ // T字数・立体交差数・品質優先などの内部生成条件は表示しない。
+ ui.goal.innerHTML=`<div class="goalInfo">
+   <div class="goalItem goalPrimary">
+     <span class="goalLabel">目標</span>
+     <span class="goalValue">番号順にすべてのライトを点灯し、ゴールへ通電する</span>
+   </div>
+   <div class="goalMeta">
+     <div class="goalItem">
+       <span class="goalLabel">難易度</span>
+       <span class="goalValue">${brief.difficulty}</span>
+     </div>
+     <div class="goalItem">
+       <span class="goalLabel">盤面</span>
+       <span class="goalValue">${COLS} × ${ROWS}</span>
+     </div>
+   </div>
+   <div class="goalItem goalPoint">
+     <span class="goalLabel">ポイント</span>
+     <span class="goalValue">${brief.point}</span>
+   </div>
+ </div>`;
+ ui.how.textContent=info.how
+}
 function buildTabs(){
  ui.tabs.innerHTML='';
  const pages=Math.ceil(levelDefs.length/10);
@@ -1544,7 +1743,31 @@ function bridgeAxisActivity(x,y){
  }
  return state
 }
-function draw(){ctx.clearRect(0,0,cv.width,cv.height);const bg=ctx.createLinearGradient(0,0,0,cv.height);bg.addColorStop(0,'#0b2031');bg.addColorStop(1,'#040b12');ctx.fillStyle=bg;ctx.fillRect(0,0,cv.width,cv.height);for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){ctx.strokeStyle='#17364a';ctx.strokeRect(x*CELL+.5,y*CELL+.5,CELL-1,CELL-1);drawTile(x,y,board[y][x],connectedSet.has(K(x,y)))}drawParticles();ctx.strokeStyle='#65f3ff';ctx.lineWidth=3;ctx.strokeRect(selected.x*CELL+5,selected.y*CELL+5,CELL-10,CELL-10)}
+function drawDebugSolutionOverlay(){
+ if(!DEBUG_MODE||!debugSolutionVisible||!debugSolutionEdges.length)return;
+ ctx.save();
+ ctx.lineCap='round';ctx.lineJoin='round';
+ // 太い暗縁で通常配線と区別し、その上に黄色の正解ラインを重ねる。
+ for(const width of [16,7]){
+   ctx.lineWidth=width;
+   ctx.strokeStyle=width===16?'rgba(18,13,2,.76)':'#ffe65a';
+   ctx.shadowColor=width===7?'#ffd93d':'transparent';ctx.shadowBlur=width===7?12:0;
+   ctx.beginPath();
+   for(const [x1,y1,x2,y2] of debugSolutionEdges){
+     ctx.moveTo(x1*CELL+CELL/2,y1*CELL+CELL/2);
+     ctx.lineTo(x2*CELL+CELL/2,y2*CELL+CELL/2)
+   }
+   ctx.stroke()
+ }
+ // 正解ネットワーク上のセル中心を小さくマーク。
+ ctx.shadowBlur=0;ctx.fillStyle='rgba(255,235,92,.92)';
+ for(const key of debugSolutionCells){
+   const[x,y]=key.split(',').map(Number);ctx.beginPath();ctx.arc(x*CELL+CELL/2,y*CELL+CELL/2,3.2,0,Math.PI*2);ctx.fill()
+ }
+ ctx.restore()
+}
+
+function draw(){ctx.clearRect(0,0,cv.width,cv.height);const bg=ctx.createLinearGradient(0,0,0,cv.height);bg.addColorStop(0,'#0b2031');bg.addColorStop(1,'#040b12');ctx.fillStyle=bg;ctx.fillRect(0,0,cv.width,cv.height);for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){ctx.strokeStyle='#17364a';ctx.strokeRect(x*CELL+.5,y*CELL+.5,CELL-1,CELL-1);drawTile(x,y,board[y][x],connectedSet.has(K(x,y)))}drawParticles();drawDebugSolutionOverlay();ctx.strokeStyle='#65f3ff';ctx.lineWidth=3;ctx.strokeRect(selected.x*CELL+5,selected.y*CELL+5,CELL-10,CELL-10)}
 function drawTile(x,y,t,active){if(t.kind==='empty')return;const px=x*CELL,py=y*CELL,z=CELL-10,mid=CELL/2,hot=t.flash||0,bridgeTile=t.kind==='bridge';ctx.save();ctx.translate(px+5,py+5);ctx.shadowColor=hot?'#ffe34d':(!bridgeTile&&active)?'#64eafa':t.kind==='plus'?'#e53935':t.kind==='minus'?'#1e88e5':'#cfdce5';ctx.shadowBlur=hot?28:(!bridgeTile&&active)?15:7;ctx.fillStyle=t.kind==='plus'?'#d83232':t.kind==='minus'?'#176fbd':t.kind==='lamp'?(t.charged?'#ffd83d':'#514a31'):t.kind==='diode'?'#d7dce2':bridgeTile?'#7f929e':active?'#63dcea':'#9badb9';round(0,0,z,z,11);ctx.fill();ctx.strokeStyle=hot?'#fffbd0':'#ffffff70';ctx.lineWidth=2;ctx.stroke();ctx.translate(z/2,z/2);ctx.lineCap='round';ctx.lineWidth=10;ctx.strokeStyle=hot?'#fff5a0':active?'#eaffff':'#172b37';
  if(t.kind==='bridge'){
    const axis=bridgeAxisActivity(x,y),vOn=axis.vertical,hOn=axis.horizontal;
@@ -1721,7 +1944,7 @@ function updateDebugUi(){
   const panel=$('debugPanel');if(!panel)return;
   panel.classList.toggle('show',DEBUG_MODE);
   if(!DEBUG_MODE)return;
-  const lap=$('debugLapInput');if(lap)lap.value=String(generationCycle+1)
+  const lap=$('debugLapInput');if(lap)lap.value=String(generationCycle+1);const sol=$('debugShowSolution');if(sol)sol.textContent=debugSolutionVisible?'正解ルートを隠す':'正解ルート表示'
 }
 
 function flashDebugButton(btn,{done=true}={}){
@@ -1751,7 +1974,7 @@ if(debugPanel){
     ui.msg.textContent=`デバッグ：${clean}周目へ切り替えました。`;
   };
 
-  // Ver.1.4.62: 個別onclickではなくデバッグ欄全体でクリックを受ける。
+  // Ver.1.4.67: 個別onclickではなくデバッグ欄全体でクリックを受ける。
   // スマホのオーバーレイや再描画後でもイベントを失わない。
   debugPanel.addEventListener('click',e=>{
     if(!DEBUG_MODE)return;
@@ -1786,6 +2009,12 @@ if(debugPanel){
       case 'debugResetIntros':
         seenPartIntros=new Set();localStorage.setItem('electricLinkSeenPartIntrosV1','[]');
         ui.msg.textContent='デバッグ：新要素説明を未読に戻しました。';flashDebugButton(btn);
+        break;
+      case 'debugShowSolution':
+        debugSolutionVisible=!debugSolutionVisible;
+        btn.textContent=debugSolutionVisible?'正解ルートを隠す':'正解ルート表示';
+        ui.msg.textContent=debugSolutionVisible?'デバッグ：正解ネットワークを黄色で表示しています。':'デバッグ：正解ルート表示を解除しました。';
+        flashDebugButton(btn);draw();
         break;
       case 'debugFullReset':
         if(!confirm('【デバッグ】Electric Link の保存データをすべて初期化しますか？'))return;
@@ -3291,7 +3520,7 @@ html,body{
   }
 
   function fitMobileBoardWithHeader(){
-    return; // Ver.1.4.62: sizing is handled by unifiedBoardFit() only.
+    return; // Ver.1.4.67: sizing is handled by unifiedBoardFit() only.
     if(!window.matchMedia('(max-width:760px)').matches)return;
 
     const canvas=document.getElementById('game');
@@ -3394,7 +3623,7 @@ html,body{
 
 
 <style id="v1446-unified-board-fit-style">
-/* Ver.1.4.62: one authoritative canvas sizing layer. */
+/* Ver.1.4.67: one authoritative canvas sizing layer. */
 #game{
   display:block!important;
   width:auto!important;
