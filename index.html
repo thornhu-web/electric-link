@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="format-detection" content="telephone=no">
-<title>Electric Link Ver.1.4.40  電気の世界体験版 Ver.1.4.59 Unified Board Fit</title>
+<title>Electric Link Ver.1.4.40  電気の世界体験版 Ver.1.4.61 Unified Board Fit</title>
 <style>
 :root{--bg:#06101b;--panel:#0b2032;--border:#28516b;--text:#eefaff;--muted:#9db8c7;--cyan:#63eafa;--yellow:#ffe34d;--red:#e53935;--blue:#1e88e5;--purple:#a86dff;--green:#57d783}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;min-height:;overscroll-behavior:none}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% 0,#173b58,#071522 46%,#03080e);color:var(--text);padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))}.app{width:min(980px,);margin:auto;display:grid;grid-template-columns:minmax(300px,500px) minmax(280px,1fr);gap:14px}.box{background:rgba(9,27,43,.96);border:1px solid var(--border);border-radius:20px;box-shadow:0 18px 54px #0008}.game{padding:9px;position:relative}canvas{display:block;width:;height:auto;border-radius:14px;background:#06111c;touch-action:none}.side{padding:17px}h1{margin:0;font-size:clamp(25px,4vw,39px)}.ver{font-size:12px;color:#9df7ff;border:1px solid #34788b;border-radius:999px;padding:3px 8px}.sub{margin:4px 0 13px;color:var(--muted)}.stageTabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0 14px}.stageTabs button{padding:7px 3px;min-height:38px}.stageTabs .active{background:#1c7187}.stageTabs .locked{opacity:.35}.card{background:#071725;border:1px solid #20445c;border-radius:14px;padding:12px;margin-top:10px}.partTitle{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:900}.partIcon{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:#15394f;font-size:23px}.rule{font-size:14px;line-height:1.65;margin-top:7px}.goal{color:var(--yellow);font-weight:900}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.stat{background:#071725;border:1px solid #20445c;border-radius:12px;padding:8px}.label{font-size:10px;color:var(--muted)}.value{font-size:21px;font-weight:900}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px}button{border:1px solid #347393;background:#123650;color:#fff;border-radius:12px;padding:10px;font-weight:800;cursor:pointer;min-height:44px}.primary{background:linear-gradient(135deg,#176985,#288da0)}.wide{grid-column:span 2}.message{min-height:27px;margin-top:10px;font-weight:900;color:#77f4ff}.legend{font-size:12px;line-height:1.7;color:#c9dce5}.legend b{color:#fff}.overlay{display:none;position:absolute;inset:9px;z-index:5;background:#02070de9;border-radius:14px;align-items:center;justify-content:center;text-align:center;padding:18px}.overlay.show{display:flex}.overlayCard{width:min(350px,94%);background:#0c2033;border:1px solid #39728e;border-radius:18px;padding:22px}.overlayCard h2{font-size:30px;margin:0 0 8px}.toast{position:absolute;left:50%;bottom:17px;transform:translateX(-50%);background:#06111eee;border:1px solid #4ca0c2;border-radius:999px;padding:8px 13px;font-size:13px;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1}.unlock{display:inline-block;margin-top:8px;color:#9fffb8}.small{font-size:11px;color:var(--muted);margin-top:9px}.tutorial{display:none;position:absolute;inset:9px;z-index:7;background:#02070df2;border-radius:14px;align-items:center;justify-content:center;padding:14px}.tutorial.show{display:flex}.tutorialCard{width:min(390px,96%);background:#0c2033;border:1px solid #4b87a2;border-radius:18px;padding:18px;text-align:left}.tutorialCard h2{margin:0 0 8px;font-size:25px}.tutorialDemo{height:150px;border:1px solid #2c5870;border-radius:13px;background:#06121d;margin:12px 0;position:relative;overflow:hidden;display:grid;place-items:center}.tutorialDemo canvas{width:;height:;border-radius:13px}.tutorialActions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bookOverlay{display:none;position:fixed;inset:0;z-index:20;background:#02070df2;align-items:center;justify-content:center;padding:14px}.bookOverlay.show{display:flex}.bookCard{width:min(700px,96vw);max-height:90vh;overflow:auto;background:#0c2033;border:1px solid #4b87a2;border-radius:20px;padding:18px}.bookGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.bookItem{background:#071725;border:1px solid #20445c;border-radius:14px;padding:12px}.bookIcon{display:none}.bookPreview{width:82px;height:82px;display:block;margin:2px auto 8px;border-radius:12px;background:#06111c;border:1px solid #24485d}.bookItem h3{margin:5px 0;text-align:center}.demoStatus{text-align:center;font-weight:900;color:#9ff7ff;margin-top:4px}@media(max-width:560px){.bookGrid{grid-template-columns:1fr}}
@@ -294,7 +294,7 @@ canvas{--board-aspect:.75}
     <button id="titleStart" type="button">GAME START</button>
     <div id="titleContinue" class="titleContinue"></div>
   </div>
-  <div class="titleVersion">ELECTRIC LINK / Ver.1.4.59</div>
+  <div class="titleVersion">ELECTRIC LINK / Ver.1.4.61</div>
 </div>
 
 <div class="app">
@@ -305,7 +305,7 @@ canvas{--board-aspect:.75}
   <div class="overlay" id="overlay"><div class="overlayCard"><h2 id="clearTitle">LIGHTS ON!</h2><p id="clearText"></p><div class="buttons"><button id="retry">もう一度</button><button class="primary" id="next">次のレベルへ</button></div></div></div>
 </section>
 <aside class="box side">
-  <h1>⚡ Electric Link <span class="ver">Ver.1.4.59 Unified Board Fit</span></h1>
+  <h1>⚡ Electric Link <span class="ver">Ver.1.4.61 Unified Board Fit</span></h1>
   <div class="sub">全100レベル。後半ほどT字分岐・実立体交差・一方通行・ダミーネットワークが複合します。</div>
   <div class="stageTabs" id="stageTabs"></div>
   <div class="stats"><div class="stat"><div class="label">LEVEL</div><div class="value" id="stageNo">1</div><span id="lapBadge" class="lapBadge hidden"></span></div><div class="stat"><div class="label">操作数</div><div class="value" id="moves">0</div></div></div><span id="status" hidden></span>
@@ -391,10 +391,15 @@ function initTitleScreen(){
   }
 
   const begin=()=>{
-    ensureAudio();
-    sfx('start');
+    // Unlock audio first, play the dedicated start sting, then let BGM enter after the impact.
+    const bgmWasOn=audioSettings.bgmOn;
+    if(bgmWasOn)audioSettings.bgmOn=false;
+    ensureAudio().then(()=>{
+      sfx('start');
+      if(bgmWasOn)setTimeout(()=>{audioSettings.bgmOn=true;startBgm()},650);
+    });
     screen.classList.add('hide');
-    setTimeout(()=>{screen.style.display='none';requestBoardRefit?.()},520);
+    setTimeout(()=>{screen.style.display='none';requestBoardRefit?.()},720);
   };
   start.addEventListener('click',begin);
   start.addEventListener('pointerdown',()=>ensureAudio(),{once:true});
@@ -408,7 +413,7 @@ const audioSettings={
  sfxVolume:Number(localStorage.getItem('electricLinkSfxVolume')||70)/100
 };
 let audioCtx=null,masterGain=null,bgmGain=null,bgmTimer=null,bgmStep=0,audioStartPromise=null;
-const MASTER_GAIN=1.75;      // Ver.1.4.59: 全体の基準音量
+const MASTER_GAIN=1.75;      // Ver.1.4.61: 全体の基準音量
 const BGM_SOURCE_GAIN=2.0;   // BGM音源そのものの聞こえやすさ
 
 function createAudioGraph(){
@@ -450,7 +455,12 @@ function ensureAudio(){
  return audioStartPromise
 }
 function tone(freq,dur=.09,type='sine',vol=.15,delay=0){if(!audioCtx||audioCtx.state!=='running'||!audioSettings.sfxOn)return;const t=audioCtx.currentTime+delay,o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol*audioSettings.sfxVolume,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(masterGain);o.start(t);o.stop(t+dur+.02)}
-function sfx(name){ensureAudio().then(()=>{if(!audioSettings.sfxOn)return;if(name==='rotate'){tone(360,.07,'triangle',.12);tone(520,.06,'triangle',.08,.04)}else if(name==='switch'){tone(220,.08,'square',.10);tone(330,.08,'square',.08,.06)}else if(name==='lamp'){tone(660,.12,'sine',.13);tone(880,.18,'sine',.11,.08)}else if(name==='clear'){[523,659,784,1047].forEach((f,i)=>tone(f,.3,'sine',.13,i*.11))}else if(name==='click'){tone(500,.045,'triangle',.07)}else if(name==='start'){tone(196,.12,'sine',.11);tone(392,.18,'triangle',.14,.07);tone(659.25,.28,'sine',.16,.16);tone(987.77,.38,'sine',.12,.27)}else if(name==='blocked'){tone(170,.12,'sawtooth',.08)}})}
+function sfx(name){ensureAudio().then(()=>{if(!audioSettings.sfxOn)return;if(name==='rotate'){tone(360,.07,'triangle',.12);tone(520,.06,'triangle',.08,.04)}else if(name==='switch'){tone(220,.08,'square',.10);tone(330,.08,'square',.08,.06)}else if(name==='lamp'){tone(660,.12,'sine',.13);tone(880,.18,'sine',.11,.08)}else if(name==='clear'){[523,659,784,1047].forEach((f,i)=>tone(f,.3,'sine',.13,i*.11))}else if(name==='click'){tone(500,.045,'triangle',.07)}else if(name==='start'){
+  // GAME START専用: カチッ -> 電力チャージ上昇 -> バシュン！
+  tone(115,.045,'square',.16,0);tone(72,.07,'square',.09,.025);
+  [180,230,300,390,510,680,900].forEach((f,i)=>tone(f,.13,'sawtooth',.055+i*.006,.08+i*.055));
+  tone(1250,.20,'triangle',.18,.47);tone(1750,.11,'sine',.12,.50);tone(92,.28,'sine',.15,.48);
+}else if(name==='blocked'){tone(170,.12,'sawtooth',.08)}})}
 function startBgm(){
  if(!audioCtx||audioCtx.state!=='running'||bgmTimer||!audioSettings.bgmOn)return;
  const notes=[220,277.18,329.63,440,329.63,277.18,246.94,329.63];bgmStep=0;
@@ -612,7 +622,7 @@ function detectCurrentStageParts(){
 }
 
 function showNewPartIntro(levelNo){
- // Ver.1.4.59:
+ // Ver.1.4.61:
  // 固定LEVEL表ではなく、完成した現在の盤面を実際に走査する。
  // そのステージに存在し、かつ未読のギミックだけを表示する。
  const presentKeys=detectCurrentStageParts();
@@ -715,7 +725,7 @@ function validateStageDefinitions(){
 }
 
 function getDimensions(n){
- // Ver.1.4.59: 6/7/8列を難易度とステージ番号で混在させる。
+ // Ver.1.4.61: 6/7/8列を難易度とステージ番号で混在させる。
  // 8列はT字分岐・実立体交差・長いダミーネットワークを自然に作れる後半中心。
  if(n<=6)return{cols:6,rows:8};
  if(n<=10)return{cols:7,rows:8};
@@ -814,7 +824,7 @@ function straightPathIndices(path){
 }
 // Ver.1.4.41: deterministic base seeds for 100 stages. A generation cycle is added after LEVEL 100 clear.
 const STAGE_LAYOUT_SALTS=Array.from({length:100},(_,i)=>{
-  // Ver.1.4.59: 全100ステージの基礎シードを刷新。
+  // Ver.1.4.61: 全100ステージの基礎シードを刷新。
   // 旧セットと同じ盤面へ収束しないよう、列数・世代番号とは独立した新しいハッシュを使う。
   let x=((i+1)*2246822519+0x85ebca6b)>>>0;
   x^=x>>>15;x=Math.imul(x,3266489917)>>>0;x^=x>>>16;
@@ -1148,7 +1158,7 @@ function buildLevel(n,{manual=false,skipTutorial=false,generationSalt=null,regen
  }
  rule.actualFixedCount=placedFixed;
 
- // Ver.1.4.59: ライト構造を最終確定してから解答検証する。
+ // Ver.1.4.61: ライト構造を最終確定してから解答検証する。
  // 1) 表示番号は必ず 1,2,3... の連番に正規化する。
  //    T字分岐で同じ番号が複数ある場合は、そのグループを同じ番号のまま維持する。
  function normalizeRequiredLampOrders(){
@@ -1190,7 +1200,7 @@ function buildLevel(n,{manual=false,skipTutorial=false,generationSalt=null,regen
    console.error(`LEVEL ${n}: 解答保証再生成の上限に到達しました。別シードで再試行します`);
    return buildLevel(n,{manual,skipTutorial,generationSalt:(L.generationSalt||generationSalt)+7919,regenDepth:0});
  }
- // Ver.1.4.59: 初期回転は毎回同じ決定論的配置にする。
+ // Ver.1.4.61: 初期回転は毎回同じ決定論的配置にする。
  // さらに盤面全体の「隣接ポート接続数」ができるだけ少なくなる向きを選び、
  // 可能な限りバラバラな状態から開始する。固定・ライト・電源・ゴール・立体交差は回転しない。
  function visualConnectionCount(){
@@ -1713,7 +1723,7 @@ if(debugPanel){
     ui.msg.textContent=`デバッグ：${clean}周目へ切り替えました。`;
   };
 
-  // Ver.1.4.59: 個別onclickではなくデバッグ欄全体でクリックを受ける。
+  // Ver.1.4.61: 個別onclickではなくデバッグ欄全体でクリックを受ける。
   // スマホのオーバーレイや再描画後でもイベントを失わない。
   debugPanel.addEventListener('click',e=>{
     if(!DEBUG_MODE)return;
@@ -1795,7 +1805,7 @@ validateStageDefinitions();
 function loop(now){const dt=Math.min(50,now-lastFrame);lastFrame=now;updateCharging(dt);draw();requestAnimationFrame(loop)}buildLevel(Math.min(unlocked,levelDefs.length),{manual:false});requestAnimationFrame(loop);
 })();
 </script>
-<div style="position:fixed;right:8px;bottom:8px;z-index:9997;background:#111d;color:#fff;padding:5px 8px;border:1px solid #ffffff44;border-radius:8px;font:12px system-ui;pointer-events:none">Ver.1.4.45 拡大表示復旧版</div>
+
 
 
 
@@ -3253,7 +3263,7 @@ html,body{
   }
 
   function fitMobileBoardWithHeader(){
-    return; // Ver.1.4.59: sizing is handled by unifiedBoardFit() only.
+    return; // Ver.1.4.61: sizing is handled by unifiedBoardFit() only.
     if(!window.matchMedia('(max-width:760px)').matches)return;
 
     const canvas=document.getElementById('game');
@@ -3356,7 +3366,7 @@ html,body{
 
 
 <style id="v1446-unified-board-fit-style">
-/* Ver.1.4.59: one authoritative canvas sizing layer. */
+/* Ver.1.4.61: one authoritative canvas sizing layer. */
 #game{
   display:block!important;
   width:auto!important;
