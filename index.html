@@ -8,91 +8,636 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="format-detection" content="telephone=no">
-<title>Electric Link 電気の世界体験版 Ver.1.2 Linked Route</title>
+<title>Electric Link Ver.1.4.40  電気の世界体験版 Ver.1.4.59 Unified Board Fit</title>
 <style>
 :root{--bg:#06101b;--panel:#0b2032;--border:#28516b;--text:#eefaff;--muted:#9db8c7;--cyan:#63eafa;--yellow:#ffe34d;--red:#e53935;--blue:#1e88e5;--purple:#a86dff;--green:#57d783}
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;min-height:100%;overscroll-behavior:none}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% 0,#173b58,#071522 46%,#03080e);color:var(--text);padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))}.app{width:min(980px,100%);margin:auto;display:grid;grid-template-columns:minmax(300px,500px) minmax(280px,1fr);gap:14px}.box{background:rgba(9,27,43,.96);border:1px solid var(--border);border-radius:20px;box-shadow:0 18px 54px #0008}.game{padding:9px;position:relative}canvas{display:block;width:100%;height:auto;border-radius:14px;background:#06111c;touch-action:none}.side{padding:17px}h1{margin:0;font-size:clamp(25px,4vw,39px)}.ver{font-size:12px;color:#9df7ff;border:1px solid #34788b;border-radius:999px;padding:3px 8px}.sub{margin:4px 0 13px;color:var(--muted)}.stageTabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0 14px}.stageTabs button{padding:8px 3px;min-height:42px}.stageTabs .active{background:#1c7187}.stageTabs .locked{opacity:.35}.card{background:#071725;border:1px solid #20445c;border-radius:14px;padding:12px;margin-top:10px}.partTitle{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:900}.partIcon{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:#15394f;font-size:23px}.rule{font-size:14px;line-height:1.65;margin-top:7px}.goal{color:var(--yellow);font-weight:900}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.stat{background:#071725;border:1px solid #20445c;border-radius:12px;padding:8px}.label{font-size:10px;color:var(--muted)}.value{font-size:21px;font-weight:900}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px}button{border:1px solid #347393;background:#123650;color:#fff;border-radius:12px;padding:10px;font-weight:800;cursor:pointer;min-height:44px}.primary{background:linear-gradient(135deg,#176985,#288da0)}.wide{grid-column:span 2}.message{min-height:27px;margin-top:10px;font-weight:900;color:#77f4ff}.legend{font-size:12px;line-height:1.7;color:#c9dce5}.legend b{color:#fff}.overlay{display:none;position:absolute;inset:9px;z-index:5;background:#02070de9;border-radius:14px;align-items:center;justify-content:center;text-align:center;padding:18px}.overlay.show{display:flex}.overlayCard{width:min(350px,94%);background:#0c2033;border:1px solid #39728e;border-radius:18px;padding:22px}.overlayCard h2{font-size:30px;margin:0 0 8px}.toast{position:absolute;left:50%;bottom:17px;transform:translateX(-50%);background:#06111eee;border:1px solid #4ca0c2;border-radius:999px;padding:8px 13px;font-size:13px;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1}.unlock{display:inline-block;margin-top:8px;color:#9fffb8}.small{font-size:11px;color:var(--muted);margin-top:9px}.tutorial{display:none;position:absolute;inset:9px;z-index:7;background:#02070df2;border-radius:14px;align-items:center;justify-content:center;padding:14px}.tutorial.show{display:flex}.tutorialCard{width:min(390px,96%);background:#0c2033;border:1px solid #4b87a2;border-radius:18px;padding:18px;text-align:left}.tutorialCard h2{margin:0 0 8px;font-size:25px}.tutorialDemo{height:150px;border:1px solid #2c5870;border-radius:13px;background:#06121d;margin:12px 0;position:relative;overflow:hidden;display:grid;place-items:center}.tutorialDemo canvas{width:100%;height:100%;border-radius:13px}.tutorialActions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bookOverlay{display:none;position:fixed;inset:0;z-index:20;background:#02070df2;align-items:center;justify-content:center;padding:14px}.bookOverlay.show{display:flex}.bookCard{width:min(700px,96vw);max-height:90vh;overflow:auto;background:#0c2033;border:1px solid #4b87a2;border-radius:20px;padding:18px}.bookGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.bookItem{background:#071725;border:1px solid #20445c;border-radius:14px;padding:12px}.bookIcon{font-size:28px}.bookItem h3{margin:5px 0}.demoStatus{text-align:center;font-weight:900;color:#9ff7ff;margin-top:4px}@media(max-width:560px){.bookGrid{grid-template-columns:1fr}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;min-height:;overscroll-behavior:none}body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% 0,#173b58,#071522 46%,#03080e);color:var(--text);padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))}.app{width:min(980px,);margin:auto;display:grid;grid-template-columns:minmax(300px,500px) minmax(280px,1fr);gap:14px}.box{background:rgba(9,27,43,.96);border:1px solid var(--border);border-radius:20px;box-shadow:0 18px 54px #0008}.game{padding:9px;position:relative}canvas{display:block;width:;height:auto;border-radius:14px;background:#06111c;touch-action:none}.side{padding:17px}h1{margin:0;font-size:clamp(25px,4vw,39px)}.ver{font-size:12px;color:#9df7ff;border:1px solid #34788b;border-radius:999px;padding:3px 8px}.sub{margin:4px 0 13px;color:var(--muted)}.stageTabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0 14px}.stageTabs button{padding:7px 3px;min-height:38px}.stageTabs .active{background:#1c7187}.stageTabs .locked{opacity:.35}.card{background:#071725;border:1px solid #20445c;border-radius:14px;padding:12px;margin-top:10px}.partTitle{display:flex;align-items:center;gap:9px;font-size:19px;font-weight:900}.partIcon{width:40px;height:40px;display:grid;place-items:center;border-radius:11px;background:#15394f;font-size:23px}.rule{font-size:14px;line-height:1.65;margin-top:7px}.goal{color:var(--yellow);font-weight:900}.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:7px}.stat{background:#071725;border:1px solid #20445c;border-radius:12px;padding:8px}.label{font-size:10px;color:var(--muted)}.value{font-size:21px;font-weight:900}.buttons{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px}button{border:1px solid #347393;background:#123650;color:#fff;border-radius:12px;padding:10px;font-weight:800;cursor:pointer;min-height:44px}.primary{background:linear-gradient(135deg,#176985,#288da0)}.wide{grid-column:span 2}.message{min-height:27px;margin-top:10px;font-weight:900;color:#77f4ff}.legend{font-size:12px;line-height:1.7;color:#c9dce5}.legend b{color:#fff}.overlay{display:none;position:absolute;inset:9px;z-index:5;background:#02070de9;border-radius:14px;align-items:center;justify-content:center;text-align:center;padding:18px}.overlay.show{display:flex}.overlayCard{width:min(350px,94%);background:#0c2033;border:1px solid #39728e;border-radius:18px;padding:22px}.overlayCard h2{font-size:30px;margin:0 0 8px}.toast{position:absolute;left:50%;bottom:17px;transform:translateX(-50%);background:#06111eee;border:1px solid #4ca0c2;border-radius:999px;padding:8px 13px;font-size:13px;opacity:0;transition:.2s;pointer-events:none}.toast.show{opacity:1}.unlock{display:inline-block;margin-top:8px;color:#9fffb8}.small{font-size:11px;color:var(--muted);margin-top:9px}.tutorial{display:none;position:absolute;inset:9px;z-index:7;background:#02070df2;border-radius:14px;align-items:center;justify-content:center;padding:14px}.tutorial.show{display:flex}.tutorialCard{width:min(390px,96%);background:#0c2033;border:1px solid #4b87a2;border-radius:18px;padding:18px;text-align:left}.tutorialCard h2{margin:0 0 8px;font-size:25px}.tutorialDemo{height:150px;border:1px solid #2c5870;border-radius:13px;background:#06121d;margin:12px 0;position:relative;overflow:hidden;display:grid;place-items:center}.tutorialDemo canvas{width:;height:;border-radius:13px}.tutorialActions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bookOverlay{display:none;position:fixed;inset:0;z-index:20;background:#02070df2;align-items:center;justify-content:center;padding:14px}.bookOverlay.show{display:flex}.bookCard{width:min(700px,96vw);max-height:90vh;overflow:auto;background:#0c2033;border:1px solid #4b87a2;border-radius:20px;padding:18px}.bookGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.bookItem{background:#071725;border:1px solid #20445c;border-radius:14px;padding:12px}.bookIcon{display:none}.bookPreview{width:82px;height:82px;display:block;margin:2px auto 8px;border-radius:12px;background:#06111c;border:1px solid #24485d}.bookItem h3{margin:5px 0;text-align:center}.demoStatus{text-align:center;font-weight:900;color:#9ff7ff;margin-top:4px}@media(max-width:560px){.bookGrid{grid-template-columns:1fr}}
 @media(max-width:760px){
-  html,body{width:100%;overflow-x:hidden}
+  html,body{width:;overflow-x:hidden}
   body{padding:max(5px,env(safe-area-inset-top)) max(5px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(5px,env(safe-area-inset-left));background:#06101b}
-  .app{display:flex;flex-direction:column;gap:7px;width:100%;max-width:560px}
-  .game,.side{width:100%;max-width:none;margin:0}
+  .app{display:flex;flex-direction:column;gap:7px;width:;max-width:560px}
+  .game,.side{width:;max-width:none;margin:0}
   .game{padding:4px;border-radius:15px;box-shadow:none}
-  #game{width:min(100%,calc((100dvh - 26px)*.75));max-height:calc(100dvh - 26px);margin:0 auto;border-radius:11px}
+  #game{width:min(,calc((100dvh - 26px)*var(--board-aspect,.75)));max-height:calc(100dvh - 26px);margin:0 auto;border-radius:11px}
   .side{padding:10px;border-radius:15px;box-shadow:none}
   h1{font-size:22px;line-height:1.15}.ver{font-size:10px}.sub{font-size:12px;margin:3px 0 8px}
   .stageTabs{grid-template-columns:repeat(6,1fr);gap:4px;margin:7px 0}.stageTabs button{min-height:38px;padding:5px 2px;font-size:12px;border-radius:9px}
   .stats{gap:4px}.stat{padding:6px;border-radius:9px}.label{font-size:9px}.value{font-size:17px}
   .card{padding:9px;margin-top:7px;border-radius:11px}.partTitle{font-size:16px}.partIcon{width:34px;height:34px;font-size:20px}.rule{font-size:13px;line-height:1.5}
   .buttons{gap:5px;margin-top:7px}button{min-height:46px;padding:9px 7px;font-size:13px;touch-action:manipulation}.message{font-size:13px;min-height:22px;margin-top:7px}.legend,.small{font-size:11px}
-  .tutorial,.overlay{inset:4px;border-radius:11px;padding:8px}.tutorialCard,.overlayCard{width:98%;max-height:calc(100dvh - 22px);overflow:auto;padding:14px;border-radius:14px}.tutorialCard h2{font-size:22px}.tutorialDemo{height:132px;margin:8px 0}.tutorialActions{grid-template-columns:1fr}.tutorialActions button{width:100%}
+  .tutorial,.overlay{inset:4px;border-radius:11px;padding:8px}.tutorialCard,.overlayCard{width:98%;max-height:calc(100dvh - 22px);overflow:auto;padding:14px;border-radius:14px}.tutorialCard h2{font-size:22px}.tutorialDemo{height:132px;margin:8px 0}.tutorialActions{grid-template-columns:1fr}.tutorialActions button{width:}
   .bookOverlay{padding:max(8px,env(safe-area-inset-top)) 8px max(8px,env(safe-area-inset-bottom))}.bookCard{max-height:94dvh;padding:12px;border-radius:15px}
 }
 @media(max-width:390px){
-  #game{width:100%}.stageTabs{grid-template-columns:repeat(4,1fr)}.buttons{grid-template-columns:1fr}.wide{grid-column:span 1}.stats{grid-template-columns:repeat(3,1fr)}
+  #game{width:}.stageTabs{grid-template-columns:repeat(4,1fr)}.buttons{grid-template-columns:1fr}.wide{grid-column:span 1}.stats{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-height:500px) and (orientation:landscape){
-  body{padding:4px}.app{display:grid;grid-template-columns:minmax(280px,44vh) minmax(300px,1fr);max-width:100%;gap:7px;align-items:start}.game{position:sticky;top:4px}.side{max-height:calc(100dvh - 8px);overflow:auto}.side h1{font-size:19px}.sub,.small{display:none}.stageTabs{grid-template-columns:repeat(6,1fr)}#game{width:auto;height:calc(100dvh - 16px);max-width:100%}
+  body{padding:4px}.app{display:grid;grid-template-columns:minmax(280px,44vh) minmax(300px,1fr);max-width:;gap:7px;align-items:start}.game{position:sticky;top:4px}.side{max-height:calc(100dvh - 8px);overflow:auto}.side h1{font-size:19px}.sub,.small{display:none}.stageTabs{grid-template-columns:repeat(6,1fr)}#game{width:auto;height:calc(100dvh - 16px);max-width:}
 }
 @media(pointer:coarse){button{cursor:default}.toast{bottom:10px}.cell{-webkit-user-select:none;user-select:none}}
 
 
-.menuOverlay{display:none;position:fixed;inset:0;z-index:30;background:#02070df2;align-items:center;justify-content:center;padding:14px}.menuOverlay.show{display:flex}.menuCard{width:min(520px,96vw);max-height:92dvh;overflow:auto;background:#0c2033;border:1px solid #4b87a2;border-radius:20px;padding:18px}.menuGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.menuSection{margin-top:14px;padding-top:12px;border-top:1px solid #28516b}.rangeRow{display:grid;grid-template-columns:90px 1fr 48px;gap:9px;align-items:center;margin:10px 0}.rangeRow input{width:100%}.toggleOn{background:#1c7187}.menuStageGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.menuStageGrid button{min-height:40px;padding:5px}.menuStageGrid .locked{opacity:.35}.topTitle{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.iconButton{min-width:48px;padding:8px 10px;font-size:20px}
+.menuOverlay{display:none;position:fixed;inset:0;z-index:30;pointer-events:none;background:#02070df2;align-items:center;justify-content:center;padding:14px}.menuOverlay.show{display:flex;pointer-events:auto}.menuCard{width:min(520px,96vw);max-height:92dvh;overflow:auto;background:#0c2033;border:1px solid #4b87a2;border-radius:20px;padding:18px}.menuGrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.menuSection{margin-top:14px;padding-top:12px;border-top:1px solid #28516b}.rangeRow{display:grid;grid-template-columns:90px 1fr 48px;gap:9px;align-items:center;margin:10px 0}.rangeRow input{width:}.toggleOn{background:#1c7187}.menuStageGrid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.menuStageGrid button{min-height:40px;padding:5px}.menuStageGrid .locked{opacity:.35}.topTitle{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}.iconButton{min-width:48px;padding:8px 10px;font-size:20px}
 </style>
+<style id="new-part-intro-style">
+#newPartOverlay .bookItem{position:relative}
+#newPartOverlay .bookItem::before{
+  content:"NEW";
+  position:absolute;
+  top:8px;
+  right:8px;
+  padding:3px 6px;
+  border-radius:999px;
+  background:#17465c;
+  border:1px solid #4b87a2;
+  color:#bff8ff;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.08em
+}
+#newPartOverlay .rule{line-height:1.55}
+</style>
+
+
+<style id="v14-fixed-style">
+canvas{--board-aspect:.75}
+@media(max-width:760px){#game{aspect-ratio:var(--board-aspect,.75)/1}}
+</style>
+
+<style id="v1444-cleared-stage-colors">
+.stageTabs button.cleared,
+#menuStages button.cleared{
+  background:#176b4a!important;
+  border-color:#4dd99b!important;
+  color:#effff8!important;
+  box-shadow:inset 0 0 0 1px rgba(77,217,155,.18),0 0 10px rgba(77,217,155,.12);
+}
+.stageTabs button.active.cleared,
+#menuStages button.active.cleared{
+  background:#1c7187!important;
+  border-color:#8df7ff!important;
+  box-shadow:0 0 0 2px rgba(77,217,155,.55),0 0 12px rgba(101,243,255,.2);
+}
+</style>
+
+
+<style id="v1450-lap-style">
+.lapBadge{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  margin-left:6px;
+  padding:2px 7px;
+  border:1px solid #4e8494;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+  color:#bff9ff;
+  background:rgba(9,35,49,.72);
+  vertical-align:middle;
+}
+.lapBadge.hidden{display:none!important}
+@media (max-width:720px){
+  .lapBadge{font-size:10px;padding:2px 6px;margin-left:4px}
+}
+</style>
+
+
+<style id="v1451-debug-panel-style">
+.debugPanel{display:none;position:relative;z-index:5;pointer-events:auto!important;margin-top:14px;padding:12px;border:1px solid #8a5a24;border-radius:14px;background:rgba(61,37,12,.42)}
+.debugPanel.show{display:block}
+.debugPanel h3{margin:0 0 5px;color:#ffd38b}.debugNote{margin:0 0 10px;color:#d9c5a5;font-size:12px;line-height:1.5}
+.debugRow{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;margin:8px 0}.debugRow input{min-width:0;width:100%;padding:9px 10px;border-radius:9px;border:1px solid #486878;background:#07131d;color:#fff}
+.debugGrid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:8px;position:relative;z-index:6;pointer-events:auto!important}.debugGrid button,.debugPanel button,.debugPanel input{pointer-events:auto!important;position:relative;z-index:7;touch-action:manipulation}.debugGrid button{font-size:12px;padding:9px 6px}.debugDanger{border-color:#a65353!important}
+@media(max-width:560px){.debugGrid{grid-template-columns:1fr}}
+</style>
+
+
+<style id="v1457-debug-press-feedback">
+#debugPanel button{
+  position:relative;
+  transition:transform .08s ease, box-shadow .12s ease, filter .12s ease, background .12s ease, border-color .12s ease;
+  box-shadow:0 2px 0 rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.03);
+  transform:translateY(0);
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+}
+#debugPanel button:hover{filter:brightness(1.08)}
+#debugPanel button:active,
+#debugPanel button.debugPressed{
+  transform:translateY(2px) scale(.985);
+  box-shadow:0 0 0 rgba(0,0,0,0), inset 0 2px 8px rgba(0,0,0,.35);
+  filter:brightness(1.22);
+}
+#debugPanel button.debugDone{
+  border-color:#72e5b0!important;
+  background:#175f48!important;
+  box-shadow:0 0 0 1px rgba(114,229,176,.22),0 0 14px rgba(114,229,176,.26)!important;
+  filter:brightness(1.08);
+}
+#debugPanel button.debugDone::after{content:' ✓';font-weight:900}
+#debugPanel button.debugDanger.debugDone{border-color:#f0a2a2!important;background:#6b3030!important;box-shadow:0 0 12px rgba(240,120,120,.22)!important}
+</style>
+
+
+<style id="v1458-title-screen">
+#titleScreen{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 35%,rgba(46,204,255,.16),transparent 34%),
+    linear-gradient(180deg,#030912 0%,#071624 55%,#02060b 100%);
+  transition:opacity .5s ease,visibility .5s ease;
+}
+#titleScreen.hide{opacity:0;visibility:hidden;pointer-events:none}
+#titleScreen::before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background-image:
+    linear-gradient(rgba(84,211,255,.08) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(84,211,255,.08) 1px,transparent 1px);
+  background-size:54px 54px;
+  transform:perspective(700px) rotateX(62deg) translateY(28%);
+  transform-origin:center bottom;
+  animation:titleGrid 9s linear infinite;
+  opacity:.55;
+}
+#titleScreen::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,transparent 0 48%,rgba(107,238,255,.11) 49% 51%,transparent 52%),
+    radial-gradient(circle at center,transparent 0 42%,rgba(0,0,0,.54) 100%);
+  mix-blend-mode:screen;
+  pointer-events:none;
+}
+@keyframes titleGrid{from{background-position:0 0,0 0}to{background-position:0 54px,54px 0}}
+.titleCircuit{
+  position:absolute;inset:0;pointer-events:none;opacity:.72
+}
+.titleCircuit span{
+  position:absolute;height:2px;background:linear-gradient(90deg,transparent,#73efff,transparent);
+  box-shadow:0 0 12px #73efff;
+  animation:titlePulse 3s ease-in-out infinite;
+}
+.titleCircuit span:nth-child(1){width:34vw;left:-3vw;top:24%;animation-delay:.1s}
+.titleCircuit span:nth-child(2){width:28vw;right:-2vw;top:35%;animation-delay:1.1s}
+.titleCircuit span:nth-child(3){width:42vw;left:6vw;bottom:20%;animation-delay:1.7s}
+.titleCircuit span:nth-child(4){width:24vw;right:8vw;bottom:14%;animation-delay:.5s}
+@keyframes titlePulse{0%,100%{opacity:.2;filter:brightness(.8)}50%{opacity:1;filter:brightness(1.8)}}
+.titleCard{
+  position:relative;
+  z-index:2;
+  width:min(760px,92vw);
+  text-align:center;
+  padding:34px 22px 30px;
+}
+.titleEyebrow{
+  letter-spacing:.38em;
+  font-size:12px;
+  font-weight:900;
+  color:#87ddea;
+  opacity:.88;
+  margin-bottom:10px;
+}
+.titleLogo{
+  margin:0;
+  font-size:clamp(44px,9vw,98px);
+  line-height:.9;
+  letter-spacing:.025em;
+  font-weight:1000;
+  color:#effeff;
+  text-shadow:
+    0 0 6px #b9f9ff,
+    0 0 18px #55e6ff,
+    0 0 42px rgba(60,198,255,.45);
+}
+.titleLogo span{
+  display:block;
+  margin-top:8px;
+  font-size:.32em;
+  letter-spacing:.58em;
+  padding-left:.58em;
+  color:#74dff0;
+  text-shadow:0 0 16px rgba(80,230,255,.5);
+}
+.titleBolt{
+  width:92px;height:92px;margin:25px auto 18px;border-radius:50%;
+  display:grid;place-items:center;
+  border:1px solid rgba(112,230,255,.55);
+  background:radial-gradient(circle,rgba(43,203,255,.14),rgba(2,13,21,.75) 68%);
+  box-shadow:0 0 24px rgba(60,214,255,.24),inset 0 0 25px rgba(73,218,255,.09);
+  font-size:47px;
+  animation:titleBolt 1.9s ease-in-out infinite;
+}
+@keyframes titleBolt{0%,100%{transform:scale(1);filter:brightness(1)}50%{transform:scale(1.05);filter:brightness(1.45)}}
+.titleTagline{
+  margin:0 auto 22px;
+  color:#b6cbd6;
+  font-weight:700;
+  letter-spacing:.12em;
+  font-size:clamp(12px,2.4vw,15px);
+}
+#titleStart{
+  min-width:min(310px,78vw);
+  border:1px solid #74edff;
+  border-radius:999px;
+  padding:15px 32px;
+  font-size:17px;
+  font-weight:1000;
+  letter-spacing:.18em;
+  color:#eaffff;
+  background:linear-gradient(180deg,#14677f,#0a4155);
+  box-shadow:0 0 0 1px rgba(116,237,255,.15),0 0 28px rgba(57,218,255,.22),inset 0 1px rgba(255,255,255,.15);
+  transition:transform .1s ease,filter .12s ease,box-shadow .12s ease;
+}
+#titleStart:hover{filter:brightness(1.13);box-shadow:0 0 36px rgba(57,218,255,.38)}
+#titleStart:active{transform:translateY(2px) scale(.985)}
+.titleContinue{
+  margin-top:13px;
+  min-height:18px;
+  color:#83a7b5;
+  font-size:12px;
+  letter-spacing:.08em;
+}
+.titleVersion{
+  position:absolute;left:0;right:0;bottom:max(16px,env(safe-area-inset-bottom));
+  z-index:2;color:#577581;font-size:10px;letter-spacing:.12em;text-align:center;
+}
+@media(max-width:600px){
+  .titleCard{padding:22px 14px}
+  .titleBolt{width:76px;height:76px;font-size:38px;margin-top:20px}
+  .titleLogo span{letter-spacing:.4em;padding-left:.4em}
+}
+@media(prefers-reduced-motion:reduce){
+  #titleScreen::before,.titleCircuit span,.titleBolt{animation:none}
+}
+</style>
+
 </head>
+
 <body>
+<div id="titleScreen" aria-label="Electric Link タイトル画面">
+  <div class="titleCircuit" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="titleCard">
+    <div class="titleEyebrow">CIRCUIT PUZZLE</div>
+    <h1 class="titleLogo">ELECTRIC<span>LINK</span></h1>
+    <div class="titleBolt" aria-hidden="true">⚡</div>
+    <p class="titleTagline">ROTATE · CONNECT · LIGHT UP</p>
+    <button id="titleStart" type="button">GAME START</button>
+    <div id="titleContinue" class="titleContinue"></div>
+  </div>
+  <div class="titleVersion">ELECTRIC LINK / Ver.1.4.59</div>
+</div>
+
 <div class="app">
 <section class="box game">
   <canvas id="game" width="420" height="560" aria-label="電気の流れを導くパズル"></canvas>
   <div class="toast" id="toast"></div>
-  <div class="tutorial" id="tutorial"><div class="tutorialCard"><h2 id="tutorialTitle"></h2><div id="tutorialText" class="rule"></div><div class="tutorialDemo"><canvas id="demoCanvas" width="360" height="150"></canvas></div><div class="demoStatus" id="demoStatus">▶ デモを見ると動きを確認できます</div><div class="tutorialActions"><button id="playDemo">▶ デモを見る</button><button class="primary" id="startLesson">🎮 ゲーム開始</button></div><button id="skipDemo" style="width:100%;margin-top:8px">説明を閉じてすぐプレイ</button></div></div>
+  <div class="tutorial" id="tutorial"><div class="tutorialCard"><h2 id="tutorialTitle"></h2><div id="tutorialText" class="rule"></div><div class="tutorialDemo"><canvas id="demoCanvas" width="360" height="150"></canvas></div><div class="demoStatus" id="demoStatus">▶ デモを見ると動きを確認できます</div><div class="tutorialActions"><button id="playDemo">▶ デモを見る</button><button class="primary" id="startLesson">🎮 ゲーム開始</button></div><button id="skipDemo" style="width:;margin-top:8px">説明を閉じてすぐプレイ</button></div></div>
   <div class="overlay" id="overlay"><div class="overlayCard"><h2 id="clearTitle">LIGHTS ON!</h2><p id="clearText"></p><div class="buttons"><button id="retry">もう一度</button><button class="primary" id="next">次のレベルへ</button></div></div></div>
 </section>
 <aside class="box side">
-  <h1>⚡ Electric Link <span class="ver">Ver.1.2 Linked Route</span></h1>
-  <div class="sub">全24レベル。手作りステージ、BGM、効果音、ゲームメニューを収録しています。</div>
+  <h1>⚡ Electric Link <span class="ver">Ver.1.4.59 Unified Board Fit</span></h1>
+  <div class="sub">全100レベル。後半ほどT字分岐・実立体交差・一方通行・ダミーネットワークが複合します。</div>
   <div class="stageTabs" id="stageTabs"></div>
-  <div class="stats"><div class="stat"><div class="label">LEVEL</div><div class="value" id="stageNo">1</div></div><div class="stat"><div class="label">操作数</div><div class="value" id="moves">0</div></div><div class="stat"><div class="label">状態</div><div class="value" id="status">OFF</div></div></div>
+  <div class="stats"><div class="stat"><div class="label">LEVEL</div><div class="value" id="stageNo">1</div><span id="lapBadge" class="lapBadge hidden"></span></div><div class="stat"><div class="label">操作数</div><div class="value" id="moves">0</div></div></div><span id="status" hidden></span>
   <div class="card"><div class="partTitle"><span class="partIcon" id="partIcon">━</span><span id="partName">導線</span></div><div class="rule" id="partRule"></div></div>
   <div class="card"><div class="goal" id="goal"></div><div class="rule" id="how"></div></div>
-  <div class="buttons"><button class="wide primary" id="playNow">🎮 実戦ステージを開始</button><button class="wide" id="openMenu">☰ メニュー</button><button class="wide" id="restart">このレベルをやり直す</button><button id="hint">操作ヒント</button><button id="book">📖 部品図鑑</button><button id="tutorialAgain">▶ 導入デモ</button><button id="reset">解放状態をリセット</button></div>
+  <div class="buttons"><button class="wide primary" id="playNow">🎮 実戦ステージを開始</button><button class="wide" id="restart">このレベルをやり直す</button><button class="wide" id="debugReroll" style="display:none">♻ ステージを再作成してやり直す</button><button id="hint" style="display:none" aria-hidden="true"></button><button id="book">📖 部品図鑑</button><button id="openMenu">⚙ 設定</button></div>
   <div class="message" id="message">ケーブルをタップして、ライトへ電気を届けよう。</div>
-  <div class="card legend"><b>色：</b> 赤＝⚡電源／青＝🏁ゴール／黄＝充電済みライト／水色＝現在つながっている範囲<br><b>基本操作：</b> ケーブルと一方通行パネルはタップで回転。ルートチェンジャーはタップで出口を切替。</div>
-  <div class="small" id="validationStatus">ステージ検証中…</div><div class="small">LEVEL 5以降は番号順ライト、LEVEL 8以降は充電時間、後半は一方通行・十字導線・ダミーライトが増えます。全ステージは正解状態を検証済みです。</div>
+  <div class="card legend"><b>色：</b> 赤＝⚡電源／青＝🏁ゴール／黄＝充電済みライト／水色＝現在つながっている範囲<br><b>基本操作：</b> ケーブルと一方通行パネルはタップで回転。🔒付きは固定。＋型4方向ブロックは立体交差で、縦横は接続しません。</div>
+  <div class="small" id="validationStatus">ステージ検証中…</div><div class="small">固定は少量のみ。立体交差は縦横の両系統が成立する場合だけ登場します。LEVEL 100クリア後は100ステージを別配置で再生成できます。</div>
 </aside>
 </div>
 <div class="bookOverlay" id="bookOverlay"><div class="bookCard"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><h2 style="margin:0">📖 部品図鑑</h2><button id="closeBook">閉じる</button></div><p class="sub">専門知識なしで遊べるよう、ゲーム内の役割だけを説明します。</p><div class="bookGrid" id="bookGrid"></div></div></div>
 
-<div class="menuOverlay" id="menuOverlay"><div class="menuCard"><div class="topTitle"><div><h2 style="margin:0">⚡ Electric Link メニュー</h2><p class="sub">ゲーム設定と各画面へ移動できます。</p></div><button id="closeMenu" class="iconButton" aria-label="メニューを閉じる">×</button></div><div class="menuGrid"><button class="primary" id="resumeGame">▶ ゲームに戻る</button><button id="menuRestart">↻ ステージをやり直す</button><button id="menuBook">📖 部品図鑑</button><button id="menuTutorial">▶ 操作デモ</button></div><div class="menuSection"><h3 style="margin:0 0 8px">🔊 サウンド</h3><div class="menuGrid"><button id="bgmToggle">BGM：ON</button><button id="sfxToggle">効果音：ON</button></div><label class="rangeRow"><span>BGM音量</span><input id="bgmVolume" type="range" min="0" max="100" value="32"><output id="bgmVolumeOut">32%</output></label><label class="rangeRow"><span>効果音</span><input id="sfxVolume" type="range" min="0" max="100" value="70"><output id="sfxVolumeOut">70%</output></label></div><div class="menuSection"><h3 style="margin:0 0 8px">ステージ選択</h3><div class="menuStageGrid" id="menuStages"></div></div><div class="menuSection"><button id="menuReset" style="width:100%">進行状況をリセット</button></div></div></div>
+
+<div class="bookOverlay" id="newPartOverlay">
+  <div class="bookCard" style="width:min(620px,96vw)">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+      <div>
+        <div style="font-size:12px;font-weight:900;color:#9ff7ff">NEW PART</div>
+        <h2 id="newPartTitle" style="margin:2px 0 0">📖 新しい部品</h2>
+      </div>
+      <button id="closeNewPart">プレイ開始</button>
+    </div>
+    <p class="sub" id="newPartLead">このステージから新しい部品が登場します。</p>
+    <div class="bookGrid" id="newPartGrid"></div>
+  </div>
+</div>
+
+<div class="menuOverlay" id="menuOverlay"><div class="menuCard">
+<div class="topTitle"><div><h2 style="margin:0">⚙ 設定</h2><p class="sub">サウンドと進行状況だけを設定します。プレイ操作はフロント画面に統一しています。</p></div><button id="closeMenu" class="iconButton" aria-label="設定を閉じる">×</button></div>
+<div class="menuSection" style="border-top:0;margin-top:4px;padding-top:0"><h3 style="margin:0 0 8px">🔊 サウンド</h3>
+<div class="menuGrid"><button id="bgmToggle">BGM 🔊</button><button id="sfxToggle">効果音 🔔</button></div>
+<label class="rangeRow"><span>BGM音量</span><input id="bgmVolume" type="range" min="0" max="100" value="32"><output id="bgmVolumeOut">32%</output></label>
+<label class="rangeRow"><span>効果音</span><input id="sfxVolume" type="range" min="0" max="100" value="70"><output id="sfxVolumeOut">70%</output></label></div>
+
+<div class="debugPanel" id="debugPanel">
+  <h3>🧪 デバッグ設定</h3>
+  <p class="debugNote">DEBUG_MODE = true のときだけ表示されます。公開版では非表示です。</p>
+  <div class="debugRow"><label for="debugLapInput">周回数</label><div style="display:flex;gap:6px"><input id="debugLapInput" type="number" min="1" max="999" value="1" style="width:82px"><button type="button" id="debugSetLap">適用</button></div></div>
+  <div class="debugGrid">
+    <button type="button" id="debugResetLap">↩ 1周目へ戻す</button>
+    <button type="button" id="debugClearClears">クリア履歴を消す</button>
+    <button type="button" id="debugMarkAllCleared">全100をクリア済みに</button>
+    <button type="button" id="debugMarkIntrosSeen">新要素説明を既読に</button>
+    <button type="button" id="debugResetIntros">新要素説明を未読に戻す</button>
+    <button type="button" id="debugFullReset" class="debugDanger">全セーブを初期化</button>
+  </div>
+</div>
+
+<div class="menuSection"><button id="menuReset" style="width:">進行状況をリセット</button></div>
+</div></div>
 <script>
 (()=>{'use strict';
-const COLS=6,ROWS=8,CELL=70,DIRS=[[0,-1],[1,0],[0,1],[-1,0]],OPP=[2,3,0,1];
+let COLS=6,ROWS=8;const CELL=70,DIRS=[[0,-1],[1,0],[0,1],[-1,0]],OPP=[2,3,0,1];
 const cv=document.getElementById('game'),ctx=cv.getContext('2d'),demoCv=document.getElementById('demoCanvas'),dctx=demoCv.getContext('2d'),$=id=>document.getElementById(id);
-const ui={tabs:$('stageTabs'),stage:$('stageNo'),moves:$('moves'),status:$('status'),icon:$('partIcon'),name:$('partName'),rule:$('partRule'),goal:$('goal'),how:$('how'),msg:$('message'),overlay:$('overlay'),clear:$('clearText'),toast:$('toast')};
+const ui={tabs:$('stageTabs'),stage:$('stageNo'),lap:$('lapBadge'),moves:$('moves'),status:$('status'),icon:$('partIcon'),name:$('partName'),rule:$('partRule'),goal:$('goal'),how:$('how'),msg:$('message'),overlay:$('overlay'),clear:$('clearText'),toast:$('toast')};
+// ============================================================
+// DEBUG MODE
+// true  : 全100ステージを最初から選択・プレイ可能
+// false : 通常の進行状況に従ってステージを解放
+// ※公開版では false にしてください。
+
+const DEBUG_MODE = false;
+
+// ============================================================
+// TITLE SCREEN
+// ============================================================
+function initTitleScreen(){
+  const screen=document.getElementById('titleScreen');
+  const start=document.getElementById('titleStart');
+  const cont=document.getElementById('titleContinue');
+  if(!screen||!start)return;
+
+  const savedUnlocked=Math.min(100,Number(localStorage.getItem('electricLinkV06Unlocked')||1));
+  const savedCycle=Math.max(0,Number(localStorage.getItem('electricLinkGenerationCycle')||0));
+  if(cont){
+    const lap=savedCycle+1;
+    if(savedUnlocked>1||savedCycle>0){
+      cont.textContent=`CONTINUE  ·  LEVEL ${savedUnlocked}${lap>1?`  ·  ${lap}周目`:''}`;
+    }else{
+      cont.textContent='100 STAGES / CIRCUIT PUZZLE';
+    }
+  }
+
+  const begin=()=>{
+    ensureAudio();
+    sfx('start');
+    screen.classList.add('hide');
+    setTimeout(()=>{screen.style.display='none';requestBoardRefit?.()},520);
+  };
+  start.addEventListener('click',begin);
+  start.addEventListener('pointerdown',()=>ensureAudio(),{once:true});
+}
+
+// ============================================================
 const audioSettings={
  bgmOn:localStorage.getItem('electricLinkBgmOn')!=='0',
  sfxOn:localStorage.getItem('electricLinkSfxOn')!=='0',
  bgmVolume:Number(localStorage.getItem('electricLinkBgmVolume')||32)/100,
  sfxVolume:Number(localStorage.getItem('electricLinkSfxVolume')||70)/100
 };
-let audioCtx=null,masterGain=null,bgmGain=null,bgmTimer=null,bgmStep=0;
-function ensureAudio(){
- if(!audioCtx){audioCtx=new (window.AudioContext||window.webkitAudioContext)();masterGain=audioCtx.createGain();bgmGain=audioCtx.createGain();masterGain.connect(audioCtx.destination);bgmGain.connect(masterGain);masterGain.gain.value=1;bgmGain.gain.value=audioSettings.bgmVolume}
- if(audioCtx.state==='suspended')audioCtx.resume();
- if(audioSettings.bgmOn)startBgm();
+let audioCtx=null,masterGain=null,bgmGain=null,bgmTimer=null,bgmStep=0,audioStartPromise=null;
+const MASTER_GAIN=1.75;      // Ver.1.4.59: 全体の基準音量
+const BGM_SOURCE_GAIN=2.0;   // BGM音源そのものの聞こえやすさ
+
+function createAudioGraph(){
+ if(audioCtx)return;
+ audioCtx=new (window.AudioContext||window.webkitAudioContext)();
+ masterGain=audioCtx.createGain();
+ bgmGain=audioCtx.createGain();
+
+ // マスターを上げても急なピークで耳障りになりにくいようDynamicsCompressorを挟む。
+ const limiter=audioCtx.createDynamicsCompressor();
+ limiter.threshold.value=-6;
+ limiter.knee.value=6;
+ limiter.ratio.value=10;
+ limiter.attack.value=.003;
+ limiter.release.value=.18;
+
+ masterGain.connect(limiter);
+ limiter.connect(audioCtx.destination);
+ bgmGain.connect(masterGain);
+ masterGain.gain.value=MASTER_GAIN;
+ bgmGain.gain.value=audioSettings.bgmVolume
 }
-function tone(freq,dur=.09,type='sine',vol=.15,delay=0){if(!audioCtx||!audioSettings.sfxOn)return;const t=audioCtx.currentTime+delay,o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol*audioSettings.sfxVolume,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(masterGain);o.start(t);o.stop(t+dur+.02)}
-function sfx(name){ensureAudio();if(!audioSettings.sfxOn)return;if(name==='rotate'){tone(360,.07,'triangle',.12);tone(520,.06,'triangle',.08,.04)}else if(name==='switch'){tone(220,.08,'square',.10);tone(330,.08,'square',.08,.06)}else if(name==='lamp'){tone(660,.12,'sine',.13);tone(880,.18,'sine',.11,.08)}else if(name==='clear'){[523,659,784,1047].forEach((f,i)=>tone(f,.3,'sine',.13,i*.11))}else if(name==='click'){tone(500,.045,'triangle',.07)}else if(name==='blocked'){tone(170,.12,'sawtooth',.08)}}
-function startBgm(){if(!audioCtx||bgmTimer||!audioSettings.bgmOn)return;const notes=[220,277.18,329.63,440,329.63,277.18,246.94,329.63];bgmStep=0;const play=()=>{if(!audioSettings.bgmOn||!audioCtx)return;const t=audioCtx.currentTime,o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='triangle';o.frequency.value=notes[bgmStep%notes.length];g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(.055,t+.03);g.gain.exponentialRampToValueAtTime(.0001,t+.42);o.connect(g);g.connect(bgmGain);o.start(t);o.stop(t+.45);if(bgmStep%4===0){const b=audioCtx.createOscillator(),bg=audioCtx.createGain();b.type='sine';b.frequency.value=notes[(bgmStep/2)%notes.length]/2;bg.gain.setValueAtTime(.028,t);bg.gain.exponentialRampToValueAtTime(.0001,t+.6);b.connect(bg);bg.connect(bgmGain);b.start(t);b.stop(t+.62)}bgmStep++};play();bgmTimer=setInterval(play,480)}
+
+function ensureAudio(){
+ createAudioGraph();
+ if(!audioCtx)return Promise.resolve();
+
+ // resume完了前にBGMタイマーだけ立つ状態を避ける。
+ if(audioCtx.state==='running'){
+   if(audioSettings.bgmOn)startBgm();
+   return Promise.resolve()
+ }
+ if(!audioStartPromise){
+   audioStartPromise=audioCtx.resume()
+     .then(()=>{if(audioSettings.bgmOn)startBgm()})
+     .catch(()=>{})
+     .finally(()=>{audioStartPromise=null})
+ }
+ return audioStartPromise
+}
+function tone(freq,dur=.09,type='sine',vol=.15,delay=0){if(!audioCtx||audioCtx.state!=='running'||!audioSettings.sfxOn)return;const t=audioCtx.currentTime+delay,o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=type;o.frequency.setValueAtTime(freq,t);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(vol*audioSettings.sfxVolume,t+.008);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g);g.connect(masterGain);o.start(t);o.stop(t+dur+.02)}
+function sfx(name){ensureAudio().then(()=>{if(!audioSettings.sfxOn)return;if(name==='rotate'){tone(360,.07,'triangle',.12);tone(520,.06,'triangle',.08,.04)}else if(name==='switch'){tone(220,.08,'square',.10);tone(330,.08,'square',.08,.06)}else if(name==='lamp'){tone(660,.12,'sine',.13);tone(880,.18,'sine',.11,.08)}else if(name==='clear'){[523,659,784,1047].forEach((f,i)=>tone(f,.3,'sine',.13,i*.11))}else if(name==='click'){tone(500,.045,'triangle',.07)}else if(name==='start'){tone(196,.12,'sine',.11);tone(392,.18,'triangle',.14,.07);tone(659.25,.28,'sine',.16,.16);tone(987.77,.38,'sine',.12,.27)}else if(name==='blocked'){tone(170,.12,'sawtooth',.08)}})}
+function startBgm(){
+ if(!audioCtx||audioCtx.state!=='running'||bgmTimer||!audioSettings.bgmOn)return;
+ const notes=[220,277.18,329.63,440,329.63,277.18,246.94,329.63];bgmStep=0;
+ const play=()=>{
+   if(!audioSettings.bgmOn||!audioCtx||audioCtx.state!=='running')return;
+   const t=audioCtx.currentTime,o=audioCtx.createOscillator(),g=audioCtx.createGain();
+   o.type='triangle';o.frequency.value=notes[bgmStep%notes.length];
+   g.gain.setValueAtTime(0,t);
+   g.gain.linearRampToValueAtTime(.055*BGM_SOURCE_GAIN,t+.03);
+   g.gain.exponentialRampToValueAtTime(.0001,t+.42);
+   o.connect(g);g.connect(bgmGain);o.start(t);o.stop(t+.45);
+   if(bgmStep%4===0){
+     const b=audioCtx.createOscillator(),bg=audioCtx.createGain();
+     b.type='sine';b.frequency.value=notes[(bgmStep/2)%notes.length]/2;
+     bg.gain.setValueAtTime(.028*BGM_SOURCE_GAIN,t);
+     bg.gain.exponentialRampToValueAtTime(.0001,t+.6);
+     b.connect(bg);bg.connect(bgmGain);b.start(t);b.stop(t+.62)
+   }
+   bgmStep++
+ };
+ play();bgmTimer=setInterval(play,480)
+}
 function stopBgm(){if(bgmTimer){clearInterval(bgmTimer);bgmTimer=null}}
 function saveAudio(){localStorage.setItem('electricLinkBgmOn',audioSettings.bgmOn?'1':'0');localStorage.setItem('electricLinkSfxOn',audioSettings.sfxOn?'1':'0');localStorage.setItem('electricLinkBgmVolume',String(Math.round(audioSettings.bgmVolume*100)));localStorage.setItem('electricLinkSfxVolume',String(Math.round(audioSettings.sfxVolume*100)))}
-function updateAudioUi(){const b=$('bgmToggle'),s=$('sfxToggle');if(!b)return;b.textContent=`BGM：${audioSettings.bgmOn?'ON':'OFF'}`;s.textContent=`効果音：${audioSettings.sfxOn?'ON':'OFF'}`;b.classList.toggle('toggleOn',audioSettings.bgmOn);s.classList.toggle('toggleOn',audioSettings.sfxOn);$('bgmVolume').value=Math.round(audioSettings.bgmVolume*100);$('sfxVolume').value=Math.round(audioSettings.sfxVolume*100);$('bgmVolumeOut').textContent=`${Math.round(audioSettings.bgmVolume*100)}%`;$('sfxVolumeOut').textContent=`${Math.round(audioSettings.sfxVolume*100)}%`}
-function buildMenuStages(){const root=$('menuStages');root.innerHTML='';levelDefs.forEach((D,i)=>{const b=document.createElement('button');b.textContent=i+1;b.title=D.name;b.disabled=i+1>unlocked;b.className=(i+1===level?'active ':'')+(i+1>unlocked?'locked':'');b.onclick=()=>{sfx('click');$('menuOverlay').classList.remove('show');buildLevel(i+1,{manual:true,skipTutorial:true})};root.appendChild(b)})}
-function openMenu(){ensureAudio();sfx('click');updateAudioUi();buildMenuStages();$('menuOverlay').classList.add('show')}
+function updateAudioUi(){
+ const b=$('bgmToggle'),s=$('sfxToggle');if(!b||!s)return;
+ b.textContent=audioSettings.bgmOn?'BGM 🔊':'BGM 🔇';
+ s.textContent=audioSettings.sfxOn?'効果音 🔔':'効果音 🔕';
+ b.classList.toggle('toggleOn',audioSettings.bgmOn);
+ s.classList.toggle('toggleOn',audioSettings.sfxOn);
+ $('bgmVolume').value=Math.round(audioSettings.bgmVolume*100);
+ $('sfxVolume').value=Math.round(audioSettings.sfxVolume*100);
+ $('bgmVolumeOut').textContent=`${Math.round(audioSettings.bgmVolume*100)}%`;
+ $('sfxVolumeOut').textContent=`${Math.round(audioSettings.sfxVolume*100)}%`
+}
 
-let level=1,moves=0,busy=false,board=[],connectedSet=new Set(),flowEdges=[],startKey='',endKey='',required=[],selected={x:2,y:3},lastFrame=performance.now(),completionQueued=false;
-let unlocked=Number(localStorage.getItem('electricLinkV06Unlocked')||1),demoRunning=false,tutorialLevel=1;
+function buildMenuStages(){const root=$('menuStages');if(!root)return;root.innerHTML='';levelDefs.forEach((D,i)=>{const b=document.createElement('button');b.textContent=i+1;b.title=D.name;b.disabled=i+1>unlocked;b.className=(i+1===level?'active ':'')+(clearedStages.has(i+1)?'cleared ':'')+(i+1>unlocked?'locked':'');b.onclick=()=>{sfx('click');$('menuOverlay').classList.remove('show');buildLevel(i+1,{manual:true,skipTutorial:true})};root.appendChild(b)});requestBoardRefit()}
+function openMenu(){ensureAudio();sfx('click');updateAudioUi();updateDebugUi();$('menuOverlay').classList.add('show')}
+
+let level=1,moves=0,busy=false,board=[],connectedSet=new Set(),rawConnectedSet=new Set(),flowEdges=[],rawFlowEdges=[],startKey='',endKey='',required=[],selected={x:2,y:3},lastFrame=performance.now(),completionQueued=false;
+
+let levelStartSnapshot=null;
+
+function cloneBoardState(src){
+  return src.map(row=>row.map(t=>{
+    if(!t)return t;
+    const copy={...t};
+    if(Array.isArray(t.ports))copy.ports=[...t.ports];
+    return copy
+  }))
+}
+
+function saveLevelStartSnapshot(){
+  levelStartSnapshot={
+    level,
+    cols:COLS,
+    rows:ROWS,
+    board:cloneBoardState(board),
+    startKey,
+    endKey,
+    required:[...required],
+    selected:selected?{...selected}:null
+  }
+}
+
+function restoreLevelStartSnapshot(){
+  if(!levelStartSnapshot || levelStartSnapshot.level!==level)return false;
+
+  busy=false;
+  completionQueued=false;
+  moves=0;
+
+  COLS=levelStartSnapshot.cols;
+  ROWS=levelStartSnapshot.rows;
+  cv.width=COLS*CELL;
+  cv.height=ROWS*CELL;
+  cv.style.setProperty('--board-aspect',String(COLS/ROWS));
+
+  board=cloneBoardState(levelStartSnapshot.board);
+  startKey=levelStartSnapshot.startKey;
+  endKey=levelStartSnapshot.endKey;
+  required=[...levelStartSnapshot.required];
+  selected=levelStartSnapshot.selected?{...levelStartSnapshot.selected}:selected;
+
+  connectedSet=new Set();
+  flowEdges=[];
+
+  ui.overlay.classList.remove('show');
+  ui.moves.textContent='0';
+  ui.msg.textContent='ステージ開始時の配置に戻しました。';
+
+  updateInfo();
+  checkCircuit();
+  draw();
+
+  requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+  return true
+}
+
+let unlocked=DEBUG_MODE?100:Math.min(100,Number(localStorage.getItem('electricLinkV06Unlocked')||1)),demoRunning=false,tutorialLevel=1;
+let generationCycle=Math.max(0,Number(localStorage.getItem('electricLinkGenerationCycle')||0));
+const clearedStorageKey=()=>`electricLinkClearedStagesV1_cycle_${generationCycle}`;
+let clearedStages=new Set(JSON.parse(localStorage.getItem(clearedStorageKey())||'[]'));
+function saveClearedStages(){
+  localStorage.setItem(clearedStorageKey(),JSON.stringify([...clearedStages].sort((a,b)=>a-b)))
+}
+
+function requestBoardRefit(){
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+    window.dispatchEvent(new Event('resize'));
+  }))
+}
+
+let currentLevelSalt=0,stageTabPage=0;
 let seenDemos=new Set(JSON.parse(localStorage.getItem('electricLinkV06SeenDemos')||'[]'));
+
+let seenPartIntros=new Set(JSON.parse(localStorage.getItem('electricLinkSeenPartIntrosV1')||'[]'));
+
+const partIntroData={
+ power:{title:'電源',desc:'ここから電気が始まります。電源自体は回転しません。'},
+ goal:{title:'ゴール',desc:'必要なライトをすべて点灯・充電したあと、最後に電気を届けます。'},
+ cable:{title:'ケーブル',desc:'直線・曲線の基本ケーブルです。タップで90°回転します。'},
+ branch:{title:'T字分岐ケーブル',desc:'1本の電気を2方向へ分けます。分岐先には同じ番号のライトが2つあり、両方への通電が必要です。その先で次の番号やゴールへ続くのは片側だけで、もう片側は十分な長さを持つダミールートになります。短い枝や固定T字は登場しません。'},
+ lamp:{title:'番号ライト',desc:'番号は回路の進行段階を示します。同じ番号が複数ある場合は、その番号のライトをすべて点灯させる必要があります。T字分岐では同番号ライトが2つ登場し、両方を確認してから次の段階へ進みます。'},
+ fixed:{title:'固定属性',desc:'🔒付きの配線は回転できません。固定された向きを条件として周囲のルートを考えます。'},
+ diode:{title:'一方通行パネル',desc:'▲ ▶ ▼ ◀ の向きにだけ電気が流れます。逆方向からは通電できません。'},
+ bridge:{title:'立体交差',desc:'縦と横の両方に実際の配線が通る交差点だけが立体交差として登場します。縦の太い実線＝地上、横の破線＝地下で、中央では接続しません。片側しか使わない＋型は生成されません。'}
+};
+
+const PART_INTRO_KEYS=['power','goal','cable','lamp','fixed','branch','diode','bridge'];
+
+function detectCurrentStageParts(){
+ const found=new Set();
+ for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){
+   const t=board[y]?.[x];
+   if(!t||t.kind==='empty')continue;
+
+   // 基本部品も「実際に盤面に存在するか」で判定する。
+   if(t.kind==='plus')found.add('power');
+   if(t.kind==='minus')found.add('goal');
+   if(t.kind==='lamp'&&t.required)found.add('lamp');
+
+   // ケーブルは直線・曲線などの通常wireが1つでもあれば対象。
+   if(t.kind==='wire')found.add('cable');
+
+   // 固定はkindではなく属性なので別判定。
+   if(t.fixed)found.add('fixed');
+
+   // T字説明は正解分岐として使う3ポートwireだけを対象にする。
+   // ダミーT字が存在しても「新ギミック登場」扱いにはしない。
+   if(t.kind==='wire'&&Array.isArray(t.ports)&&t.ports.length===3&&!t.decoy)found.add('branch');
+
+   if(t.kind==='diode')found.add('diode');
+
+   // 立体交差は実際に生成されたbridgeセルが存在する場合だけ対象。
+   if(t.kind==='bridge')found.add('bridge');
+ }
+ return PART_INTRO_KEYS.filter(key=>found.has(key));
+}
+
+function showNewPartIntro(levelNo){
+ // Ver.1.4.59:
+ // 固定LEVEL表ではなく、完成した現在の盤面を実際に走査する。
+ // そのステージに存在し、かつ未読のギミックだけを表示する。
+ const presentKeys=detectCurrentStageParts();
+ const keys=presentKeys.filter(key=>!seenPartIntros.has(key));
+ if(!keys.length)return;
+
+ const grid=$('newPartGrid');
+ $('newPartTitle').textContent=keys.length>1?'📖 初登場の部品':'📖 初登場：'+partIntroData[keys[0]].title;
+ $('newPartLead').textContent=`LEVEL ${levelNo} の盤面に初めて登場した要素です。役割を確認してからプレイしてください。`;
+ grid.innerHTML=keys.map(key=>{
+   const d=partIntroData[key];
+   return `<div class="bookItem">
+     <canvas class="bookPreview" width="82" height="82" data-new-part="${key}"></canvas>
+     <h3>${d.title}</h3>
+     <div class="rule">${d.desc}</div>
+   </div>`;
+ }).join('');
+ grid.querySelectorAll('[data-new-part]').forEach(canvas=>renderBookPreview(canvas,canvas.dataset.newPart));
+
+ // 表示した時点で既読化。次のステージからは再表示しない。
+ keys.forEach(key=>seenPartIntros.add(key));
+ localStorage.setItem('electricLinkSeenPartIntrosV1',JSON.stringify([...seenPartIntros]));
+ $('newPartOverlay').classList.add('show')
+}
+
 const K=(x,y)=>`${x},${y}`;
 const basePaths=[
  [[2,0],[2,1],[3,1],[3,2],[4,2],[4,3],[3,3],[2,3],[2,4],[1,4],[1,5],[2,5],[3,5],[3,6],[2,6],[2,7]],
@@ -101,38 +646,49 @@ const basePaths=[
  [[4,0],[4,1],[3,1],[3,2],[2,2],[1,2],[1,3],[2,3],[3,3],[3,4],[4,4],[4,5],[3,5],[2,5],[1,5],[1,6],[2,6],[2,7]],
  [[2,0],[2,1],[1,1],[1,2],[2,2],[3,2],[4,2],[4,3],[3,3],[3,4],[2,4],[1,4],[1,5],[2,5],[3,5],[4,5],[4,6],[3,6],[2,6],[2,7]]
 ];
-const levelDefs=[
- {base:0,name:'曲線ルート入門',feature:'cable',lamps:[4,9,13],scramble:5},
- {base:3,name:'折り返す電流',feature:'cable',lamps:[3,8,13],scramble:5},
- {base:1,name:'ジグザグ配電',feature:'cable',lamps:[4,9,14],scramble:6},
- {base:2,name:'曲がり道の連続',feature:'cable',lamps:[4,10,15],scramble:6},
- {base:4,name:'多重カーブ',feature:'cable',lamps:[4,9,14,17],scramble:7},
- {base:0,name:'ルート切替入門',feature:'threeway',lamps:[4,9,13],special:{index:7,kind:'threeway',state:1,group:'A'},scramble:6,intro:true},
- {base:3,name:'出口を選べ',feature:'threeway',lamps:[3,8,13],special:{index:7,kind:'threeway',state:1,group:'A'},scramble:6},
- {base:1,name:'連動スイッチA',feature:'linked',lamps:[4,9,14],special:{index:6,kind:'threeway',state:1,group:'A'},extras:[{index:12,kind:'threeway',state:1,group:'A'}],scramble:7,intro:true},
- {base:2,name:'Aを同時に切替',feature:'linked',lamps:[4,10,15],special:{index:5,kind:'threeway',state:1,group:'A'},extras:[{index:13,kind:'threeway',state:1,group:'A'}],scramble:7},
- {base:4,name:'AとBの連動',feature:'linked',lamps:[4,9,14,17],special:{index:6,kind:'threeway',state:1,group:'A'},extras:[{index:11,kind:'threeway',state:1,group:'A'},{index:15,kind:'threeway',state:1,group:'B'}],scramble:8},
- {base:2,name:'一方通行登場',feature:'diode',lamps:[4,10,15],special:{index:7,kind:'diode'},scramble:6,intro:true},
- {base:0,name:'曲線ゲート',feature:'diode',lamps:[4,9,13],special:{index:8,kind:'diode'},scramble:7},
- {base:3,name:'曲がる一方通行',feature:'diode',lamps:[3,8,13],special:{index:10,kind:'diode'},scramble:7},
- {base:1,name:'二重一方通行',feature:'diode',lamps:[4,9,14],special:{index:6,kind:'diode'},extras:[{index:12,kind:'diode'}],scramble:8},
- {base:4,name:'連動A＋一方通行',feature:'mixed',lamps:[4,9,14,17],special:{index:6,kind:'threeway',state:1,group:'A'},extras:[{index:11,kind:'threeway',state:1,group:'A'},{index:15,kind:'diode'}],scramble:9},
- {base:1,name:'連動A・B回路',feature:'linked',lamps:[4,9,14],special:{index:5,kind:'threeway',state:1,group:'A'},extras:[{index:10,kind:'threeway',state:1,group:'B'},{index:13,kind:'threeway',state:1,group:'A'}],scramble:9},
- {base:2,name:'連動と逆流防止',feature:'mixed',lamps:[4,10,15],special:{index:5,kind:'threeway',state:1,group:'A'},extras:[{index:9,kind:'diode'},{index:14,kind:'threeway',state:1,group:'A'}],scramble:10},
- {base:3,name:'ダブル連動迷路',feature:'linked',lamps:[3,8,13],special:{index:5,kind:'threeway',state:1,group:'A'},extras:[{index:9,kind:'threeway',state:1,group:'B'},{index:12,kind:'threeway',state:1,group:'A'},{index:15,kind:'threeway',state:1,group:'B'}],scramble:10},
- {base:4,name:'A・Bと一方通行',feature:'mixed',lamps:[4,9,14,17],special:{index:5,kind:'threeway',state:1,group:'A'},extras:[{index:8,kind:'diode'},{index:12,kind:'threeway',state:1,group:'B'},{index:16,kind:'threeway',state:1,group:'A'}],scramble:11},
- {base:0,name:'連動三段回路',feature:'linked',lamps:[4,8,11,14],special:{index:5,kind:'threeway',state:1,group:'A'},extras:[{index:8,kind:'threeway',state:1,group:'B'},{index:11,kind:'threeway',state:1,group:'A'},{index:13,kind:'threeway',state:1,group:'B'}],scramble:11},
- {base:1,name:'複合ルート制御',feature:'mixed',lamps:[4,9,14,16],special:{index:5,kind:'threeway',state:1,group:'A'},extras:[{index:7,kind:'diode'},{index:10,kind:'threeway',state:1,group:'B'},{index:13,kind:'threeway',state:1,group:'A'},{index:15,kind:'diode'}],scramble:12},
- {base:2,name:'連動ゲート網',feature:'mixed',lamps:[4,8,12,16],special:{index:5,kind:'threeway',state:1,group:'A'},extras:[{index:8,kind:'threeway',state:1,group:'B'},{index:11,kind:'diode'},{index:14,kind:'threeway',state:1,group:'A'},{index:17,kind:'threeway',state:1,group:'B'}],scramble:13},
- {base:3,name:'A・B・C迷宮',feature:'linked',lamps:[3,7,11,15],special:{index:4,kind:'threeway',state:1,group:'A'},extras:[{index:7,kind:'threeway',state:1,group:'B'},{index:10,kind:'threeway',state:1,group:'C'},{index:13,kind:'threeway',state:1,group:'A'},{index:16,kind:'threeway',state:1,group:'B'}],scramble:14},
- {base:4,name:'マスター連動回路',feature:'mixed',lamps:[4,8,12,16],special:{index:5,kind:'threeway',state:1,group:'A'},extras:[{index:7,kind:'diode'},{index:9,kind:'threeway',state:1,group:'B'},{index:12,kind:'threeway',state:1,group:'A'},{index:15,kind:'diode'},{index:17,kind:'threeway',state:1,group:'B'}],scramble:15}
-];
+const CORE_LEVEL_DEFS=[
+ {base:0,name:'基本配線I',feature:'cable',lamps:[1,2,3],scramble:5},
+ {base:3,name:'基本配線II',feature:'cable',lamps:[1,2,3],scramble:5},
+ {base:1,name:'折り返し配線',feature:'cable',lamps:[1,2,3],scramble:6},
+ {base:2,name:'曲線ルートI',feature:'cable',lamps:[1,2,3],scramble:6},
+ {base:4,name:'曲線ルートII',feature:'cable',lamps:[1,2,3,4],scramble:7},
+ {base:0,name:'ダミールート入門',feature:'cable',lamps:[1,2,3],scramble:7},
+ {base:3,name:'固定配線入門',feature:'cable',lamps:[1,2,3],scramble:7},
+ {base:1,name:'固定ルート判別I',feature:'cable',lamps:[1,2,3],scramble:8},
+ {base:2,name:'固定ルート判別II',feature:'cable',lamps:[1,2,3],scramble:8},
+ {base:4,name:'固定迷路',feature:'cable',lamps:[1,2,3,4],scramble:9},
+ {base:2,name:'T字分岐入門',feature:'cable',lamps:[1,2,3],scramble:8},
+ {base:0,name:'同番号分岐',feature:'cable',lamps:[1,2,3],scramble:8},
+ {base:3,name:'分岐＋立体交差',feature:'diode',lamps:[1,2,3],scramble:9},
+ {base:1,name:'分岐経路判別',feature:'diode',lamps:[1,2,3],scramble:9},
+ {base:4,name:'複合分岐網I',feature:'diode',lamps:[1,2,3,4],scramble:10},
+ {base:1,name:'複合分岐網II',feature:'diode',lamps:[1,2,3],scramble:10},
+ {base:2,name:'二段分岐I',feature:'diode',lamps:[1,2,3,4],scramble:11},
+ {base:3,name:'二段分岐II',feature:'diode',lamps:[1,2,3,4],scramble:11},
+ {base:4,name:'階層分岐I',feature:'diode',lamps:[1,2,3,4],scramble:12},
+ {base:0,name:'階層分岐II',feature:'diode',lamps:[1,2,3,4],scramble:12},
+ {base:1,name:'階層分岐III',feature:'diode',lamps:[1,2,3,4],scramble:13},
+ {base:2,name:'マスター配線網I',feature:'diode',lamps:[1,2,3,4],scramble:14},
+ {base:3,name:'マスター配線網II',feature:'diode',lamps:[1,2,3,4],scramble:15},
+ {base:4,name:'マスター回路',feature:'diode',lamps:[1,2,3,4],scramble:16}
+];;
+const levelDefs=Array.from({length:100},(_,i)=>{
+  if(i<CORE_LEVEL_DEFS.length)return {...CORE_LEVEL_DEFS[i]};
+  const n=i+1;
+  const phase=n<=40?'ADVANCED':n<=60?'EXPERT':n<=80?'MASTER':'ULTIMATE';
+  const names={ADVANCED:'高度配線網',EXPERT:'エキスパート回路',MASTER:'マスター回路網',ULTIMATE:'アルティメット回路'};
+  return {
+    base:(n*7+3)%basePaths.length,
+    name:`${names[phase]} ${String(n).padStart(3,'0')}`,
+    feature:'diode',
+    lamps:[1,2,3,4],
+    scramble:Math.min(22,12+Math.floor((n-25)/8))
+  }
+});
+
 const featureInfo={
- cable:{name:'ケーブルとライト',icon:'┗',intro:'ケーブルをタップすると90度回転します。曲がり道を読み、電源からすべてのライトを通ってゴールへつなげましょう。',demo:'ケーブルが回転し、青白い電気がライトへ流れます。',rule:'ケーブルを回して、すべてのライトを点灯させます。',how:'ケーブルをタップすると90°回転します。'},
- diode:{name:'一方通行パネル',icon:'▼',intro:'三角の向きだけ電気が通ります。▲・▶・▼・◀で進める方向が分かります。',demo:'正方向では通り、逆方向では赤い×で止まります。',rule:'一方通行パネルは三角の向きにだけ電気を通します。',how:'ケーブルと一方通行パネルをタップして回転します。'},
- threeway:{name:'ルートチェンジャー',icon:'⇆',intro:'タップすると出口A／Bが切り替わります。電気を正しいルートへ送りましょう。',demo:'出口がAからBへ切り替わり、進む道が変わります。',rule:'紫のルートチェンジャーは出口A／Bを切り替えます。',how:'紫のパネルをタップして出口を切り替えます。'},
- linked:{name:'連動ルートチェンジャー',icon:'A⇆A',intro:'同じ記号のルートチェンジャーは連動します。Aを1つ切り替えると、盤面上のAがすべて同時に切り替わります。',demo:'同じA記号のパネルが一斉にA出口／B出口を切り替えます。',rule:'同じ記号のルートチェンジャーが同時に切り替わります。',how:'A・B・Cの各グループを、必要な組み合わせへ切り替えてください。'},
- mixed:{name:'複合制御回路',icon:'⚡',intro:'一方通行パネルと連動ルートチェンジャーを組み合わせたチャレンジです。',demo:'部品図鑑から各部品のデモを見直せます。',rule:'方向制限と連動切替を組み合わせます。',how:'一方通行の向きと、A・B・Cの連動状態を確認してください。'}
+ cable:{name:'ケーブルとライト',icon:'┗',intro:'ケーブルをタップすると90度回転します。曲がり道を読み、電源からすべてのライトを通ってゴールへつなげましょう。',demo:'ケーブルが回転し、青白い電気がライトへ流れます。',rule:'',how:'ケーブルをタップすると90°回転します。'},
+ diode:{name:'一方通行パネル',icon:'▼',intro:'三角の向きだけ電気が通ります。▲・▶・▼・◀で進める方向が分かります。',demo:'正方向では通り、逆方向では止まります。',rule:'一方通行パネルは三角の向きにだけ電気を通します。',how:'ケーブルと一方通行パネルをタップして回転します。'}
 };
 
 function validateStageDefinitions(){
@@ -150,342 +706,1098 @@ function validateStageDefinitions(){
   indices.forEach(i=>{if(!Number.isInteger(i)||i<=0||i>=path.length-1)errors.push(`LEVEL ${stage}: invalid part index ${i}`)});
   const lampSet=new Set(d.lamps||[]);if(lampSet.size!==(d.lamps||[]).length)errors.push(`LEVEL ${stage}: duplicate lamp index`);
   const parts=[d.special,d.extra,...(d.extras||[])].filter(Boolean);
-  parts.forEach(part=>{if(part.kind==='switch')errors.push(`LEVEL ${stage}: obsolete ON/OFF switch remains`);if(lampSet.has(part.index))errors.push(`LEVEL ${stage}: part overlaps lamp at ${part.index}`)});
+  parts.forEach(part=>{if(part.kind==='switch'||part.kind==='threeway')errors.push(`LEVEL ${stage}: obsolete switch/changer remains`);if(lampSet.has(part.index))errors.push(`LEVEL ${stage}: part overlaps lamp at ${part.index}`)});
  });
  const el=document.getElementById('validationStatus');
  if(el){el.textContent=errors.length?`⚠ ステージ検証: ${errors.length}件の問題`:`✓ 全${levelDefs.length}ステージ検証済み`;el.style.color=errors.length?'#ff9c9c':'#9fffb8'}
  if(errors.length)console.error('Stage validation errors',errors);else console.info(`Validated ${levelDefs.length} handcrafted stages`);
  return errors;
 }
-function getLevel(n){
- const d=levelDefs[n-1],path=basePaths[d.base].map(p=>[...p]),parts={};
- d.lamps.forEach((i,order)=>parts[K(...path[i])]={kind:'lamp',required:true,order:order+1});
- for(const part of [d.special,d.extra,...(d.extras||[])])if(part)parts[K(...path[part.index])]={...part};
- // 後半は正解経路上の一方通行パネルを増やす。ライトや既存部品とは重ねない。
- const diodeCount=n<11?0:n<16?1:n<21?2:3;
- const candidates=[2,4,5,6,7,8,9,10].filter(i=>i>0&&i<path.length-1);
- let added=0;
- for(const i of candidates){const k=K(...path[i]);if(added>=diodeCount)break;if(!parts[k]){parts[k]={kind:'diode',auto:true};added++}}
- return{...d,path,parts,...featureInfo[d.feature],ordered:n>=5,chargeMs:n>=8?700+(n>=16?250:0):0,
- goal:`目標：${n>=5?'番号順に ':''}ライト${d.lamps.length}個を${n>=8?'充電して ':''}ゴールへ届ける（難易度：${n<=4?'高め':n<=10?'難しい':n<=17?'かなり難しい':'エキスパート'}）`}
+
+function getDimensions(n){
+ // Ver.1.4.59: 6/7/8列を難易度とステージ番号で混在させる。
+ // 8列はT字分岐・実立体交差・長いダミーネットワークを自然に作れる後半中心。
+ if(n<=6)return{cols:6,rows:8};
+ if(n<=10)return{cols:7,rows:8};
+ if(n<=14)return{cols:7,rows:9};
+ if(n<=20)return{cols:7,rows:10};
+
+ // Lv21-30: 8列を初導入。まだ7列も多めに残す。
+ if(n<=30)return{cols:(n%3===0?8:7),rows:10};
+
+ // Lv31-50: 7x11 / 8x10 / 8x11 を混在。
+ if(n<=50){
+   if(n%4===0)return{cols:8,rows:10};
+   return{cols:(n%2===0?8:7),rows:11};
+ }
+
+ // Lv51-70: 8列中心。ただし7列を混ぜて盤面の読み味を変える。
+ if(n<=70)return{cols:(n%4===1?7:8),rows:11};
+
+ // Lv71-85: 8x12 と 8x11/12 を混在。
+ if(n<=85){
+   if(n%5===0)return{cols:7,rows:12};
+   return{cols:8,rows:(n%3===0?11:12)};
+ }
+
+ // Lv86-100: 8x12中心。数ステージだけ8x12を残して単調化を防ぐ。
+ return{cols:(n%7===0?7:8),rows:12};
 }
-function tile(kind='empty',ports=[]){return{kind,ports:[...ports],rotation:0,on:false,state:0,group:'',flash:0,required:false,order:0,charged:false,charge:0}}
+function getDifficultyRule(n){
+ // 100 LEVEL difficulty curve. Board size grows through 6/7/8 columns and caps at 8x12; complexity still comes primarily from topology.
+ // Fixed blocks remain sparse because excessive fixed cells reveal the route instead of making it harder.
+ if(n<=3)return{tier:1,label:'BASIC',tJunctionRange:[0,0],bridgeRange:[0,0],diodeRange:[0,0],complexityRange:[0,1],maxStraightRun:2,minTurns:3,minBacktracks:0,fixedTotalRange:[0,0],minBranches:0,minFakeDepth:2};
+ if(n<=6)return{tier:2,label:'CURVE',tJunctionRange:[0,0],bridgeRange:[0,0],diodeRange:[0,0],complexityRange:[1,2],maxStraightRun:2,minTurns:6,minBacktracks:0,fixedTotalRange:[0,0],minBranches:1,minFakeDepth:3};
+ if(n<=10)return{tier:3,label:'ROUTE',tJunctionRange:[0,0],bridgeRange:[0,1],diodeRange:[0,0],complexityRange:[2,3],maxStraightRun:2,minTurns:7,minBacktracks:0,fixedTotalRange:[0,1],minBranches:2,minFakeDepth:4};
+ if(n<=12)return{tier:4,label:'BRANCH',tJunctionRange:[0,1],bridgeRange:[0,1],diodeRange:[0,0],complexityRange:[2,4],maxStraightRun:2,minTurns:8,minBacktracks:0,fixedTotalRange:[0,1],minBranches:2,minFakeDepth:5};
+ if(n<=16)return{tier:5,label:'MIX',tJunctionRange:[0,2],bridgeRange:[0,2],diodeRange:[0,1],complexityRange:[3,6],maxStraightRun:2,minTurns:9,minBacktracks:0,fixedTotalRange:[0,2],minBranches:2,minFakeDepth:5};
+ if(n<=24)return{tier:6,label:'EXPERT I',tJunctionRange:[1,3],bridgeRange:[0,3],diodeRange:[1,2],complexityRange:[6,9],maxStraightRun:1,minTurns:12,minBacktracks:1,fixedTotalRange:[1,2],minBranches:3,minFakeDepth:7};
+ if(n<=40)return{tier:7,label:'ADVANCED',tJunctionRange:[1,2],bridgeRange:[0,3],diodeRange:[1,2],complexityRange:[6,9],maxStraightRun:1,minTurns:12,minBacktracks:1,fixedTotalRange:[0,2],minBranches:3,minFakeDepth:7};
+ if(n<=60)return{tier:8,label:'EXPERT II',tJunctionRange:[1,3],bridgeRange:[0,3],diodeRange:[1,2],complexityRange:[7,10],maxStraightRun:1,minTurns:13,minBacktracks:1,fixedTotalRange:[1,2],minBranches:4,minFakeDepth:8};
+ if(n<=80)return{tier:9,label:'MASTER',tJunctionRange:[1,3],bridgeRange:[1,3],diodeRange:[1,3],complexityRange:[8,11],maxStraightRun:1,minTurns:14,minBacktracks:2,fixedTotalRange:[1,3],minBranches:4,minFakeDepth:8};
+ return{tier:10,label:'ULTIMATE',tJunctionRange:[1,3],bridgeRange:[1,4],diodeRange:[1,3],complexityRange:[9,12],maxStraightRun:1,minTurns:15,minBacktracks:2,fixedTotalRange:[1,3],minBranches:5,minFakeDepth:9};
+}
+function chooseStructurePlan(n,generationSalt,rule){
+ function seeded(seed){let s=seed>>>0;return()=>((s=(s*1664525+1013904223)>>>0)/4294967296)}
+ const rnd=seeded(97531+n*8191+generationSalt*131071);
+ const pick=range=>range[0]+Math.floor(rnd()*(range[1]-range[0]+1));
+ const archetypes=rule.tier<4?['basic']:rule.tier<6?['branch','bridge','balanced']:['branch','bridge','diode','balanced'];
+ const archetype=archetypes[Math.floor(rnd()*archetypes.length)];
+ let best=null;
+ for(let i=0;i<28;i++){
+   let t=pick(rule.tJunctionRange),b=pick(rule.bridgeRange),d=pick(rule.diodeRange);
+   if(archetype==='branch')t=Math.min(rule.tJunctionRange[1],Math.max(t,rule.tJunctionRange[0]+1));
+   if(archetype==='bridge')b=Math.min(rule.bridgeRange[1],Math.max(b,rule.bridgeRange[0]+1));
+   if(archetype==='diode')d=Math.min(rule.diodeRange[1],Math.max(d,rule.diodeRange[0]+1));
+   const score=t*2+b+d;
+   const min=rule.complexityRange[0],max=rule.complexityRange[1];
+   const penalty=score<min?min-score:score>max?score-max:0;
+   const candidate={tJunctions:t,bridges:b,diodes:d,score,archetype,penalty};
+   if(!best||candidate.penalty<best.penalty||(candidate.penalty===best.penalty&&rnd()>.5))best=candidate;
+   if(!penalty&&i>5)break;
+ }
+ return best
+}
+function pathMetrics(path){
+ let turns=0,backtracks=0,maxStraightRun=1,run=1,last=null;
+ let minY=Infinity,maxY=-Infinity;
+ for(let i=1;i<path.length;i++){
+   const dx=path[i][0]-path[i-1][0],dy=path[i][1]-path[i-1][1];
+   const dir=dx===1?1:dx===-1?3:dy===1?2:0;
+   minY=Math.min(minY,path[i][1]);maxY=Math.max(maxY,path[i][1]);
+   if(last!==null){
+     if(dir===last){run++;maxStraightRun=Math.max(maxStraightRun,run)}else{turns++;run=1}
+   }
+   if(dy<0)backtracks++;
+   last=dir;
+ }
+ return{turns,backtracks,maxStraightRun,minY,maxY};
+}
+function countDummyBranches(board,pathSet){
+ let branches=0;
+ for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){
+   const k=K(x,y),t=board[y][x];
+   if(pathSet.has(k)||!t||!t.decoy)continue;
+   const adjacent=[[0,-1],[1,0],[0,1],[-1,0]].some(([dx,dy])=>pathSet.has(K(x+dx,y+dy)));
+   if(adjacent)branches++;
+ }
+ return branches;
+}
+function straightPathIndices(path){
+ const out=[];
+ for(let i=1;i<path.length-1;i++){
+   const a=path[i-1],b=path[i],c=path[i+1];
+   const dx1=b[0]-a[0],dy1=b[1]-a[1],dx2=c[0]-b[0],dy2=c[1]-b[1];
+   if(dx1===dx2&&dy1===dy2)out.push(i);
+ }
+ return out;
+}
+// Ver.1.4.41: deterministic base seeds for 100 stages. A generation cycle is added after LEVEL 100 clear.
+const STAGE_LAYOUT_SALTS=Array.from({length:100},(_,i)=>{
+  // Ver.1.4.59: 全100ステージの基礎シードを刷新。
+  // 旧セットと同じ盤面へ収束しないよう、列数・世代番号とは独立した新しいハッシュを使う。
+  let x=((i+1)*2246822519+0x85ebca6b)>>>0;
+  x^=x>>>15;x=Math.imul(x,3266489917)>>>0;x^=x>>>16;
+  x=Math.imul(x^(i*668265263),374761393)>>>0;
+  return 50000+(x%850000);
+});
+
+function makeSerpentinePath(cols,rows,n,generationSalt=0){
+ function seeded(seed){let s=seed>>>0;return()=>((s=(s*1664525+1013904223)>>>0)/4294967296)}
+ // generationSalt already contains the stage-specific layout seed. Do not add it twice.
+ const rnd=seeded(271828+n*17863+rows*1237+cols*389+generationSalt*104729),rule=getDifficultyRule(n);
+ const key=(x,y)=>`${x},${y}`;
+ const inside=(x,y)=>x>=0&&y>=0&&x<cols&&y<rows;
+ const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+ const ix=f=>clamp(Math.round((cols-1)*f),1,Math.max(1,cols-2));
+ const iy=f=>clamp(Math.round((rows-1)*f),1,Math.max(1,rows-2));
+ const jitter=(v,max,amount=1)=>clamp(v+(Math.floor(rnd()*(amount*2+1))-amount),1,Math.max(1,max-2));
+ function shuffledDirs(){const a=[0,1,2,3];for(let i=a.length-1;i>0;i--){const j=Math.floor(rnd()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+ function connect(start,target,blocked,preferTurn=true){
+   const q=[[start.x,start.y,-1]],prev=new Map(),seen=new Set([key(start.x,start.y)]);
+   while(q.length){
+     const [x,y,last]=q.shift();
+     if(x===target.x&&y===target.y){const out=[];let k=key(x,y);while(k!==key(start.x,start.y)){const [px,py]=k.split(',').map(Number);out.push([px,py]);k=prev.get(k).k}out.reverse();return out}
+     const dirs=shuffledDirs().sort((a,b)=>{
+       const ax=x+DIRS[a][0],ay=y+DIRS[a][1],bx=x+DIRS[b][0],by=y+DIRS[b][1];
+       const da=Math.abs(target.x-ax)+Math.abs(target.y-ay),db=Math.abs(target.x-bx)+Math.abs(target.y-by);
+       const ta=(preferTurn&&last>=0&&a===last)?.55:0,tb=(preferTurn&&last>=0&&b===last)?.55:0;
+       return (da+ta+rnd()*.35)-(db+tb+rnd()*.35)
+     });
+     for(const d of dirs){const nx=x+DIRS[d][0],ny=y+DIRS[d][1],nk=key(nx,ny);if(!inside(nx,ny)||seen.has(nk))continue;if(blocked.has(nk)&&!(nx===target.x&&ny===target.y))continue;seen.add(nk);prev.set(nk,{k:key(x,y)});q.push([nx,ny,d])}
+   }
+   return null
+ }
+ function metrics(path){let turns=0,up=0,down=0,left=0,right=0,maxStraight=1,run=1,last='';for(let i=1;i<path.length;i++){const dx=path[i][0]-path[i-1][0],dy=path[i][1]-path[i-1][1],dir=`${dx},${dy}`;if(dy<0)up++;if(dy>0)down++;if(dx<0)left++;if(dx>0)right++;if(i>1&&dir!==last){turns++;run=1}else if(i>1){run++;maxStraight=Math.max(maxStraight,run)}last=dir}return{turns,up,down,left,right,maxStraight,colsUsed:new Set(path.map(p=>p[0])).size,rowsUsed:new Set(path.map(p=>p[1])).size}}
+
+ // Six genuinely different route families. Stages rotate through them instead of sharing one serpentine skeleton.
+ const family=n<=3?'tutorial':['horizontalWeave','verticalWeave','ring','centerCross','doubleBack','diagonalWeave'][(n-4)%6];
+ function layoutForAttempt(attempt){
+   if(n<=3){
+     const sx=1+Math.floor(rnd()*Math.max(1,cols-2)),gx=1+Math.floor(rnd()*Math.max(1,cols-2));
+     return{start:{x:sx,y:0},goal:{x:gx,y:rows-1},wps:[{x:ix(.25),y:iy(.28)},{x:ix(.72),y:iy(.50)},{x:ix(.32),y:iy(.72)}]}
+   }
+   const L=1,R=cols-2,T=1,B=rows-2,CX=ix(.5),CY=iy(.5);
+   let start,goal,wps=[];
+   if(family==='horizontalWeave'){
+     start={x:0,y:jitter(iy(.18),rows)};goal={x:cols-1,y:jitter(iy(.82),rows)};
+     wps=[{x:ix(.22),y:jitter(B,rows)},{x:ix(.42),y:jitter(T,rows)},{x:ix(.62),y:jitter(B,rows)},{x:ix(.80),y:jitter(T,rows)}]
+   }else if(family==='verticalWeave'){
+     start={x:jitter(ix(.78),cols),y:0};goal={x:jitter(ix(.22),cols),y:rows-1};
+     wps=[{x:jitter(L,cols),y:iy(.20)},{x:jitter(R,cols),y:iy(.40)},{x:jitter(L,cols),y:iy(.62)},{x:jitter(R,cols),y:iy(.80)}]
+   }else if(family==='ring'){
+     start={x:0,y:jitter(iy(.25),rows)};goal={x:cols-1,y:jitter(iy(.70),rows)};
+     wps=[{x:L,y:T},{x:R,y:T},{x:R,y:B},{x:L,y:B},{x:jitter(CX,cols),y:jitter(CY,rows)}]
+   }else if(family==='centerCross'){
+     start={x:jitter(ix(.18),cols),y:0};goal={x:cols-1,y:jitter(iy(.82),rows)};
+     wps=[{x:jitter(CX,cols),y:iy(.22)},{x:L,y:jitter(CY,rows)},{x:jitter(CX,cols),y:jitter(CY,rows)},{x:R,y:jitter(CY,rows)},{x:jitter(CX,cols),y:iy(.78)}]
+   }else if(family==='doubleBack'){
+     start={x:cols-1,y:jitter(iy(.15),rows)};goal={x:0,y:jitter(iy(.85),rows)};
+     wps=[{x:ix(.28),y:iy(.20)},{x:ix(.78),y:iy(.38)},{x:ix(.22),y:iy(.58)},{x:ix(.74),y:iy(.76)}]
+   }else{
+     start={x:jitter(ix(.18),cols),y:rows-1};goal={x:jitter(ix(.82),cols),y:0};
+     wps=[{x:ix(.75),y:iy(.82)},{x:ix(.25),y:iy(.64)},{x:ix(.72),y:iy(.46)},{x:ix(.28),y:iy(.28)}]
+   }
+   // Higher tiers add one or two interior detours for branch/crossing space without changing the family identity.
+   if(n>=11)wps.splice(Math.min(2,wps.length),0,{x:jitter(CX,cols),y:jitter(iy(.35+(attempt%3)*.12),rows)});
+   if(n>=19)wps.push({x:jitter(ix(attempt%2?.35:.65),cols),y:jitter(iy(.55),rows)});
+   // Drop accidental duplicate waypoints.
+   const seen=new Set();wps=wps.filter(p=>{const k=key(p.x,p.y);if(seen.has(k)||k===key(start.x,start.y)||k===key(goal.x,goal.y))return false;seen.add(k);return true});
+   return{start,goal,wps}
+ }
+
+ for(let attempt=0;attempt<90;attempt++){
+   const spec=layoutForAttempt(attempt),targets=[...spec.wps,spec.goal],path=[[spec.start.x,spec.start.y]],blocked=new Set([key(spec.start.x,spec.start.y)]);let current=spec.start,ok=true;
+   for(const target of targets){const segment=connect(current,target,blocked,true);if(!segment){ok=false;break}for(const p of segment){path.push(p);blocked.add(key(...p))}current=target}
+   if(!ok)continue;
+   const m=metrics(path),pm=pathMetrics(path);
+   const minLen=n<=3?rows+cols:Math.floor(cols*rows*(n<10?.34:n<18?.40:.45));
+   const needHorizontal=n<=3?2:Math.max(3,Math.floor(cols*.55));
+   if(path.length<minLen)continue;if(pm.turns<Math.max(2,rule.minTurns-2))continue;if(pm.backtracks<rule.minBacktracks)continue;
+   if(n>=11&&m.colsUsed<Math.min(cols,5))continue;if(m.rowsUsed<Math.min(rows,5))continue;if(m.left+m.right<needHorizontal)continue;
+   return path
+ }
+ // Emergency fallback is also family-specific rather than the old shared corner loop.
+ const spec=layoutForAttempt(99),path=[[spec.start.x,spec.start.y]],blocked=new Set([key(spec.start.x,spec.start.y)]);let current=spec.start;
+ for(const a of [...spec.wps,spec.goal]){const seg=connect(current,a,blocked,true);if(!seg)continue;for(const p of seg){path.push(p);blocked.add(key(...p))}current=a}
+ return path
+}
+function dynamicPartsForLevel(n,d,path){
+ const parts={},lampCount=(d.lamps||[]).length;
+ const reserved=new Set([0,path.length-1]);
+ const lampIndices=[];
+ for(let i=0;i<lampCount;i++){
+   let idx=Math.round((i+1)*path.length/(lampCount+1));
+   idx=Math.max(2,Math.min(path.length-3,idx));
+   while(reserved.has(idx))idx++;
+   reserved.add(idx);lampIndices.push(idx);
+   parts[K(...path[idx])]={kind:'lamp',required:true,order:i+1};
+ }
+ const specs=[d.special,d.extra,...(d.extras||[])].filter(spec=>spec&&spec.kind!=='threeway');
+ specs.forEach((spec,i)=>{
+   let idx=Math.round((i+1)*path.length/(specs.length+1));
+   idx=Math.max(2,Math.min(path.length-3,idx));
+   while(reserved.has(idx))idx++;
+   reserved.add(idx);
+   parts[K(...path[idx])]={...spec,index:idx};
+ });
+ return{parts,lamps:lampIndices};
+}
+
+function buildRequiredBranches(L,n){
+ const need=L.difficultyRule.requiredTJunctions||0;
+ if(!need){L.generatedTJunctions=0;return[]}
+ const occupied=new Set(L.path.map(([x,y])=>K(x,y)));
+ const branches=[],usedJunctions=new Set();
+ const mainLamps=[];
+ for(let i=1;i<L.path.length-1;i++){
+   const key=K(...L.path[i]),spec=L.parts[key];
+   if(spec?.kind==='lamp')mainLamps.push({index:i,key,spec,order:spec.order})
+ }
+ const byOrder=new Map(mainLamps.map(v=>[v.order,v]));
+ function inside(x,y){return x>=0&&y>=0&&x<L.cols&&y<L.rows}
+ function direction(a,b){const dx=b[0]-a[0],dy=b[1]-a[1];return dx===1?1:dx===-1?3:dy===1?2:0}
+ function seededDirs(seed){
+   const a=[0,1,2,3];let z=(seed*1103515245+n*12345+(L.generationSalt||0)*2654435761)>>>0;
+   for(let i=a.length-1;i>0;i--){z=(z*1664525+1013904223)>>>0;const j=z%(i+1);[a[i],a[j]]=[a[j],a[i]]}
+   return a
+ }
+ function findQualitySpur(junctionIndex,seed,targetCells){
+   const [jx,jy]=L.path[junctionIndex],prev=L.path[junctionIndex-1],next=L.path[junctionIndex+1];
+   const mainDirs=[direction([jx,jy],prev),direction([jx,jy],next)];
+   const firstDirs=seededDirs(seed).filter(d=>!mainDirs.includes(d));
+   for(const first of firstDirs){
+     const sx=jx+DIRS[first][0],sy=jy+DIRS[first][1],sk=K(sx,sy);
+     if(!inside(sx,sy)||occupied.has(sk))continue;
+     const path=[[jx,jy],[sx,sy]],local=new Set([sk]);
+     function dfs(x,y,depth,lastDir){
+       if(path.length>=targetCells)return true;
+       const dirs=seededDirs(seed+depth*47).sort((a,b)=>(a===lastDir?1:0)-(b===lastDir?1:0));
+       for(const d of dirs){
+         const nx=x+DIRS[d][0],ny=y+DIRS[d][1],nk=K(nx,ny);
+         if(!inside(nx,ny)||occupied.has(nk)||local.has(nk))continue;
+         // 枝の途中で本線へ再接近しすぎる経路は避け、見た目でも独立した枝にする。
+         let nearMain=0;
+         for(let q=0;q<4;q++)if(occupied.has(K(nx+DIRS[q][0],ny+DIRS[q][1])))nearMain++;
+         if(nearMain>1)continue;
+         path.push([nx,ny]);local.add(nk);
+         if(dfs(nx,ny,depth+1,d))return true;
+         path.pop();local.delete(nk)
+       }
+       return false
+     }
+     if(dfs(sx,sy,1,first))return path
+   }
+   return null
+ }
+ function tryMake(targetOrder,serial){
+   const previous=byOrder.get(targetOrder-1),target=byOrder.get(targetOrder);
+   if(!previous||!target)return false;
+   const candidates=[];
+   for(let idx=previous.index+2;idx<=target.index-2;idx++){
+     const key=K(...L.path[idx]);
+     if(L.parts[key]||usedJunctions.has(idx))continue;
+     const p=L.path[idx-1],c=L.path[idx],q=L.path[idx+1];
+     if(!p||!q)continue;
+     const mainDirs=[direction(c,p),direction(c,q)];
+     if(new Set(mainDirs).size<2)continue;
+     candidates.push(idx)
+   }
+   // 次番号ライトの少し手前を優先し、本線側と枝側の見た目を近づける。
+   candidates.reverse();
+   const targetCells=L.difficultyRule.tier<=4?6:L.difficultyRule.tier<=6?7:8;
+   for(const idx of candidates){
+     const spur=findQualitySpur(idx,n*131+targetOrder*31+idx+serial*997,targetCells);
+     if(!spur)continue;
+     // T→2マス目に同番号ライト、その先も最低3マス残る品質条件。
+     const lampPos=2;
+     if(spur.length-lampPos-1<3)continue;
+     spur.slice(1).forEach(([x,y])=>occupied.add(K(x,y)));
+     usedJunctions.add(idx);
+     const lampCell=spur[lampPos],lampKey=K(...lampCell);
+     L.parts[lampKey]={kind:'lamp',required:true,order:targetOrder,branchLamp:true,pairedMainLamp:target.key};
+     for(let i=lampPos+1;i<spur.length;i++){
+       const k=K(...spur[i]);
+       if(!L.parts[k]){
+         // ダミー側も一本の回路として見せる。末端を片側1ポートのケーブルにはしない。
+         // 最終セルは立体交差へ接続し、配線が突然切れた見た目を禁止する。
+         L.parts[k]=i===spur.length-1
+           ?{kind:'bridge',branchTail:true,dummyAfterLamp:true,decoyBridgeTerminal:true}
+           :{kind:'wire',branchTail:true,dummyAfterLamp:true};
+       }
+     }
+     branches.push(spur);return true
+   }
+   return false
+ }
+ let madeCount=0;
+ for(let targetOrder=2;targetOrder<=mainLamps.length&&madeCount<need;targetOrder++){
+   if(tryMake(targetOrder,madeCount))madeCount++
+ }
+ L.generatedTJunctions=madeCount;
+ return branches
+}
+function getLevel(n,generationSalt=0){
+ const d=levelDefs[n-1],dim=getDimensions(n),baseRule=getDifficultyRule(n),plan=chooseStructurePlan(n,generationSalt,baseRule);
+ const rule={...baseRule,requiredTJunctions:plan.tJunctions,requiredBridges:plan.bridges,targetDiodes:plan.diodes,structurePlan:plan};
+ const path=makeSerpentinePath(dim.cols,dim.rows,n,generationSalt);const layoutFamily=n<=3?'tutorial':['horizontalWeave','verticalWeave','ring','centerCross','doubleBack','diagonalWeave'][(n-4)%6];
+ const featureKey=d.feature;
+ const dyn=dynamicPartsForLevel(n,d,path),parts=dyn.parts;
+ const diodeCount=plan.diodes;
+ const candidates=Array.from({length:Math.max(0,path.length-4)},(_,i)=>i+2);
+ let added=0;
+ for(const i of candidates){
+   if(added>=diodeCount)break;
+   const k=K(...path[i]);
+   if(!parts[k]){parts[k]={kind:'diode',auto:true,index:i};added++}
+ }
+ return{
+   ...d,path,parts,lamps:dyn.lamps,cols:dim.cols,rows:dim.rows,difficultyRule:rule,generationSalt,layoutFamily,
+   ...featureInfo[featureKey],feature:featureKey,ordered:false,chargeMs:520,
+   goal:`目標：すべてのライトとゴールへ同時に通電する（難易度：${n<=4?'高め':n<=10?'難しい':n<=17?'かなり難しい':'エキスパート'}）`
+ }
+}
+function tile(kind='empty',ports=[]){return{kind,ports:[...ports],rotation:0,on:false,state:0,group:'',flash:0,required:false,order:0,charged:false,charge:0,fixed:false,decoy:false}}
 function addPort(map,x,y,d){const k=K(x,y);if(!map.has(k))map.set(k,new Set());map.get(k).add(d)}
-function buildLevel(n,{manual=false,skipTutorial=false}={}){level=n;moves=0;busy=false;completionQueued=false;ui.overlay.classList.remove('show'); if(skipTutorial)$('tutorial').classList.remove('show'); board=Array.from({length:ROWS},()=>Array.from({length:COLS},()=>tile()));const L=getLevel(n),map=new Map();for(let i=0;i<L.path.length-1;i++){const[a,b]=L.path[i],[c,d]=L.path[i+1],dx=c-a,dy=d-b,dir=dx===1?1:dx===-1?3:dy===1?2:0;addPort(map,a,b,dir);addPort(map,c,d,OPP[dir])}if(L.branch){for(let i=0;i<L.branch.length-1;i++){const[a,b]=L.branch[i],[c,d]=L.branch[i+1],dx=c-a,dy=d-b,dir=dx===1?1:dx===-1?3:dy===1?2:0;addPort(map,a,b,dir);addPort(map,c,d,OPP[dir])}}startKey=K(...L.path[0]);endKey=K(...L.path[L.path.length-1]);required=[];
- for(const [k,set] of map){const[x,y]=k.split(',').map(Number);let kind='wire';if(k===startKey)kind='plus';else if(k===endKey)kind='minus';if(L.parts[k])kind=L.parts[k].kind;const t=tile(kind,[...set]);const spec=L.parts[k];if(kind==='lamp'){t.required=spec?.required!==false;t.order=spec?.order||0;t.charged=false;t.charge=0}if(kind==='threeway'){t.state=spec.state;t.group=spec.group||'';}if(kind==='diode'){const idx=L.path.findIndex(p=>K(...p)===k);if(idx>0&&idx<L.path.length-1){const[px,py]=L.path[idx-1],[cx,cy]=L.path[idx],[nx,ny]=L.path[idx+1];t.input=px-cx===1?1:px-cx===-1?3:py-cy===1?2:0;t.forward=nx-cx===1?1:nx-cx===-1?3:ny-cy===1?2:0}}board[y][x]=t;if(kind==='lamp'&&t.required)required.push(k)}
- // 実プレイ盤面は全マスをケーブルで埋める。正解経路以外は迷路用のダミーケーブル。
- const fillerShapes=[[0,2],[1,3],[0,1],[1,2],[2,3],[3,0],[0,1,2],[1,2,3],[2,3,0],[3,0,1],[0,1,2,3]];
+function buildLevel(n,{manual=false,skipTutorial=false,generationSalt=null,regenDepth=0}={}){generationSalt=(generationSalt===null?((STAGE_LAYOUT_SALTS[n-1]||n*1009)+generationCycle*1000003):generationSalt);currentLevelSalt=generationSalt;stageTabPage=Math.floor((n-1)/10);level=n;moves=0;busy=false;completionQueued=false;ui.overlay.classList.remove('show'); if(skipTutorial)$('tutorial').classList.remove('show'); const dim=getDimensions(n);COLS=dim.cols;ROWS=dim.rows;cv.width=COLS*CELL;cv.height=ROWS*CELL;cv.style.setProperty('--board-aspect',String(COLS/ROWS));board=Array.from({length:ROWS},()=>Array.from({length:COLS},()=>tile()));let L=null,solutionBranches=[],bestCandidate=null;for(let attempt=0;attempt<140;attempt++){const salt=generationSalt+attempt;const candidate=getLevel(n,salt),candidateBranches=buildRequiredBranches(candidate,n),minT=candidate.difficultyRule.tJunctionRange[0],desiredT=candidate.difficultyRule.requiredTJunctions||0,actualT=candidateBranches.length;const qualityOK=actualT>=minT;if(!qualityOK)continue;candidate.difficultyRule={...candidate.difficultyRule,requiredTJunctions:actualT};const naturalScore=actualT*2+candidate.difficultyRule.requiredBridges+candidate.difficultyRule.targetDiodes;if(!bestCandidate||Math.abs(naturalScore-(candidate.difficultyRule.complexityRange[0]+candidate.difficultyRule.complexityRange[1])/2)<bestCandidate.delta){bestCandidate={candidate,branches:candidateBranches,delta:Math.abs(naturalScore-(candidate.difficultyRule.complexityRange[0]+candidate.difficultyRule.complexityRange[1])/2)}}if(actualT>=desiredT||attempt>45){L=candidate;solutionBranches=candidateBranches;break}}if(!L&&bestCandidate){L=bestCandidate.candidate;solutionBranches=bestCandidate.branches}if(!L){L=getLevel(n,generationSalt+140);L.difficultyRule={...L.difficultyRule,requiredTJunctions:0};solutionBranches=[];console.warn(`LEVEL ${n}: 品質優先でT字を省略しました`)}const map=new Map();for(let i=0;i<L.path.length-1;i++){const[a,b]=L.path[i],[c,d]=L.path[i+1],dx=c-a,dy=d-b,dir=dx===1?1:dx===-1?3:dy===1?2:0;addPort(map,a,b,dir);addPort(map,c,d,OPP[dir])}for(const branch of solutionBranches){for(let i=0;i<branch.length-1;i++){const[a,b]=branch[i],[c,d]=branch[i+1],dx=c-a,dy=d-b,dir=dx===1?1:dx===-1?3:dy===1?2:0;addPort(map,a,b,dir);addPort(map,c,d,OPP[dir])}}
+ startKey=K(...L.path[0]);endKey=K(...L.path[L.path.length-1]);required=[];
+ for(const [k,set] of map){const[x,y]=k.split(',').map(Number);let kind='wire';if(k===startKey)kind='plus';else if(k===endKey)kind='minus';if(L.parts[k])kind=L.parts[k].kind;const autoNetworkBridge=(kind==='wire'&&set.size===4);if(autoNetworkBridge)kind='bridge';const spec=L.parts[k];const t=tile(kind,(kind==='bridge'&&spec?.decoyBridgeTerminal)?[0,1,2,3]:[...set]);if(autoNetworkBridge){t.effectiveBridge=true;t.autoNetworkBridge=true;t.requiredBridge=true;}if(kind==='lamp'){t.required=spec?.required!==false;t.order=spec?.order||0;t.charged=false;t.charge=0}if(kind==='diode'){const idx=L.path.findIndex(p=>K(...p)===k);if(idx>0&&idx<L.path.length-1){const[px,py]=L.path[idx-1],[cx,cy]=L.path[idx],[nx,ny]=L.path[idx+1];t.input=px-cx===1?1:px-cx===-1?3:py-cy===1?2:0;t.forward=nx-cx===1?1:nx-cx===-1?3:ny-cy===1?2:0}}board[y][x]=t;if(kind==='lamp'&&t.required)required.push(k)}
+ // 立体交差は「両軸利用」が成立する交差点だけ採用する。
+ // 主経路が水平なら上下に、主経路が垂直なら左右に独立したダミー経路を通す。
+ // 一方向しか使われない＋型は生成しない。候補が無ければ0個でも採用する。
+ const rule=L.difficultyRule;
+ const desiredBridgeCount=rule.requiredBridges||0;
+ function insideCell(x,y){return x>=0&&y>=0&&x<COLS&&y<ROWS}
+ function bridgeAxisAt(path,idx){
+   const a=path[idx-1],c=path[idx],b=path[idx+1];
+   if(!a||!b)return null;
+   if(a[1]===c[1]&&b[1]===c[1])return 'h';
+   if(a[0]===c[0]&&b[0]===c[0])return 'v';
+   return null
+ }
+ function canBuildPerpendicularCross(x,y,axis){
+   const cells=axis==='h'
+     ? [[x,y-3],[x,y-2],[x,y-1],[x,y+1],[x,y+2],[x,y+3]]
+     : [[x-3,y],[x-2,y],[x-1,y],[x+1,y],[x+2,y],[x+3,y]];
+   for(const [cx,cy] of cells){
+     if(!insideCell(cx,cy))return false;
+     const k=K(cx,cy);
+     if(map.has(k)||L.parts[k])return false;
+   }
+   return true
+ }
+ function installPerpendicularCross(x,y,axis){
+   const line=axis==='h'
+     ? [[x,y-3],[x,y-2],[x,y-1],[x,y+1],[x,y+2],[x,y+3]]
+     : [[x-3,y],[x-2,y],[x-1,y],[x+1,y],[x+2,y],[x+3,y]];
+   const dirPair=axis==='h'?[0,2]:[1,3];
+   // 交差直前の2セルは直線。外側セルはL字にして、さらに周囲へ続く偽回路に見せる。
+   const cells=line;
+   for(let i=0;i<cells.length;i++){
+     const [cx,cy]=cells[i];
+     let ports=[...dirPair];
+     if(i===0||i===cells.length-1){
+       const sideChoices=axis==='h'?[1,3]:[0,2];
+       const side=sideChoices[(cx*17+cy*29+n+(L.generationSalt||0)+i)%2];
+       const towardBridge=axis==='h'?(i===0?2:0):(i===0?1:3);
+       ports=[towardBridge,side];
+     }
+     const t=tile('wire',ports);
+     t.decoy=true;t.crossingDecoy=true;t.bridgeSupport=true;
+     board[cy][cx]=t
+   }
+ }
+ const bridgeCandidates=[];
+ for(let i=1;i<L.path.length-1;i++){
+   const [x,y]=L.path[i],k=K(x,y),t=board[y][x],axis=bridgeAxisAt(L.path,i);
+   if(!axis||!t||t.kind!=='wire'||L.parts[k])continue;
+   if(canBuildPerpendicularCross(x,y,axis))bridgeCandidates.push({x,y,axis,source:'main'})
+ }
+ // T字の枝上も、両軸利用できる場合だけ候補にする。
+ for(const branch of solutionBranches){
+   for(let i=1;i<branch.length-1;i++){
+     const [x,y]=branch[i],k=K(x,y),t=board[y][x],axis=bridgeAxisAt(branch,i);
+     if(!axis||!t||t.kind!=='wire'||L.parts[k])continue;
+     if(canBuildPerpendicularCross(x,y,axis))bridgeCandidates.push({x,y,axis,source:'branch'})
+   }
+ }
+ const seenBridgeCandidate=new Set();
+ const uniqueBridgeCandidates=bridgeCandidates.filter(c=>{const k=K(c.x,c.y);if(seenBridgeCandidate.has(k))return false;seenBridgeCandidate.add(k);return true});
+ let actualBridgeCount=0;
+ for(let i=0;i<desiredBridgeCount&&uniqueBridgeCandidates.length;i++){
+   const pickIndex=(i*7+n+(L.generationSalt||0))%uniqueBridgeCandidates.length;
+   const c=uniqueBridgeCandidates.splice(pickIndex,1)[0],t=board[c.y][c.x];
+   if(!t||t.kind!=='wire'||!canBuildPerpendicularCross(c.x,c.y,c.axis))continue;
+   installPerpendicularCross(c.x,c.y,c.axis);
+   t.kind='bridge';t.ports=[0,1,2,3];t.requiredBridge=true;t.effectiveBridge=true;t.primaryAxis=c.axis;t.branchBridge=c.source==='branch';
+   actualBridgeCount++
+ }
+ rule.requiredBridges=actualBridgeCount;
+ // 固定は「ヒント」になりやすいため少量だけ配置する。
+ // 正解側だけに偏らせず、正解/ダミーへ混在させる。T字・立体交差は固定しない。
+ // まず残りマスを通常ダミーで埋める。＋型はここでは一切生成しない。
+ const fillerShapes=[[0,2],[1,3],[0,1],[1,2],[2,3],[3,0]];
  for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++)if(board[y][x].kind==='empty'){
-   const fillerLimit=n<5?9:n<12?10:fillerShapes.length;
-   const seed=(x*17+y*31+n*13)%fillerLimit;
+   const seed=(x*29+y*47+n*61+(x*y*7)+(L.generationSalt||0)*13)%fillerShapes.length;
    const t=tile('wire',fillerShapes[seed]);
-   rotatePorts(t,(x*3+y*5+n)%4);
+   rotatePorts(t,(x*7+y*11+n*3+(x+y)%3)%4);
    t.decoy=true;
-   if(n>=12&&((x*11+y*7+n)%5===0)){t.ports=[0,1,2,3]} // 十字導線を増加
    board[y][x]=t;
  }
- // 正解経路の向きを崩して問題化する。
- for(const [k] of map){const[x,y]=k.split(',').map(Number),t=board[y][x];if(['wire','diode'].includes(t.kind)){
-   const threshold=n<=2?58:n<=5?68:n<=10?78:n<=15?88:n<=20?95:100;
-   const shouldRotate=((x*37+y*53+n*19)%100)<threshold;
-   if(shouldRotate){let turns=1+((x*3+y*5+n)%3);if(n===1&&turns===3)turns=2;rotatePorts(t,turns)}
- }}
- for(let i=1;i<L.path.length-1;i++){
-   const [x,y]=L.path[i],t=board[y][x];
-   if(t.kind!=='threeway')continue;
-   const [px,py]=L.path[i-1],[nx,ny]=L.path[i+1];
-   t.input=px-x===1?1:px-x===-1?3:py-y===1?2:0;
-   t.correctOutput=nx-x===1?1:nx-x===-1?3:ny-y===1?2:0;
-   t.altOutput=[0,1,2,3].find(d=>d!==t.input&&d!==t.correctOutput);
-   t.state=1;
+ const fixedRange=rule.fixedTotalRange||[0,0];
+ const fixedSpan=fixedRange[1]-fixedRange[0]+1;
+ const targetFixed=fixedRange[0]+((n*17+(L.generationSalt||0)*7)%Math.max(1,fixedSpan));
+ const solutionFixedCandidates=L.path.slice(2,-2).filter(([x,y])=>{
+   const t=board[y][x];
+   return t&&t.kind==='wire'&&t.ports.length===2&&!t.effectiveBridge&&!t.crossingDecoy;
+ });
+ const decoyFixedCandidates=[];
+ for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){
+   const t=board[y][x];
+   if(t?.decoy&&t.kind==='wire'&&t.ports.length===2&&!t.crossingDecoy&&!t.bridgeSupport)decoyFixedCandidates.push([x,y]);
  }
- // 開始時点で偶然クリアしていた場合は、正解経路上のケーブルを追加回転して必ず未完成にする。
- for(let guard=0;guard<12;guard++){
+ let placedFixed=0;
+ // 正解側は最大1個。残りはダミー側へ置き、固定=正解という推測を防ぐ。
+ if(targetFixed>0&&solutionFixedCandidates.length){
+   const p=solutionFixedCandidates[(n+(L.generationSalt||0))%solutionFixedCandidates.length];
+   board[p[1]][p[0]].fixed=true;placedFixed++;
+ }
+ for(let i=0;placedFixed<targetFixed&&i<decoyFixedCandidates.length;i++){
+   const p=decoyFixedCandidates[(i*11+n*7+(L.generationSalt||0))%decoyFixedCandidates.length];
+   if(!board[p[1]][p[0]].fixed){board[p[1]][p[0]].fixed=true;placedFixed++}
+ }
+ rule.actualFixedCount=placedFixed;
+
+ // Ver.1.4.59: ライト構造を最終確定してから解答検証する。
+ // 1) 表示番号は必ず 1,2,3... の連番に正規化する。
+ //    T字分岐で同じ番号が複数ある場合は、そのグループを同じ番号のまま維持する。
+ function normalizeRequiredLampOrders(){
+   const oldOrders=[...new Set(required.map(k=>{const[x,y]=k.split(',').map(Number);return Number(board[y][x].order)||1}))].sort((a,b)=>a-b);
+   const remap=new Map(oldOrders.map((oldOrder,i)=>[oldOrder,i+1]));
+   for(const k of required){
+     const[x,y]=k.split(',').map(Number),lamp=board[y][x];
+     lamp.order=remap.get(Number(lamp.order)||1)||1;
+   }
+ }
+ function validateRequiredLampTopology(){
+   const issues=[];
+   for(const k of required){
+     const[x,y]=k.split(',').map(Number),lamp=board[y][x];
+     if(!lamp||lamp.kind!=='lamp'){issues.push(`${k}:ライトではない`);continue}
+     // ライトは「経路上を通過する部品」。T字・十字の役割を兼ねさせない。
+     if(!Array.isArray(lamp.ports)||lamp.ports.length!==2)issues.push(`${k}:ポート${lamp.ports?.length??0}`);
+   }
+   const orders=[...new Set(required.map(k=>{const[x,y]=k.split(',').map(Number);return board[y][x].order}))].sort((a,b)=>a-b);
+   for(let i=0;i<orders.length;i++)if(orders[i]!==i+1)issues.push(`番号欠番:${orders.join(',')}`);
+   return issues
+ }
+ normalizeRequiredLampOrders();
+ const lampTopologyIssues=validateRequiredLampTopology();
+ if(lampTopologyIssues.length){
+   console.warn(`LEVEL ${n}: ライト構造不正のため再生成`,{generationSalt:L.generationSalt,issues:lampTopologyIssues});
+   if(regenDepth<24)return buildLevel(n,{manual,skipTutorial,generationSalt:(L.generationSalt||generationSalt)+211,regenDepth:regenDepth+1});
+   console.error(`LEVEL ${n}: ライト構造再生成の上限に到達。別シードへ移行します`);
+   return buildLevel(n,{manual,skipTutorial,generationSalt:(L.generationSalt||generationSalt)+10037,regenDepth:0});
+ }
+
+ // 完成形が本当に解けることを初期回転前に検証する。
+ const solvedDesignState=trace();
+ const solvedDesignOK=solvedDesignState.seen.has(endKey)&&required.every(k=>solvedDesignState.seen.has(k));
+ if(!solvedDesignOK){
+   const unreachableRequired=required.filter(k=>!solvedDesignState.seen.has(k));
+   console.warn(`LEVEL ${n}: 完成形が通電不能のため再生成`,{generationSalt:L.generationSalt,endReached:solvedDesignState.seen.has(endKey),unreachableRequired});
+   if(regenDepth<24)return buildLevel(n,{manual,skipTutorial,generationSalt:(L.generationSalt||generationSalt)+137,regenDepth:regenDepth+1});
+   console.error(`LEVEL ${n}: 解答保証再生成の上限に到達しました。別シードで再試行します`);
+   return buildLevel(n,{manual,skipTutorial,generationSalt:(L.generationSalt||generationSalt)+7919,regenDepth:0});
+ }
+ // Ver.1.4.59: 初期回転は毎回同じ決定論的配置にする。
+ // さらに盤面全体の「隣接ポート接続数」ができるだけ少なくなる向きを選び、
+ // 可能な限りバラバラな状態から開始する。固定・ライト・電源・ゴール・立体交差は回転しない。
+ function visualConnectionCount(){
+   let score=0;
+   for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){
+     const t=board[y][x];if(!t||t.kind==='empty')continue;
+     for(const d of [1,2]){
+       const nx=x+DIRS[d][0],ny=y+DIRS[d][1];if(nx<0||ny<0||nx>=COLS||ny>=ROWS)continue;
+       const u=board[ny][nx];if(!u||u.kind==='empty')continue;
+       if(t.ports?.includes(d)&&u.ports?.includes(OPP[d])){
+         // 電源・必須ライト付近の初期接続は特に避ける。
+         const important=(t.kind==='plus'||u.kind==='plus'||(t.kind==='lamp'&&t.required)||(u.kind==='lamp'&&u.required));
+         score+=important?5:1;
+       }
+     }
+   }
+   return score
+ }
+ function deterministicInitialScramble(seed){
+   const rotatable=[];
+   for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){
+     const t=board[y][x];
+     if(t&&!t.fixed&&(t.kind==='wire'||t.kind==='diode'))rotatable.push([x,y,t]);
+   }
+   // 最初に全タイルをステージ固有シードで決定論的にずらす。
+   for(const [x,y,t] of rotatable){
+     const turns=((seed>>>0)+x*17+y*31+n*43+(x+1)*(y+3)*7)%4;
+     if(turns)rotatePorts(t,turns)
+   }
+   // 座標降下法で接続数を減らす。固定された交差や部品があるため0を強制はしない。
+   for(let pass=0;pass<8;pass++){
+     let improved=false;
+     const order=[...rotatable].sort((a,b)=>{
+       const ha=((a[0]+1)*73856093^(a[1]+1)*19349663^seed)>>>0;
+       const hb=((b[0]+1)*73856093^(b[1]+1)*19349663^seed)>>>0;
+       return ha-hb
+     });
+     for(const [x,y,t] of order){
+       const originalPorts=[...t.ports],originalForward=t.forward,originalInput=t.input,originalRotation=t.rotation;
+       let bestScore=Infinity,bestTurn=0;
+       for(let turn=0;turn<4;turn++){
+         t.ports=[...originalPorts];t.forward=originalForward;t.input=originalInput;t.rotation=originalRotation;
+         if(turn)rotatePorts(t,turn);
+         const s=visualConnectionCount();
+         const tie=(((seed+x*97+y*193+turn*389)>>>0)%997)/1000000;
+         if(s+tie<bestScore){bestScore=s+tie;bestTurn=turn}
+       }
+       t.ports=[...originalPorts];t.forward=originalForward;t.input=originalInput;t.rotation=originalRotation;
+       if(bestTurn)rotatePorts(t,bestTurn);
+       if(bestTurn!==0)improved=true
+     }
+     if(!improved||visualConnectionCount()===0)break
+   }
+ }
+ deterministicInitialScramble((L.generationSalt||generationSalt)+n*100003);
+
+ // 万一完成状態が残った場合も、ランダムではなく決定論的に正解経路を1つずつ回して未完成にする。
+ for(let guard=0;guard<40;guard++){
    const state=trace(),done=state.seen.has(endKey)&&required.every(k=>state.seen.has(k));
    if(!done)break;
-   const p=L.path[1+guard%(L.path.length-2)],t=board[p[1]][p[0]];
-   if(t.kind==='wire'||t.kind==='diode')rotatePorts(t,1);
+   const candidates=L.path.slice(1,-1).filter(([x,y])=>['wire','diode'].includes(board[y][x].kind)&&!board[y][x].fixed);
+   if(!candidates.length)break;
+   const idx=((L.generationSalt||generationSalt)+n*101+guard*17)%candidates.length;
+   const p=candidates[idx],t=board[p[1]][p[0]];
+   rotatePorts(t,1+(((L.generationSalt||generationSalt)+guard+n)%3));
  }
- selected={x:L.path[Math.floor(L.path.length/2)][0],y:L.path[Math.floor(L.path.length/2)][1]};updateInfo();buildTabs();draw();setTimeout(checkCircuit,50);
- const key=L.feature;if(!skipTutorial&&(n===1||L.intro)&&!seenDemos.has(key)&&!manual){seenDemos.add(key);localStorage.setItem('electricLinkV06SeenDemos',JSON.stringify([...seenDemos]));showTutorial(n)}}
-function rotatePorts(t,turns=1){for(let i=0;i<turns;i++){t.ports=t.ports.map(d=>(d+1)%4);if(Number.isInteger(t.forward))t.forward=(t.forward+1)%4;if(Number.isInteger(t.input))t.input=(t.input+1)%4}t.rotation=(t.rotation+turns)%4}
-function effectivePorts(x,y){const t=board[y][x];if(t.kind==='threeway'){
-   if(Number.isInteger(t.input)&&Number.isInteger(t.correctOutput))return [t.input,t.state===0?t.correctOutput:t.altOutput];
-   return t.state===0?[3,2]:[3,1];
- }
- return t.ports;
+ console.info(`LEVEL ${n}: 初期接続スコア ${visualConnectionCount()}（同一LEVEL/周回では固定）`);
+ const generatedMetrics=pathMetrics(L.path);
+ const generatedBridgeCount=board.flat().filter(t=>t?.kind==='bridge'&&t.effectiveBridge).length;
+ const generatedTCount=board.flat().filter(t=>t.kind==='wire'&&t.ports.length===3&&!t.decoy).length;
+ const pathSet=new Set(L.path.map(([x,y])=>K(x,y)));
+ const generatedBranches=countDummyBranches(board,pathSet);
+ const ruleProblems=[];
+ if(generatedMetrics.turns<rule.minTurns)ruleProblems.push(`曲がり ${generatedMetrics.turns}/${rule.minTurns}`);
+ if(generatedMetrics.backtracks<rule.minBacktracks)ruleProblems.push(`逆走 ${generatedMetrics.backtracks}/${rule.minBacktracks}`);
+ if(generatedMetrics.maxStraightRun>rule.maxStraightRun)ruleProblems.push(`連続ストレート ${generatedMetrics.maxStraightRun}>${rule.maxStraightRun}`);
+ if(generatedBridgeCount>rule.bridgeRange[1])ruleProblems.push(`有効立体交差 ${generatedBridgeCount}（上限${rule.bridgeRange[1]}）`);
+ if(generatedTCount<rule.tJunctionRange[0]||generatedTCount>rule.tJunctionRange[1])ruleProblems.push(`T字分岐 ${generatedTCount}（許容${rule.tJunctionRange[0]}-${rule.tJunctionRange[1]}）`);
+ if(generatedBranches<rule.minBranches)ruleProblems.push(`ダミー分岐 ${generatedBranches}/${rule.minBranches}`);
+ if(ruleProblems.length)console.warn(`LEVEL ${n} 固定難易度ルール警告:`,ruleProblems.join(', '));
+ const actualTJunctions=board.flat().filter(t=>t&&t.kind==='wire'&&Array.isArray(t.ports)&&t.ports.length===3&&!t.decoy).length;if(actualTJunctions<rule.tJunctionRange[0]||actualTJunctions>rule.tJunctionRange[1])console.warn(`LEVEL ${n}: T字レンジ外 ${actualTJunctions}（${rule.tJunctionRange[0]}-${rule.tJunctionRange[1]}）`);validateMeaningfulTJunctions();validateEffectiveBridges();validateBranchNumberStructure(L,solutionBranches);selected={x:L.path[Math.floor(L.path.length/2)][0],y:L.path[Math.floor(L.path.length/2)][1]};saveLevelStartSnapshot();updateInfo();buildTabs();draw();setTimeout(checkCircuit,50);
+ setTimeout(()=>showNewPartIntro(n),90)
 }
-function canFlow(x,y,d){const nx=x+DIRS[d][0],ny=y+DIRS[d][1];if(nx<0||ny<0||nx>=COLS||ny>=ROWS)return false;const a=board[y][x],b=board[ny][nx],ap=effectivePorts(x,y),bp=effectivePorts(nx,ny);if(!ap.includes(d)||!bp.includes(OPP[d]))return false;
- // 一方通行パネルは、指定された入口から入り、三角の出口方向へだけ進める。
- // 曲がり型では入口と出口が直角になるため、両方向を別々に判定する。
- if(a.kind==='diode'&&d!==a.forward)return false
- if(b.kind==='diode'&&OPP[d]!==b.input)return false
- return true}
-function trace(){const [sx,sy]=startKey.split(',').map(Number),q=[[sx,sy]],seen=new Set([startKey]),edges=[];let guard=0;while(q.length&&guard++<1000){const[x,y]=q.shift();for(let d=0;d<4;d++)if(canFlow(x,y,d)){const nx=x+DIRS[d][0],ny=y+DIRS[d][1],nk=K(nx,ny);edges.push([x,y,nx,ny]);if(!seen.has(nk)){seen.add(nk);q.push([nx,ny])}}}return{seen,edges}}
+
+function validateBranchNumberStructure(L,solutionBranches){
+ const issues=[];
+ const onePortSolutionWires=[];
+ for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){
+   const t=board[y][x];
+   if(t?.kind==='wire'&&!t.decoy&&Array.isArray(t.ports)&&t.ports.length===1)onePortSolutionWires.push(K(x,y));
+ }
+ if(onePortSolutionWires.length)issues.push(`片側1ポートケーブル ${onePortSolutionWires.join(' / ')}`);
+ const need=solutionBranches.length;
+ const [minT,maxT]=L.difficultyRule.tJunctionRange||[0,0];
+ if(need<minT||need>maxT)issues.push(`T字 ${need}（許容${minT}-${maxT}）`);
+ const counts=new Map();
+ for(const k of required){
+   const[x,y]=k.split(',').map(Number),t=board[y][x];
+   counts.set(t.order,(counts.get(t.order)||0)+1);
+   if(!Array.isArray(t.ports)||t.ports.length!==2)issues.push(`ライト${t.order}@${k}が${t.ports?.length??0}ポート`)
+ }
+ const orderedNumbers=[...counts.keys()].sort((a,b)=>a-b);
+ orderedNumbers.forEach((order,i)=>{if(order!==i+1)issues.push(`ライト番号欠番 ${orderedNumbers.join('→')}`)});
+ for(let order=2;order<=1+need;order++)if((counts.get(order)||0)<2)issues.push(`番号${order}ライトが2個未満`);
+ const fixedT=board.flat().filter(t=>t.kind==='wire'&&t.ports.length===3&&t.fixed).length;
+ if(fixedT)issues.push(`固定T字 ${fixedT}個`);
+ if(issues.length)console.warn(`LEVEL ${level} 分岐構造チェック:`,issues.join(', '));
+ return issues.length===0
+}
+
+function validateEffectiveBridges(){
+ const issues=[];
+ function connectedStep(x,y,d){
+   const nx=x+DIRS[d][0],ny=y+DIRS[d][1];
+   if(!insideBoard(nx,ny))return false;
+   return board[y][x]?.ports?.includes(d)&&board[ny][nx]?.ports?.includes(OPP[d]);
+ }
+ function axisDepth(x,y,d,need=2){
+   let cx=x,cy=y;
+   for(let i=0;i<need;i++){
+     if(!connectedStep(cx,cy,d))return false;
+     cx+=DIRS[d][0];cy+=DIRS[d][1];
+   }
+   return true
+ }
+ for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){
+   const t=board[y][x];
+   if(!t||t.kind!=='bridge')continue;
+   if(!t.effectiveBridge){issues.push(`${K(x,y)}:片軸/未認定`);continue}
+   const h=axisDepth(x,y,1,2)&&axisDepth(x,y,3,2);
+   const v=axisDepth(x,y,0,2)&&axisDepth(x,y,2,2);
+   if(!h||!v)issues.push(`${K(x,y)}:${h?'H':'-'}${v?'V':'-'}`)
+ }
+ if(issues.length)console.warn(`LEVEL ${level} 立体交差実交差チェック:`,issues);
+ return issues.length===0
+}
+function insideBoard(x,y){return x>=0&&y>=0&&x<COLS&&y<ROWS}
+
+function validateMeaningfulTJunctions(){
+  const issues=[];
+  for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){
+    const t=board[y][x];
+    if(!t||t.kind!=='wire'||!Array.isArray(t.ports)||t.ports.length!==3)continue;
+    // A legitimate T comes from the real solution map, never from a dummy filler.
+    if(t.decoy)issues.push(K(x,y));
+  }
+  if(issues.length)console.warn('意味のないT字ダミーを検出:',issues);
+  return issues.length===0
+}
+
+function rotatePorts(t,turns=1){for(let i=0;i<turns;i++){t.ports=t.ports.map(d=>(d+1)%4);if(Number.isInteger(t.forward))t.forward=(t.forward+1)%4;if(Number.isInteger(t.input))t.input=(t.input+1)%4}t.rotation=(t.rotation+turns)%4}
+function effectivePorts(x,y){return board[y][x].ports}
+function canFlow(x,y,d){
+ const nx=x+DIRS[d][0],ny=y+DIRS[d][1];if(nx<0||ny<0||nx>=COLS||ny>=ROWS)return false;
+ const a=board[y][x],b=board[ny][nx],ap=effectivePorts(x,y),bp=effectivePorts(nx,ny);
+ if(!ap.includes(d)||!bp.includes(OPP[d]))return false;
+ if(a.kind==='diode'&&d!==a.forward)return false;
+ if(b.kind==='diode'&&OPP[d]!==b.input)return false;
+ return true
+}
+function tracePass(){
+ const [sx,sy]=startKey.split(',').map(Number),q=[[sx,sy,-1]],seen=new Set([startKey]),states=new Set(),edges=[];let guard=0;
+ while(q.length&&guard++<7000){
+   const[x,y,inDir]=q.shift(),stateKey=`${x},${y}|${inDir}`;if(states.has(stateKey))continue;states.add(stateKey);
+   const t=board[y][x];let dirs=[0,1,2,3];if(t.kind==='bridge'&&inDir>=0)dirs=[OPP[inDir]];
+   for(const d of dirs)if(canFlow(x,y,d)){const nx=x+DIRS[d][0],ny=y+DIRS[d][1],nk=K(nx,ny);edges.push([x,y,nx,ny]);seen.add(nk);q.push([nx,ny,OPP[d]])}
+ }
+ return{seen,edges}
+}
+function trace(){return tracePass()}
 function orderedDistances(){const t=trace(),adj=new Map();for(const[a,b,c,d] of t.edges){const k1=K(a,b),k2=K(c,d);if(!adj.has(k1))adj.set(k1,[]);adj.get(k1).push(k2)}const q=[startKey],dist=new Map([[startKey,0]]);while(q.length){const k=q.shift(),base=dist.get(k);for(const nk of adj.get(k)||[])if(!dist.has(nk)&&t.seen.has(nk)){dist.set(nk,base+1);q.push(nk)}}return dist}
+function currentIncompleteOrder(){
+ const orders=[...new Set(required.map(k=>{const[x,y]=k.split(',').map(Number);return Number(board[y][x].order)||1}))].sort((a,b)=>a-b);
+ for(const order of orders){
+   const group=required.filter(k=>{const[x,y]=k.split(',').map(Number);return (Number(board[y][x].order)||1)===order});
+   if(!group.every(k=>{const[x,y]=k.split(',').map(Number);return board[y][x].charged}))return order
+ }
+ return null
+}
+function gateVisibleFlow(raw){
+ const adj=new Map();
+ for(const e of raw.edges){
+   const[a,b,c,d]=e,k1=K(a,b),k2=K(c,d);
+   if(!adj.has(k1))adj.set(k1,[]);
+   adj.get(k1).push({k:k2,e})
+ }
+ const seen=new Set([startKey]),edges=[],q=[startKey];
+ while(q.length){
+   const k=q.shift(),[x,y]=k.split(',').map(Number),tileHere=board[y][x];
+   // 未点灯の必須ライトに到達したら、表示上の電流はそこで止める。
+   if(tileHere?.kind==='lamp'&&tileHere.required&&!tileHere.charged)continue;
+   for(const item of adj.get(k)||[]){
+     edges.push(item.e);
+     if(!seen.has(item.k)){seen.add(item.k);q.push(item.k)}
+   }
+ }
+ return{seen,edges}
+}
 function checkCircuit(){
- const t=trace();connectedSet=t.seen;flowEdges=t.edges;const L=getLevel(level);
- // ライトの点灯順は updateCharging() が「直前の番号が点灯済みか」で保証する。
- // 経路距離で順番を比較すると、十字導線やダミー経路による近道で誤判定するため使用しない。
- const lampsOK=required.every(k=>board[Number(k.split(',')[1])][Number(k.split(',')[0])].charged);
- const clear=connectedSet.has(endKey)&&lampsOK;
- ui.status.textContent=clear?'ON':'OFF';ui.status.style.color=clear?'#ffe34d':'#fff';
- if(clear&&!busy&&!completionQueued){completionQueued=true;complete()}draw()
+ const raw=trace();rawConnectedSet=raw.seen;rawFlowEdges=raw.edges;
+ const gated=gateVisibleFlow(raw);connectedSet=gated.seen;flowEdges=gated.edges;
+ const lampsOK=required.every(k=>{
+   const[x,y]=k.split(',').map(Number),lamp=board[y][x];
+   return rawConnectedSet.has(k)&&lamp.charged
+ });
+ const clear=rawConnectedSet.has(endKey)&&lampsOK;
+ ui.status.textContent='';
+ if(clear&&!busy&&!completionQueued){completionQueued=true;complete()}
+ draw()
 }
 function updateCharging(dt){
- if(busy)return;const L=getLevel(level);let changed=false;
- const dist=orderedDistances();
- for(let i=0;i<required.length;i++){
-   const k=required[i],[x,y]=k.split(',').map(Number),lamp=board[y][x];if(lamp.charged)continue;
-   const previousOK=i===0||board[Number(required[i-1].split(',')[1])][Number(required[i-1].split(',')[0])].charged;
-   const orderOK=!L.ordered||previousOK;
-   if(connectedSet.has(k)&&orderOK){lamp.charge+=dt;if(lamp.charge>=(L.chargeMs||1)){lamp.charged=true;lamp.charge=L.chargeMs||1;changed=true;sfx('lamp');ui.msg.textContent=`ライト ${lamp.order||i+1} を点灯しました！`}}
-   else if(!lamp.charged)lamp.charge=Math.max(0,lamp.charge-dt*.75)
+ if(busy)return;
+ const delay=520;
+ let changed=false;
+ const groups=new Map();
+ for(const k of required){
+   const[x,y]=k.split(',').map(Number),lamp=board[y][x],order=Number(lamp.order)||1;
+   if(!groups.has(order))groups.set(order,[]);
+   groups.get(order).push({k,lamp})
+ }
+ const orders=[...groups.keys()].sort((a,b)=>a-b);
+ let activeOrder=null;
+ for(const order of orders){
+   if(!groups.get(order).every(({lamp})=>lamp.charged)){activeOrder=order;break}
+ }
+
+ // 前段が切れた場合、その番号以降は消灯して再ロック。
+ let previousBroken=false;
+ for(const order of orders){
+   const group=groups.get(order),allRawConnected=group.every(({k})=>rawConnectedSet.has(k));
+   if(previousBroken||(!allRawConnected&&group.some(({lamp})=>lamp.charged))){
+     previousBroken=true;
+     for(const {lamp} of group){
+       if(lamp.charged||lamp.charge>0)changed=true;
+       lamp.charged=false;lamp.charge=0
+     }
+   }
+ }
+ if(previousBroken){
+   activeOrder=null;
+   for(const order of orders){if(!groups.get(order).every(({lamp})=>lamp.charged)){activeOrder=order;break}}
+ }
+
+ for(const order of orders){
+   const group=groups.get(order);
+   if(order!==activeOrder){
+     if(activeOrder!==null&&order>activeOrder){
+       for(const {lamp} of group)if(lamp.charge>0){lamp.charge=0;changed=true}
+     }
+     continue
+   }
+   const allConnected=group.every(({k})=>rawConnectedSet.has(k));
+   if(!allConnected){
+     for(const {lamp} of group){if(lamp.charge>0){lamp.charge=0;changed=true}}
+     continue
+   }
+   let newlyCompleted=false;
+   for(const {lamp} of group){
+     if(!lamp.charged){
+       lamp.charge=Math.min(delay,lamp.charge+dt);
+       if(lamp.charge>=delay){lamp.charged=true;changed=true;newlyCompleted=true}
+     }
+   }
+   if(newlyCompleted&&group.every(({lamp})=>lamp.charged)){
+     sfx('lamp');
+     ui.msg.textContent=`ライト ${order} がすべて点灯しました！`
+   }
  }
  if(changed)checkCircuit()
 }
-async function complete(){busy=true;sfx('clear');ui.msg.textContent='すべてのライトが点灯しました！';for(let i=0;i<8;i++){for(const k of connectedSet){const[x,y]=k.split(',').map(Number);board[y][x].flash=i%2?.3:1}draw();await wait(90)}for(const row of board)for(const t of row)t.flash=0;const nextLevel=Math.min(levelDefs.length,level+1);unlocked=Math.max(unlocked,nextLevel);localStorage.setItem('electricLinkV06Unlocked',String(unlocked));buildTabs();ui.clear.innerHTML=`LEVEL ${level} CLEAR！<br>すべてのライトを点灯し、ゴールへ届けました。${level<levelDefs.length?'<br><span class="unlock">LEVEL '+(level+1)+' を解放しました。</span>':'<br>全レベルクリアです！'}`;$('next').textContent=level<levelDefs.length?'次のレベルへ':'LEVEL 1へ';ui.overlay.classList.add('show');busy=false}
+async function complete(){busy=true;clearedStages.add(level);saveClearedStages();sfx('clear');ui.msg.textContent='すべてのライトとゴールに同時に通電しました！';for(let i=0;i<8;i++){for(const k of connectedSet){const[x,y]=k.split(',').map(Number);board[y][x].flash=i%2?.3:1}draw();await wait(90)}for(const row of board)for(const t of row)t.flash=0;const isFinal=level===levelDefs.length;const nextLevel=Math.min(levelDefs.length,level+1);unlocked=Math.max(unlocked,nextLevel);localStorage.setItem('electricLinkV06Unlocked',String(unlocked));buildTabs();if(typeof buildMenuStages==='function')buildMenuStages();if(!isFinal){
+ ui.clear.innerHTML=`LEVEL ${level} CLEAR！<br>すべてのライトとゴールへ同時に通電しました。<br><span class="unlock">LEVEL ${level+1} を解放しました。</span>`;
+ $('next').textContent='次のレベルへ';
+}else{
+ const lap=generationCycle+1,nextLap=lap+1;
+ ui.clear.innerHTML=`<strong style="font-size:1.15em">ALL STAGES COMPLETE!</strong><br>${lap===1?'100ステージクリア！':lap+'周目 COMPLETE!'}<br><span class="unlock">新しい回路が生成されます。</span>`;
+ $('next').textContent=`${nextLap}周目へ`;
+}ui.overlay.classList.add('show');requestBoardRefit();busy=false}
 function wait(ms){return new Promise(r=>setTimeout(r,ms))}
-function interact(x,y){if(busy)return;const t=board[y]?.[x];if(!t||t.kind==='empty'||t.kind==='plus'||t.kind==='minus'||t.kind==='lamp')return;if(t.kind==='wire'||t.kind==='diode'){rotatePorts(t);moves++;sfx('rotate');ui.msg.textContent=t.kind==='diode'?'一方通行パネルの向きを変更しました':'ケーブルを回転しました'}else if(t.kind==='threeway'){const next=1-t.state;if(t.group){for(const row of board)for(const p of row)if(p.kind==='threeway'&&p.group===t.group)p.state=next;ui.msg.textContent=`連動グループ ${t.group} を一斉切替：出口 ${next===0?'A':'B'}`}else{t.state=next;ui.msg.textContent=`ルートチェンジャー：出口 ${next===0?'A':'B'}`}moves++;sfx('switch')}selected={x,y};updateInfo();checkCircuit()}
-function updateInfo(){const L=getLevel(level);ui.stage.textContent=level;ui.moves.textContent=moves;ui.icon.textContent=L.icon;ui.name.textContent=L.name;ui.rule.textContent=L.rule;ui.goal.textContent=L.goal;ui.how.textContent=L.how}
-function buildTabs(){ui.tabs.innerHTML='';levelDefs.forEach((D,i)=>{const b=document.createElement('button');b.textContent=`${i+1}`;b.title=D.name;b.className=(i+1===level?'active ':'')+(i+1>unlocked?'locked':'');b.disabled=i+1>unlocked;b.addEventListener('click',()=>buildLevel(i+1,{manual:true}));ui.tabs.appendChild(b)})}
+function interact(x,y){if(busy)return;const t=board[y]?.[x];if(!t||t.kind==='empty'||t.kind==='plus'||t.kind==='minus'||t.kind==='lamp'||t.kind==='bridge')return;if(t.fixed){selected={x,y};sfx('blocked');ui.msg.textContent='🔒 このブロックは固定されているため回転できません';draw();return}if(t.kind==='wire'||t.kind==='diode'){rotatePorts(t);moves++;sfx('rotate');ui.msg.textContent=t.kind==='diode'?'一方通行パネルの向きを変更しました':'ケーブルを回転しました'}selected={x,y};updateInfo();checkCircuit()}
+function updateInfo(){const R=getDifficultyRule(level),fixed=board.flat().filter(t=>t.fixed).length;ui.stage.textContent=level;
+ if(ui.lap){
+   const lap=generationCycle+1;
+   ui.lap.textContent=`${lap}周目`;
+   ui.lap.classList.toggle('hidden',lap<=1);
+ }
+ ui.moves.textContent=moves;ui.icon.textContent=level>=7?'🔒':getLevel(level).icon;ui.name.textContent=level>=7?`${getLevel(level).name}（${COLS}×${ROWS}）`:getLevel(level).name;ui.rule.textContent=level>=7?`${getLevel(level).rule} 鍵付きブロックは回転できません。`:getLevel(level).rule;ui.goal.textContent=getLevel(level).goal+`／盤面 ${COLS}×${ROWS}${fixed?`／固定 ${fixed}個`:''}／${R.label}：T字${R.tJunctionRange[0]}〜${R.tJunctionRange[1]}・立体交差0〜${R.bridgeRange[1]}（縦横2系統が成立した交差点のみ）・一方通行${R.diodeRange[0]}〜${R.diodeRange[1]}（品質優先）`;ui.how.textContent=getLevel(level).how}
+function buildTabs(){
+ ui.tabs.innerHTML='';
+ const pages=Math.ceil(levelDefs.length/10);
+ stageTabPage=Math.max(0,Math.min(pages-1,stageTabPage));
+ const start=stageTabPage*10,end=Math.min(levelDefs.length,start+10);
+ const prev=document.createElement('button');prev.textContent='◀';prev.title='前の10 LEVEL';prev.disabled=stageTabPage===0;prev.addEventListener('click',()=>{stageTabPage--;buildTabs()});ui.tabs.appendChild(prev);
+ for(let i=start;i<end;i++){
+   const D=levelDefs[i],b=document.createElement('button');
+   b.textContent=`${i+1}`;b.title=D.name;
+   b.className=(i+1===level?'active ':'')+(clearedStages.has(i+1)?'cleared ':'')+(i+1>unlocked?'locked':'');
+   b.disabled=i+1>unlocked;
+   b.addEventListener('click',()=>buildLevel(i+1,{manual:true}));ui.tabs.appendChild(b)
+ }
+ const next=document.createElement('button');next.textContent='▶';next.title='次の10 LEVEL';next.disabled=stageTabPage>=pages-1||start+10>=Math.max(unlocked,10);next.addEventListener('click',()=>{stageTabPage++;buildTabs()});ui.tabs.appendChild(next);
+ requestBoardRefit()
+}
 function showToast(s){ui.toast.textContent=s;ui.toast.classList.add('show');setTimeout(()=>ui.toast.classList.remove('show'),1300)}
+function bridgeAxisActivity(x,y){
+ const state={vertical:false,horizontal:false};
+ for(const e of flowEdges){
+   const[a,b,c,d]=e;
+   if(!((a===x&&b===y)||(c===x&&d===y)))continue;
+   if(a===c)state.vertical=true;
+   if(b===d)state.horizontal=true;
+   if(state.vertical&&state.horizontal)break;
+ }
+ return state
+}
 function draw(){ctx.clearRect(0,0,cv.width,cv.height);const bg=ctx.createLinearGradient(0,0,0,cv.height);bg.addColorStop(0,'#0b2031');bg.addColorStop(1,'#040b12');ctx.fillStyle=bg;ctx.fillRect(0,0,cv.width,cv.height);for(let y=0;y<ROWS;y++)for(let x=0;x<COLS;x++){ctx.strokeStyle='#17364a';ctx.strokeRect(x*CELL+.5,y*CELL+.5,CELL-1,CELL-1);drawTile(x,y,board[y][x],connectedSet.has(K(x,y)))}drawParticles();ctx.strokeStyle='#65f3ff';ctx.lineWidth=3;ctx.strokeRect(selected.x*CELL+5,selected.y*CELL+5,CELL-10,CELL-10)}
-function drawTile(x,y,t,active){if(t.kind==='empty')return;const px=x*CELL,py=y*CELL,z=CELL-10,mid=CELL/2,hot=t.flash||0;ctx.save();ctx.translate(px+5,py+5);ctx.shadowColor=hot?'#ffe34d':active?'#64eafa':t.kind==='plus'?'#e53935':t.kind==='minus'?'#1e88e5':t.kind==='threeway'?'#a86dff':'#cfdce5';ctx.shadowBlur=hot?28:active?15:7;ctx.fillStyle=t.kind==='plus'?'#d83232':t.kind==='minus'?'#176fbd':t.kind==='threeway'?'#7142b7':t.kind==='lamp'?(t.charged?'#ffd83d':'#514a31'):t.kind==='diode'?'#d7dce2':active?'#63dcea':'#9badb9';round(0,0,z,z,11);ctx.fill();ctx.strokeStyle=hot?'#fffbd0':'#ffffff70';ctx.lineWidth=2;ctx.stroke();ctx.translate(z/2,z/2);ctx.lineCap='round';ctx.lineWidth=10;ctx.strokeStyle=hot?'#fff5a0':active?'#eaffff':'#172b37';for(const d of effectivePorts(x,y)){const[dx,dy]=DIRS[d];ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(dx*z*.5,dy*z*.5);ctx.stroke()}ctx.fillStyle=ctx.strokeStyle;ctx.beginPath();ctx.arc(0,0,9,0,Math.PI*2);ctx.fill();
+function drawTile(x,y,t,active){if(t.kind==='empty')return;const px=x*CELL,py=y*CELL,z=CELL-10,mid=CELL/2,hot=t.flash||0,bridgeTile=t.kind==='bridge';ctx.save();ctx.translate(px+5,py+5);ctx.shadowColor=hot?'#ffe34d':(!bridgeTile&&active)?'#64eafa':t.kind==='plus'?'#e53935':t.kind==='minus'?'#1e88e5':'#cfdce5';ctx.shadowBlur=hot?28:(!bridgeTile&&active)?15:7;ctx.fillStyle=t.kind==='plus'?'#d83232':t.kind==='minus'?'#176fbd':t.kind==='lamp'?(t.charged?'#ffd83d':'#514a31'):t.kind==='diode'?'#d7dce2':bridgeTile?'#7f929e':active?'#63dcea':'#9badb9';round(0,0,z,z,11);ctx.fill();ctx.strokeStyle=hot?'#fffbd0':'#ffffff70';ctx.lineWidth=2;ctx.stroke();ctx.translate(z/2,z/2);ctx.lineCap='round';ctx.lineWidth=10;ctx.strokeStyle=hot?'#fff5a0':active?'#eaffff':'#172b37';
+ if(t.kind==='bridge'){
+   const axis=bridgeAxisActivity(x,y),vOn=axis.vertical,hOn=axis.horizontal;
+   // 立体交差は軸ごとに独立通電。セル全体のactiveでは発光させない。
+   ctx.shadowBlur=0;
+   // 地下配線：横。横軸に実際の電流が流れた時だけ発光。
+   ctx.fillStyle='#04101a';ctx.fillRect(-z*.5,-10,z,20);
+   ctx.shadowColor=hOn?'#64eafa':'transparent';ctx.shadowBlur=hOn?10:0;
+   ctx.strokeStyle=hOn?'#63dcea':'#40677a';ctx.lineWidth=6;ctx.setLineDash([9,7]);ctx.beginPath();ctx.moveTo(-z*.5,0);ctx.lineTo(z*.5,0);ctx.stroke();ctx.setLineDash([]);
+   ctx.shadowBlur=0;ctx.fillStyle=hOn?'#9df7ff':'#6c8794';ctx.beginPath();ctx.arc(-z*.42,0,5,0,Math.PI*2);ctx.arc(z*.42,0,5,0,Math.PI*2);ctx.fill();
+   // 地上配線：縦。縦軸に実際の電流が流れた時だけ発光。
+   ctx.shadowColor=vOn?'#64eafa':'transparent';ctx.shadowBlur=vOn?12:0;ctx.strokeStyle=vOn?'#eaffff':'#172b37';ctx.lineWidth=11;ctx.beginPath();ctx.moveTo(0,-z*.5);ctx.lineTo(0,z*.5);ctx.stroke();ctx.shadowBlur=0;
+   // 中央は絶縁・非接続を示す暗色を維持。
+   ctx.fillStyle='#07131d';ctx.beginPath();ctx.arc(0,0,7,0,Math.PI*2);ctx.fill();
+   ctx.font='900 8px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle=hOn?'#bffcff':'#7994a2';ctx.fillText('UNDER',0,14);
+ }else for(const d of effectivePorts(x,y)){const[dx,dy]=DIRS[d];ctx.beginPath();ctx.moveTo(0,0);ctx.lineTo(dx*z*.5,dy*z*.5);ctx.stroke()}if(t.kind!=='bridge'){ctx.fillStyle=ctx.strokeStyle;ctx.beginPath();ctx.arc(0,0,9,0,Math.PI*2);ctx.fill();}
  if(t.kind==='plus'||t.kind==='minus'){ctx.fillStyle=t.kind==='plus'?'#e53935':'#1e88e5';ctx.beginPath();ctx.arc(0,0,17,0,Math.PI*2);ctx.fill();ctx.fillStyle='#fff';ctx.font='900 29px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='900 25px system-ui';ctx.fillText(t.kind==='plus'?'⚡':'🏁',0,-1)}
- if(t.kind==='threeway'){ctx.fillStyle='#fff';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='900 13px system-ui';ctx.fillText(t.group||'単',0,-7);ctx.font='900 12px system-ui';ctx.fillText(t.state===0?'出口A':'出口B',0,10)}
- if(t.kind==='lamp'){const lit=t.charged;ctx.fillStyle=lit?'#fff4a0':'#d0c9a0';ctx.beginPath();ctx.arc(0,-3,15,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#4b4020';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(-9,16);ctx.lineTo(9,16);ctx.stroke();if(t.required&&t.order){ctx.fillStyle=lit?'#422f00':'#fff';ctx.beginPath();ctx.arc(17,-17,10,0,Math.PI*2);ctx.fill();ctx.fillStyle=lit?'#fff':'#14202a';ctx.font='900 12px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(t.order),17,-17)}if(t.required&&!t.charged&&getLevel(level).chargeMs>0&&t.charge>0){const ratio=Math.min(1,t.charge/getLevel(level).chargeMs);ctx.strokeStyle='#ffe34d';ctx.lineWidth=4;ctx.beginPath();ctx.arc(0,-3,22,-Math.PI/2,-Math.PI/2+Math.PI*2*ratio);ctx.stroke()}}
+ if(t.kind==='lamp'){
+   const lit=t.charged,charging=active&&!lit&&t.charge>0;
+   ctx.fillStyle=lit?'#fff4a0':charging?'#ffe073':'#d0c9a0';
+   ctx.beginPath();ctx.arc(0,-3,15,0,Math.PI*2);ctx.fill();
+   ctx.strokeStyle='#4b4020';ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(-9,16);ctx.lineTo(9,16);ctx.stroke();
+   if(charging){
+     const pulse=(Math.sin(performance.now()/85)+1)/2;
+     ctx.strokeStyle=`rgba(255,227,77,${0.45+0.45*pulse})`;
+     ctx.lineWidth=4+2*pulse;
+     ctx.beginPath();ctx.arc(0,-3,22+3*pulse,0,Math.PI*2);ctx.stroke();
+     ctx.fillStyle='#fff4b0';ctx.beginPath();ctx.arc(0,-3,4+2*pulse,0,Math.PI*2);ctx.fill()
+   }
+   if(t.order){
+     ctx.fillStyle=lit?'#ffe34d':'#ffffff';
+     ctx.beginPath();ctx.arc(18,-18,11,0,Math.PI*2);ctx.fill();
+     ctx.fillStyle='#12202a';ctx.font='900 12px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';
+     ctx.fillText(String(t.order),18,-18)
+   }
+ }
  if(t.kind==='diode'){const dir=Number.isInteger(t.forward)?t.forward:1;const marks=['▲','▶','▼','◀'];ctx.fillStyle=active?'#ffffff':'#173342';ctx.font='900 38px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(marks[dir],0,0);ctx.font='900 10px system-ui';ctx.fillStyle=active?'#dfffff':'#234b60';ctx.fillText('ONE WAY',0,23)}
+ if(t.fixed){ctx.save();ctx.shadowBlur=0;ctx.fillStyle='#07131ddd';ctx.beginPath();ctx.arc(z/2-9,-z/2+9,12,0,Math.PI*2);ctx.fill();ctx.font='15px system-ui';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('🔒',z/2-9,-z/2+9);ctx.restore()}
  ctx.restore()}
 function round(x,y,w,h,r){ctx.beginPath();if(ctx.roundRect)ctx.roundRect(x,y,w,h,r);else ctx.rect(x,y,w,h)}
-function drawParticles(){if(busy||level>=9)return;const now=performance.now()/1000;ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=level<=4?.8:.18;for(let i=0;i<flowEdges.length;i++){const[a,b,c,d]=flowEdges[i],phase=(now*1.4-i*.13)%1,px=(a+.5+(c-a)*phase)*CELL,py=(b+.5+(d-b)*phase)*CELL;ctx.shadowColor='#a7fbff';ctx.shadowBlur=14;ctx.fillStyle='#e9ffff';ctx.beginPath();ctx.arc(px,py,level<=4?4:2.5,0,Math.PI*2);ctx.fill()}ctx.restore()}
+function drawParticles(){if(busy)return;const now=performance.now()/1000;ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=level<=4?.82:level<=12?.62:.48;for(let i=0;i<flowEdges.length;i++){const[a,b,c,d]=flowEdges[i],phase=(now*1.4-i*.13)%1,px=(a+.5+(c-a)*phase)*CELL,py=(b+.5+(d-b)*phase)*CELL;ctx.shadowColor='#a7fbff';ctx.shadowBlur=14;ctx.fillStyle='#e9ffff';ctx.beginPath();ctx.arc(px,py,level<=4?4:level<=12?3.3:2.8,0,Math.PI*2);ctx.fill()}ctx.restore()}
 
-function showTutorial(n){tutorialLevel=n;buildLevel(n,{manual:true,skipTutorial:true});const L=getLevel(n);$('tutorialTitle').textContent=`LEVEL ${n}：${L.name}`;$('tutorialText').innerHTML=`<b>${L.intro}</b><br><span style="color:#9db8c7">${L.demo}</span><br><br><span style="color:#ffe34d;font-weight:900">デモ確認後、「ゲーム開始」で全マスが埋まった実戦盤面を遊べます。</span>`;$('demoStatus').textContent='▶ デモを見ると動きを確認できます';$('tutorial').classList.add('show');drawDemoStatic(n)}
+
+function previewRound(c,x,y,w,h,r){c.beginPath();if(c.roundRect)c.roundRect(x,y,w,h,r);else c.rect(x,y,w,h)}
+function drawActualBlock(c,cx,cy,size,spec,active=false,rotation=0){
+ const z=size-10;
+ c.save();c.translate(cx-size/2+5,cy-size/2+5);
+ c.shadowColor=active?'#64eafa':spec.kind==='plus'?'#e53935':spec.kind==='minus'?'#1e88e5':'#cfdce5';
+ c.shadowBlur=active?15:7;
+ c.fillStyle=spec.kind==='plus'?'#d83232':spec.kind==='minus'?'#176fbd':spec.kind==='lamp'?(spec.charged?'#ffd83d':'#514a31'):spec.kind==='diode'?'#d7dce2':active?'#63dcea':'#9badb9';
+ previewRound(c,0,0,z,z,11);c.fill();c.strokeStyle='#ffffff70';c.lineWidth=2;c.stroke();
+ c.translate(z/2,z/2);c.rotate(rotation);c.lineCap='round';c.lineJoin='round';c.lineWidth=10;c.strokeStyle=active?'#eaffff':'#172b37';
+ if(spec.kind==='bridge'){
+   const wireColor=c.strokeStyle;c.shadowBlur=0;c.fillStyle='#04101a';c.fillRect(-z*.5,-10,z,20);
+   c.strokeStyle=active?'#63dcea':'#40677a';c.lineWidth=6;c.setLineDash([9,7]);c.beginPath();c.moveTo(-z*.5,0);c.lineTo(z*.5,0);c.stroke();c.setLineDash([]);
+   c.fillStyle=active?'#9df7ff':'#6c8794';c.beginPath();c.arc(-z*.42,0,5,0,Math.PI*2);c.arc(z*.42,0,5,0,Math.PI*2);c.fill();
+   c.strokeStyle=wireColor;c.lineWidth=11;c.beginPath();c.moveTo(0,-z*.5);c.lineTo(0,z*.5);c.stroke();
+   c.fillStyle='#07131d';c.beginPath();c.arc(0,0,7,0,Math.PI*2);c.fill();
+   c.font='900 8px system-ui';c.textAlign='center';c.textBaseline='middle';c.fillStyle=active?'#bffcff':'#7994a2';c.fillText('UNDER',0,14)
+ }else{
+   const ports=spec.ports||[];
+   for(const d of ports){const[dx,dy]=DIRS[d];c.beginPath();c.moveTo(0,0);c.lineTo(dx*z*.5,dy*z*.5);c.stroke()}
+   if(!['plus','minus','lamp','diode'].includes(spec.kind)){c.fillStyle=c.strokeStyle;c.beginPath();c.arc(0,0,9,0,Math.PI*2);c.fill()}
+ }
+ if(spec.kind==='plus'||spec.kind==='minus'){
+   c.fillStyle=spec.kind==='plus'?'#e53935':'#1e88e5';c.beginPath();c.arc(0,0,17,0,Math.PI*2);c.fill();
+   c.fillStyle='#fff';c.font='900 25px system-ui';c.textAlign='center';c.textBaseline='middle';c.fillText(spec.kind==='plus'?'⚡':'🏁',0,-1)
+ }
+ if(spec.kind==='lamp'){
+   c.fillStyle=spec.charged?'#fff4a0':'#d0c9a0';c.beginPath();c.arc(0,-3,15,0,Math.PI*2);c.fill();
+   c.strokeStyle='#4b4020';c.lineWidth=4;c.beginPath();c.moveTo(-9,16);c.lineTo(9,16);c.stroke();
+   c.fillStyle='#fff';c.beginPath();c.arc(17,-17,10,0,Math.PI*2);c.fill();c.fillStyle='#14202a';c.font='900 12px system-ui';c.textAlign='center';c.textBaseline='middle';c.fillText(String(spec.order||1),17,-17)
+ }
+ if(spec.kind==='diode'){
+   const dir=spec.forward??2,marks=['▲','▶','▼','◀'];c.fillStyle=active?'#fff':'#173342';c.font='900 34px system-ui';c.textAlign='center';c.textBaseline='middle';c.fillText(marks[dir],0,0);
+   c.font='900 8px system-ui';c.fillStyle=active?'#dfffff':'#234b60';c.fillText('ONE WAY',0,22)
+ }
+ if(spec.fixed){
+   c.shadowBlur=0;c.fillStyle='#07131ddd';c.beginPath();c.arc(z/2-9,-z/2+9,12,0,Math.PI*2);c.fill();c.font='15px system-ui';c.textAlign='center';c.textBaseline='middle';c.fillText('🔒',z/2-9,-z/2+9)
+ }
+ c.restore()
+}
+function bookPreviewSpec(type){
+ if(type==='power')return{kind:'plus',ports:[2]};
+ if(type==='goal')return{kind:'minus',ports:[0]};
+ if(type==='cable')return{kind:'wire',ports:[0,1]};
+ if(type==='branch')return{kind:'wire',ports:[0,1,3]};
+ if(type==='lamp')return{kind:'lamp',ports:[0,2],charged:true,order:1};
+ if(type==='diode')return{kind:'diode',ports:[0,2],forward:2};
+ if(type==='fixed')return{kind:'wire',ports:[0,1],fixed:true};
+ return{kind:'bridge',ports:[0,1,2,3]}
+}
+function renderBookPreview(canvas,type){
+ const c=canvas.getContext('2d');c.clearRect(0,0,canvas.width,canvas.height);
+ const g=c.createLinearGradient(0,0,0,canvas.height);g.addColorStop(0,'#0b2031');g.addColorStop(1,'#040b12');c.fillStyle=g;c.fillRect(0,0,canvas.width,canvas.height);
+ drawActualBlock(c,canvas.width/2,canvas.height/2,70,bookPreviewSpec(type),false,0)
+}
+function demoSpecForLevel(n){
+ const L=getLevel(n);if(n>=11)return bookPreviewSpec('bridge');if(L.feature==='diode')return bookPreviewSpec('diode');if(n>=6)return bookPreviewSpec('fixed');return bookPreviewSpec('cable')
+}
+
+function showTutorial(n){return;tutorialLevel=n;buildLevel(n,{manual:true,skipTutorial:true});const L=getLevel(n);$('tutorialTitle').textContent=`LEVEL ${n}：${L.name}`;$('tutorialText').innerHTML=`<b>${L.intro}</b><br><span style="color:#9db8c7">${L.demo}</span><br><br><span style="color:#ffe34d;font-weight:900">デモ確認後、「ゲーム開始」で全マスが埋まった実戦盤面を遊べます。</span>`;$('demoStatus').textContent='▶ デモを見ると動きを確認できます';$('tutorial').classList.add('show');drawDemoStatic(n)}
 function drawDemoBase(){dctx.clearRect(0,0,demoCv.width,demoCv.height);const g=dctx.createLinearGradient(0,0,0,150);g.addColorStop(0,'#0d2638');g.addColorStop(1,'#050d15');dctx.fillStyle=g;dctx.fillRect(0,0,360,150);dctx.lineCap='round';dctx.lineJoin='round'}
 function demoWire(x1,y1,x2,y2,on=true){dctx.strokeStyle=on?'#73ecff':'#435965';dctx.shadowColor=on?'#73ecff':'transparent';dctx.shadowBlur=on?12:0;dctx.lineWidth=12;dctx.beginPath();dctx.moveTo(x1,y1);dctx.lineTo(x2,y2);dctx.stroke();dctx.shadowBlur=0}
-function demoType(n){const f=getLevel(n).feature;return f==='cable'?1:f==='diode'?3:f==='threeway'||f==='linked'||f==='mixed'?5:4}
-function drawDemoStatic(n){n=demoType(n);drawDemoBase();dctx.font='900 26px system-ui';dctx.textAlign='center';dctx.textBaseline='middle';if(n===1){demoWire(45,75,150,75,false);demoWire(210,75,315,75,false);dctx.fillStyle='#dbe9ef';dctx.fillText('┗',180,75)}else if(n===2){demoWire(35,75,135,75,false);demoWire(225,75,325,75,false);dctx.fillStyle='#788a94';dctx.fillText('OFF',180,75)}else if(n===3){demoWire(35,75,125,75,false);demoWire(235,75,325,75,false);dctx.fillStyle='#d7dce2';dctx.fillRect(135,42,90,66);dctx.fillStyle='#263845';dctx.font='900 40px system-ui';dctx.fillText('▼',180,75);dctx.font='900 13px system-ui';dctx.fillText('この向きだけ通る',180,126)}else if(n===4){demoWire(35,75,135,75,false);demoWire(225,75,325,75,false);dctx.font='46px system-ui';dctx.fillText('💡',180,75)}else{demoWire(35,75,140,75,false);dctx.strokeStyle='#9e70df';dctx.lineWidth=10;dctx.beginPath();dctx.moveTo(140,75);dctx.lineTo(220,45);dctx.stroke();dctx.beginPath();dctx.moveTo(140,75);dctx.lineTo(220,105);dctx.stroke();dctx.fillStyle='#fff';dctx.font='900 18px system-ui';dctx.fillText('A',245,45);dctx.fillText('B',245,105)}}
-async function playDemo(){if(demoRunning)return;demoRunning=true;$('playDemo').disabled=true;const n=demoType(tutorialLevel);$('demoStatus').textContent='デモ再生中…';try{for(let f=0;f<90;f++){drawDemoBase();const p=f/89;if(n===1){demoWire(40,75,145,75,p>.45);demoWire(215,75,320,75,p>.45);dctx.save();dctx.translate(180,75);dctx.rotate(Math.min(1,p*2)*Math.PI/2);dctx.fillStyle='#dbe9ef';dctx.font='900 30px system-ui';dctx.textAlign='center';dctx.textBaseline='middle';dctx.fillText('┗',0,0);dctx.restore();if(p>.5)demoParticle(40+(280*((p-.5)*2)%1),75)}else if(n===2){const on=p>.45;demoWire(35,75,135,75,on);demoWire(225,75,325,75,on);dctx.fillStyle=on?'#57d783':'#788a94';dctx.font='900 23px system-ui';dctx.textAlign='center';dctx.textBaseline='middle';dctx.fillText(on?'ON':'OFF',180,75);if(on)demoParticle(35+(290*((p-.45)/.55)%1),75)}else if(n===3){const forward=p<.58;demoWire(35,75,125,75,forward);demoWire(235,75,325,75,forward);dctx.fillStyle='#d7dce2';dctx.fillRect(135,42,90,66);dctx.save();dctx.translate(180,75);if(!forward)dctx.rotate(Math.PI);dctx.fillStyle='#263845';dctx.font='900 40px system-ui';dctx.textAlign='center';dctx.textBaseline='middle';dctx.fillText('▶',0,0);dctx.restore();if(forward){demoParticle(35+290*((p/.58)%1),75);dctx.fillStyle='#9fffb8';dctx.font='900 14px system-ui';dctx.fillText('矢印方向：通る',180,130)}else{dctx.fillStyle='#ff6464';dctx.font='900 52px system-ui';dctx.fillText('×',105,75);dctx.font='900 14px system-ui';dctx.fillText('逆向き：止まる',180,130)}}else if(n===4){const on=p>.4;demoWire(35,75,135,75,on);demoWire(225,75,325,75,on);dctx.shadowColor=on?'#ffe34d':'transparent';dctx.shadowBlur=on?25:0;dctx.font='50px system-ui';dctx.textAlign='center';dctx.textBaseline='middle';dctx.fillText('💡',180,75);dctx.shadowBlur=0;if(on)demoParticle(35+290*((p-.4)/.6%1),75)}else{const a=p<.5;demoWire(35,75,140,75,true);dctx.strokeStyle='#a86dff';dctx.lineWidth=11;dctx.beginPath();dctx.moveTo(140,75);dctx.lineTo(230,a?45:105);dctx.stroke();dctx.fillStyle='#fff';dctx.font='900 18px system-ui';dctx.textAlign='center';dctx.fillText('A',255,45);dctx.fillText('B',255,105);const yy=a?45:105;demoParticle(35+195*((p*2)%1),75+(yy-75)*Math.max(0,(p*2)%1))}await wait(28)}$('demoStatus').textContent='デモ完了。実際に操作してみましょう'}catch(err){console.error(err);$('demoStatus').textContent='デモを再生できませんでした。もう一度お試しください'}finally{demoRunning=false;$('playDemo').disabled=false}}
+function demoType(n){const f=getLevel(n).feature;return f==='diode'?3:f==='cable'?1:4}
+function drawDemoStatic(n){drawDemoBase();drawActualBlock(dctx,180,75,76,demoSpecForLevel(n),false,0)}
+
+async function playDemo(){
+ if(demoRunning)return;demoRunning=true;$('playDemo').disabled=true;$('demoStatus').textContent='デモ再生中…';
+ try{
+   const spec=demoSpecForLevel(tutorialLevel);
+   for(let f=0;f<72;f++){
+     drawDemoBase();const p=f/71,active=p>.52;let rot=0;
+     if((spec.kind==='wire'||spec.kind==='diode')&&!spec.fixed)rot=Math.min(1,p*1.7)*Math.PI/2;
+     drawActualBlock(dctx,180,75,76,spec,active,rot);
+     if(spec.fixed){dctx.fillStyle=p>.45?'#ffe34d':'#9db8c7';dctx.font='900 14px system-ui';dctx.textAlign='center';dctx.fillText('固定：回転しない',180,132)}
+     else if(spec.kind==='bridge'){dctx.fillStyle='#9ff7ff';dctx.font='900 13px system-ui';dctx.textAlign='center';dctx.fillText('縦＝地上 ／ 横＝地下（中央で非接続）',180,132)}
+     else if(active){demoParticle(145+70*((p-.52)/.48),75)}
+     await wait(24)
+   }
+   $('demoStatus').textContent='デモ完了。盤面と同じ部品表示です'
+ }catch(err){console.error(err);$('demoStatus').textContent='デモを再生できませんでした。もう一度お試しください'}
+ finally{demoRunning=false;$('playDemo').disabled=false}
+}
+
 function demoParticle(x,y){dctx.shadowColor='#bffcff';dctx.shadowBlur=14;dctx.fillStyle='#fff';dctx.beginPath();dctx.arc(x,y,6,0,Math.PI*2);dctx.fill();dctx.shadowBlur=0}
-function buildBook(){const descriptions=[['電源','⚡','ここから電気が始まります。'],['ゴール','🏁','全ライトを点灯して、最後に電気を届けます。'],['ケーブル','┗','タップで90°回転。曲線や分岐をつなぎます。'],['番号ライト','💡','番号順に電気を届け、リングが満ちるまで充電します。'],['一方通行パネル','▼','三角の向きだけ電気が通ります。'],['連動ルートチェンジャー','A⇆A','同じ記号のパネルがすべて同時に切り替わります。']];$('bookGrid').innerHTML=descriptions.map((d,i)=>`<div class="bookItem"><div class="bookIcon">${d[1]}</div><h3>${d[0]}</h3><div class="rule">${d[2]}</div>${i>=2?`<button data-demo="${i}" style="margin-top:8px;width:100%">▶ この部品のデモ</button>`:''}</div>`).join('');$('bookGrid').querySelectorAll('[data-demo]').forEach(b=>b.addEventListener('click',()=>{const i=Number(b.dataset.demo);$('bookOverlay').classList.remove('show');showTutorial({2:1,3:1,4:11,5:8}[i]||1)}))}
+function buildBook(){
+ const descriptions=[
+  ['power','電源','ここから電気が始まります。'],
+  ['goal','ゴール','全ライトを点灯して、最後に電気を届けます。'],
+  ['cable','ケーブル','直線・曲線の基本ケーブルです。'],
+  ['branch','T字分岐ケーブル','1本の電気を2方向へ分けます。分岐先の同番号ライト2個は両方必須です。その先は片側だけが次番号やゴールへ続き、もう片側は十分な長さのダミールートになります。短い枝や固定T字は登場しません。'],
+  ['lamp','番号ライト','番号は回路段階のヒントです。同じ番号が複数ある場合はすべて点灯が必要です。電気が届くと短い充電風エフェクトのあと点灯し、配線が切れると消灯します。'],
+  ['diode','一方通行パネル','三角の向きだけ電気が通ります。'],
+  ['fixed','固定属性','鍵付きの導線は回転できません。向きを条件として周囲をつなぎます。'],
+  ['bridge','立体交差','縦と横の両方に実際の配線が通る場合だけ登場します。縦の太い実線＝地上、横の破線＝地下で中央では接続しません。片側だけを通過する＋型は生成されません。']
+ ];
+ $('bookGrid').innerHTML=descriptions.map(d=>`<div class="bookItem"><canvas class="bookPreview" width="82" height="82" data-preview="${d[0]}"></canvas><h3>${d[1]}</h3><div class="rule">${d[2]}</div></div>`).join('');
+ $('bookGrid').querySelectorAll('[data-preview]').forEach(c=>renderBookPreview(c,c.dataset.preview))
+}
 cv.addEventListener('pointerdown',e=>{const r=cv.getBoundingClientRect(),x=Math.floor((e.clientX-r.left)*cv.width/r.width/CELL),y=Math.floor((e.clientY-r.top)*cv.height/r.height/CELL);if(x>=0&&y>=0&&x<COLS&&y<ROWS)interact(x,y)});cv.addEventListener('touchmove',e=>e.preventDefault(),{passive:false});
 cv.addEventListener('contextmenu',e=>e.preventDefault());
 cv.addEventListener('selectstart',e=>e.preventDefault());
 document.addEventListener('gesturestart',e=>e.preventDefault(),{passive:false});
 let lastTouchEnd=0;document.addEventListener('touchend',e=>{const now=Date.now();if(now-lastTouchEnd<280)e.preventDefault();lastTouchEnd=now},{passive:false});
-$('playNow').onclick=()=>{ $('tutorial').classList.remove('show'); $('overlay').classList.remove('show'); buildLevel(level,{manual:true,skipTutorial:true}); cv.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'}); }; $('restart').onclick=()=>buildLevel(level,{manual:true,skipTutorial:true});$('playDemo').onclick=playDemo;function startPlayableStage(){ $('tutorial').classList.remove('show'); buildLevel(tutorialLevel,{manual:true,skipTutorial:true}); ui.msg.textContent='全マスが埋まった盤面から正解ルートを見つけ、すべてのライトを点灯させよう。'; setTimeout(()=>cv.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'}),50); } $('startLesson').onclick=startPlayableStage; $('skipDemo').onclick=startPlayableStage;$('tutorialAgain').onclick=()=>showTutorial(level);$('book').onclick=()=>{$('bookOverlay').classList.add('show');buildBook()};$('closeBook').onclick=()=>$('bookOverlay').classList.remove('show');$('hint').onclick=()=>{const L=getLevel(level);showToast(L.how);ui.msg.textContent=L.goal};$('reset').onclick=()=>{if(confirm('進行状況とデモ履歴をリセットしますか？')){unlocked=1;seenDemos=new Set();localStorage.setItem('electricLinkV06Unlocked','1');localStorage.setItem('electricLinkV06SeenDemos','[]');buildLevel(1,{manual:true})}};$('retry').onclick=()=>buildLevel(level,{manual:true});$('next').onclick=()=>buildLevel(level<levelDefs.length?level+1:1);
+$('playNow').onclick=()=>{ $('tutorial').classList.remove('show'); $('overlay').classList.remove('show'); buildLevel(level,{manual:true,skipTutorial:true}); cv.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'}); }; $('restart').onclick=()=>{ensureAudio();sfx('click');if(!restoreLevelStartSnapshot())buildLevel(level,{manual:true,skipTutorial:true});};function startPlayableStage(){ $('tutorial').classList.remove('show'); buildLevel(tutorialLevel,{manual:true,skipTutorial:true}); ui.msg.textContent='全マスが埋まった盤面から正解ルートを見つけ、すべてのライトを点灯させよう。'; setTimeout(()=>cv.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'center'}),50); } $('startLesson').onclick=startPlayableStage; $('skipDemo').onclick=startPlayableStage;$('book').onclick=()=>{$('bookOverlay').classList.add('show');buildBook()};$('closeBook').onclick=()=>$('bookOverlay').classList.remove('show');$('closeNewPart').onclick=()=>{$('newPartOverlay').classList.remove('show');sfx('click')};$('hint').onclick=()=>{const L=getLevel(level);showToast(L.how);ui.msg.textContent=L.goal};$('retry').onclick=()=>{if(!restoreLevelStartSnapshot())buildLevel(level,{manual:true,skipTutorial:true});};function regenerateAllStagesAndRetry(){
+  generationCycle++;
+  localStorage.setItem('electricLinkGenerationCycle',String(generationCycle));
+  clearedStages=new Set();saveClearedStages();
+  unlocked=DEBUG_MODE?100:1;localStorage.setItem('electricLinkV06Unlocked','1');
+  level=1;stageTabPage=0;ui.overlay.classList.remove('show');
+  buildTabs();
+  if(typeof buildMenuStages==='function')buildMenuStages();
+  buildLevel(1,{manual:true,skipTutorial:true});
+  ui.msg.textContent=`${generationCycle+1}周目を開始しました。新しい100ステージです。`;
+}
+$('next').onclick=()=>{if(level<levelDefs.length)buildLevel(level+1);else regenerateAllStagesAndRetry()};
 
-$('openMenu').onclick=openMenu;$('closeMenu').onclick=()=>$('menuOverlay').classList.remove('show');$('resumeGame').onclick=()=>{sfx('click');$('menuOverlay').classList.remove('show')};$('menuRestart').onclick=()=>{sfx('click');$('menuOverlay').classList.remove('show');buildLevel(level,{manual:true,skipTutorial:true})};$('menuBook').onclick=()=>{sfx('click');$('menuOverlay').classList.remove('show');$('bookOverlay').classList.add('show');buildBook()};$('menuTutorial').onclick=()=>{sfx('click');$('menuOverlay').classList.remove('show');showTutorial(level)};$('menuReset').onclick=()=>{if(confirm('進行状況とデモ履歴をリセットしますか？')){unlocked=1;seenDemos=new Set();localStorage.setItem('electricLinkV06Unlocked','1');localStorage.setItem('electricLinkV06SeenDemos','[]');$('menuOverlay').classList.remove('show');buildLevel(1,{manual:true})}};
-$('bgmToggle').onclick=()=>{ensureAudio();audioSettings.bgmOn=!audioSettings.bgmOn;if(audioSettings.bgmOn)startBgm();else stopBgm();saveAudio();updateAudioUi()};$('sfxToggle').onclick=()=>{ensureAudio();audioSettings.sfxOn=!audioSettings.sfxOn;saveAudio();updateAudioUi();if(audioSettings.sfxOn)sfx('click')};$('bgmVolume').oninput=e=>{audioSettings.bgmVolume=Number(e.target.value)/100;if(bgmGain)bgmGain.gain.value=audioSettings.bgmVolume;saveAudio();updateAudioUi()};$('sfxVolume').oninput=e=>{audioSettings.sfxVolume=Number(e.target.value)/100;saveAudio();updateAudioUi()};
-document.addEventListener('pointerdown',ensureAudio,{once:true});document.addEventListener('keydown',ensureAudio,{once:true});
+$('openMenu').onclick=openMenu;
+$('closeMenu').onclick=()=>$('menuOverlay').classList.remove('show');
+
+function reloadClearedStagesForCycle(){
+  clearedStages=new Set(JSON.parse(localStorage.getItem(clearedStorageKey())||'[]'))
+}
+function refreshAfterDebugSaveChange({restartLevel=true}={}){
+  unlocked=DEBUG_MODE?100:Math.min(100,Number(localStorage.getItem('electricLinkV06Unlocked')||1));
+  stageTabPage=Math.floor((Math.max(1,Math.min(level,100))-1)/10);
+  buildTabs();
+  if(typeof buildMenuStages==='function')buildMenuStages();
+  updateDebugUi();
+  if(restartLevel)buildLevel(Math.max(1,Math.min(level,100)),{manual:true,skipTutorial:true})
+}
+function updateDebugUi(){
+  const panel=$('debugPanel');if(!panel)return;
+  panel.classList.toggle('show',DEBUG_MODE);
+  if(!DEBUG_MODE)return;
+  const lap=$('debugLapInput');if(lap)lap.value=String(generationCycle+1)
+}
+
+function flashDebugButton(btn,{done=true}={}){
+  if(!btn)return;
+  btn.classList.remove('debugPressed','debugDone');
+  void btn.offsetWidth;
+  btn.classList.add('debugPressed');
+  setTimeout(()=>btn.classList.remove('debugPressed'),110);
+  if(done){
+    setTimeout(()=>btn.classList.add('debugDone'),120);
+    setTimeout(()=>btn.classList.remove('debugDone'),850);
+  }
+}
+
+const debugPanel=$('debugPanel');
+if(debugPanel){
+  debugPanel.classList.toggle('show',DEBUG_MODE);
+
+  const setLap=lap=>{
+    if(!DEBUG_MODE)return;
+    const clean=Math.max(1,Math.min(999,Math.floor(Number(lap)||1)));
+    generationCycle=clean-1;
+    localStorage.setItem('electricLinkGenerationCycle',String(generationCycle));
+    reloadClearedStagesForCycle();
+    level=1;stageTabPage=0;
+    refreshAfterDebugSaveChange();
+    ui.msg.textContent=`デバッグ：${clean}周目へ切り替えました。`;
+  };
+
+  // Ver.1.4.59: 個別onclickではなくデバッグ欄全体でクリックを受ける。
+  // スマホのオーバーレイや再描画後でもイベントを失わない。
+  debugPanel.addEventListener('click',e=>{
+    if(!DEBUG_MODE)return;
+    const btn=e.target.closest('button');
+    if(!btn||!debugPanel.contains(btn))return;
+    e.preventDefault();
+    e.stopPropagation();
+    flashDebugButton(btn,{done:false});
+
+    switch(btn.id){
+      case 'debugSetLap':
+        setLap($('debugLapInput').value);flashDebugButton(btn);
+        break;
+      case 'debugResetLap':
+        generationCycle=0;localStorage.setItem('electricLinkGenerationCycle','0');
+        clearedStages=new Set();saveClearedStages();
+        level=1;stageTabPage=0;refreshAfterDebugSaveChange();
+        ui.msg.textContent='デバッグ：1周目へ戻しました。';flashDebugButton(btn);
+        break;
+      case 'debugClearClears':
+        clearedStages=new Set();saveClearedStages();buildTabs();buildMenuStages();updateDebugUi();
+        ui.msg.textContent=`デバッグ：${generationCycle+1}周目のクリア履歴を消去しました。`;flashDebugButton(btn);
+        break;
+      case 'debugMarkAllCleared':
+        clearedStages=new Set(Array.from({length:100},(_,i)=>i+1));saveClearedStages();buildTabs();buildMenuStages();updateDebugUi();
+        ui.msg.textContent='デバッグ：全100ステージをクリア済みにしました。';flashDebugButton(btn);
+        break;
+      case 'debugMarkIntrosSeen':
+        seenPartIntros=new Set(PART_INTRO_KEYS);localStorage.setItem('electricLinkSeenPartIntrosV1',JSON.stringify([...seenPartIntros]));
+        ui.msg.textContent='デバッグ：新要素説明をすべて既読にしました。';flashDebugButton(btn);
+        break;
+      case 'debugResetIntros':
+        seenPartIntros=new Set();localStorage.setItem('electricLinkSeenPartIntrosV1','[]');
+        ui.msg.textContent='デバッグ：新要素説明を未読に戻しました。';flashDebugButton(btn);
+        break;
+      case 'debugFullReset':
+        if(!confirm('【デバッグ】Electric Link の保存データをすべて初期化しますか？'))return;
+        ['electricLinkV06Unlocked','electricLinkGenerationCycle','electricLinkV06SeenDemos','electricLinkSeenPartIntrosV1'].forEach(k=>localStorage.removeItem(k));
+        for(let i=0;i<1000;i++)localStorage.removeItem(`electricLinkClearedStagesV1_cycle_${i}`);
+        generationCycle=0;unlocked=100;clearedStages=new Set();seenDemos=new Set();seenPartIntros=new Set();level=1;stageTabPage=0;
+        localStorage.setItem('electricLinkGenerationCycle','0');saveClearedStages();
+        $('menuOverlay').classList.remove('show');buildTabs();buildMenuStages();buildLevel(1,{manual:true,skipTutorial:true});
+        ui.msg.textContent='デバッグ：保存データを初期化しました。';
+        break;
+    }
+  });
+  updateDebugUi();
+}
+
+const debugRerollBtn=$('debugReroll');
+if(debugRerollBtn){
+  debugRerollBtn.style.display=DEBUG_MODE?'block':'none';
+  debugRerollBtn.onclick=()=>{
+    if(!DEBUG_MODE)return;
+    const yes=confirm('【デバッグ】ステージを再作成してLEVEL 1からやり直しますか？\n\nYES：次の周回用100ステージを生成して最初から開始\nNO：キャンセル');
+    if(!yes)return;
+    generationCycle++;
+    localStorage.setItem('electricLinkGenerationCycle',String(generationCycle));
+    clearedStages=new Set();saveClearedStages();
+    unlocked=100;
+    level=1;
+    stageTabPage=0;
+    ui.overlay.classList.remove('show');
+    buildTabs();
+    if(typeof buildMenuStages==='function')buildMenuStages();
+    buildLevel(1,{manual:true,skipTutorial:true});
+    ui.msg.textContent=`${generationCycle+1}周目を開始しました。（デバッグ再生成）`;
+  };
+}
+$('menuReset').onclick=()=>{if(confirm('進行状況をリセットしますか？')){unlocked=DEBUG_MODE?100:1;seenDemos=new Set();seenPartIntros=new Set();localStorage.setItem('electricLinkV06Unlocked','1');generationCycle=0;localStorage.setItem('electricLinkGenerationCycle','0');clearedStages=new Set();saveClearedStages();localStorage.setItem('electricLinkV06SeenDemos','[]');localStorage.setItem('electricLinkSeenPartIntrosV1','[]');$('menuOverlay').classList.remove('show');level=1;stageTabPage=0;buildTabs();if(typeof buildMenuStages==='function')buildMenuStages();buildLevel(1,{manual:true})}};
+$('bgmToggle').onclick=()=>{audioSettings.bgmOn=!audioSettings.bgmOn;if(audioSettings.bgmOn)ensureAudio();else stopBgm();saveAudio();updateAudioUi()};$('sfxToggle').onclick=()=>{ensureAudio();audioSettings.sfxOn=!audioSettings.sfxOn;saveAudio();updateAudioUi();if(audioSettings.sfxOn)sfx('click')};$('bgmVolume').oninput=e=>{audioSettings.bgmVolume=Number(e.target.value)/100;if(bgmGain)bgmGain.gain.value=audioSettings.bgmVolume;saveAudio();updateAudioUi()};$('sfxVolume').oninput=e=>{audioSettings.sfxVolume=Number(e.target.value)/100;saveAudio();updateAudioUi()};
+document.addEventListener('pointerdown',ensureAudio,{once:true});
+document.addEventListener('touchstart',ensureAudio,{once:true,passive:true});
+document.addEventListener('keydown',ensureAudio,{once:true});
+window.addEventListener('pageshow',()=>{if(audioCtx&&audioSettings.bgmOn)ensureAudio()});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&audioCtx&&audioSettings.bgmOn)ensureAudio()});
+initTitleScreen();
 validateStageDefinitions();
 function loop(now){const dt=Math.min(50,now-lastFrame);lastFrame=now;updateCharging(dt);draw();requestAnimationFrame(loop)}buildLevel(Math.min(unlocked,levelDefs.length),{manual:false});requestAnimationFrame(loop);
 })();
 </script>
-<div style="position:fixed;right:8px;bottom:8px;z-index:9997;background:#111d;color:#fff;padding:5px 8px;border:1px solid #ffffff44;border-radius:8px;font:12px system-ui;pointer-events:none">Ver.1.2 連動ルート版</div>
+<div style="position:fixed;right:8px;bottom:8px;z-index:9997;background:#111d;color:#fff;padding:5px 8px;border:1px solid #ffffff44;border-radius:8px;font:12px system-ui;pointer-events:none">Ver.1.4.45 拡大表示復旧版</div>
 
-<script>
-/* Electric Link Ver.1.3 Energy Delivery patch */
-(() => {
-  const CFG = {
-    chargeMs: 700,
-    tickMs: 60,
-    version: '1.3'
-  };
-  window.ELECTRIC_LINK_V13 = CFG;
 
-  const state = {
-    timer: null,
-    last: performance.now(),
-    nextOrder: 1,
-    lights: new Map(),
-    goalEnabled: false,
-    running: false
-  };
-
-  function getCellElements(){
-    return [...document.querySelectorAll('[data-type], .cell, .tile, .block')];
-  }
-
-  function typeOf(el){
-    return (el.dataset.type || el.dataset.kind || '').toLowerCase();
-  }
-
-  function isLight(el){
-    const t=typeOf(el);
-    return t.includes('light') || el.classList.contains('light') || /💡/.test(el.textContent||'');
-  }
-
-  function isGoal(el){
-    const t=typeOf(el);
-    return t.includes('goal') || el.classList.contains('goal') || /🏁/.test(el.textContent||'');
-  }
-
-  function lightOrder(el, fallback){
-    const raw=el.dataset.order || el.dataset.number || el.getAttribute('data-light-order');
-    if(raw && !isNaN(+raw)) return +raw;
-    const m=(el.textContent||'').match(/([1-9]\d*)/);
-    return m ? +m[1] : fallback;
-  }
-
-  function connected(el){
-    return el.classList.contains('powered') || el.classList.contains('energized') ||
-      el.classList.contains('connected') || el.dataset.powered==='true' ||
-      el.dataset.connected==='true' || el.getAttribute('aria-current')==='true';
-  }
-
-  function ensureLightUI(el, order){
-    el.dataset.energyOrder=order;
-    if(!el.querySelector('.v13-charge-ring')){
-      const ring=document.createElement('div');
-      ring.className='v13-charge-ring';
-      const fill=document.createElement('div');
-      fill.className='v13-charge-fill';
-      ring.appendChild(fill);
-      const pct=document.createElement('div');
-      pct.className='v13-charge-pct';
-      const lock=document.createElement('div');
-      lock.className='v13-lock';
-      lock.textContent='🔒';
-      const num=document.createElement('div');
-      num.className='v13-order';
-      num.textContent=order;
-      el.append(ring,pct,lock,num);
-    }
-  }
-
-  function scanLights(){
-    const found=getCellElements().filter(isLight);
-    found.forEach((el,i)=>{
-      const order=lightOrder(el,i+1);
-      ensureLightUI(el,order);
-      if(!state.lights.has(el)) state.lights.set(el,{order,charge:0,done:false});
-    });
-    state.nextOrder=[...state.lights.values()].filter(x=>!x.done).sort((a,b)=>a.order-b.order)[0]?.order ?? Infinity;
-  }
-
-  function allDone(){
-    return state.lights.size>0 && [...state.lights.values()].every(x=>x.done);
-  }
-
-  function updateGoal(){
-    state.goalEnabled=allDone();
-    getCellElements().filter(isGoal).forEach(el=>{
-      el.classList.toggle('v13-goal-active',state.goalEnabled);
-      el.classList.toggle('v13-goal-locked',!state.goalEnabled);
-      el.dataset.goalEnabled=String(state.goalEnabled);
-      let badge=el.querySelector('.v13-goal-badge');
-      if(!badge){badge=document.createElement('div');badge.className='v13-goal-badge';el.appendChild(badge);}
-      badge.textContent=state.goalEnabled?'GO!':'🔒';
-    });
-  }
-
-  function renderLight(el, rec){
-    const fill=el.querySelector('.v13-charge-fill');
-    const pct=el.querySelector('.v13-charge-pct');
-    const lock=el.querySelector('.v13-lock');
-    if(fill) fill.style.setProperty('--p', Math.max(0,Math.min(100,rec.charge))+'%');
-    if(pct) pct.textContent=rec.done?'100%':Math.floor(rec.charge)+'%';
-    const locked=!rec.done && rec.order!==state.nextOrder;
-    if(lock) lock.style.display=locked?'grid':'none';
-    el.classList.toggle('v13-charging', !rec.done && !locked && connected(el));
-    el.classList.toggle('v13-charged', rec.done);
-    el.classList.toggle('v13-locked', locked);
-  }
-
-  function playTone(freq=660,dur=.12){
-    try{
-      const AC=window.AudioContext||window.webkitAudioContext;
-      const ctx=window.__electricAudioCtx||(window.__electricAudioCtx=new AC());
-      const o=ctx.createOscillator(), g=ctx.createGain();
-      o.frequency.value=freq; g.gain.value=.05; o.connect(g); g.connect(ctx.destination);
-      o.start(); g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+dur); o.stop(ctx.currentTime+dur);
-    }catch(e){}
-  }
-
-  function tick(now){
-    const dt=Math.min(200,now-state.last); state.last=now;
-    scanLights();
-    const ordered=[...state.lights.entries()].sort((a,b)=>a[1].order-b[1].order);
-    for(const [el,rec] of ordered){
-      if(rec.done){ renderLight(el,rec); continue; }
-      const locked=rec.order!==state.nextOrder;
-      if(!locked && connected(el)){
-        rec.charge=Math.min(100,rec.charge + (dt/CFG.chargeMs)*100);
-        if(rec.charge>=100){
-          rec.charge=100; rec.done=true; playTone(820,.18);
-          state.nextOrder=ordered.find(([,r])=>!r.done)?.[1].order ?? Infinity;
-        }
-      }
-      renderLight(el,rec);
-    }
-    updateGoal();
-
-    if(state.goalEnabled){
-      for(const goal of getCellElements().filter(isGoal)){
-        if(connected(goal) && !goal.dataset.v13Cleared){
-          goal.dataset.v13Cleared='true';
-          playTone(1040,.35);
-          window.dispatchEvent(new CustomEvent('electric-link-v13-clear'));
-          const evt=new CustomEvent('stageclear',{detail:{source:'v1.3'}}); document.dispatchEvent(evt);
-        }
-      }
-    }
-    state.timer=requestAnimationFrame(tick);
-  }
-
-  function resetEnergy(){
-    state.lights.clear(); state.nextOrder=1; state.goalEnabled=false;
-    getCellElements().filter(isGoal).forEach(g=>delete g.dataset.v13Cleared);
-  }
-
-  function hookStageChanges(){
-    const obs=new MutationObserver(muts=>{
-      if(muts.some(m=>m.addedNodes.length||m.removedNodes.length)){
-        resetEnergy(); setTimeout(scanLights,30);
-      }
-    });
-    obs.observe(document.body,{childList:true,subtree:true});
-    document.addEventListener('click',e=>{
-      const t=e.target.closest('button,[role="button"],.route-changer,.changer');
-      if(t && /restart|retry|やり直し|ステージ|level/i.test(t.textContent||'')) setTimeout(resetEnergy,20);
-    });
-  }
-
-  function addStyle(){
-    const st=document.createElement('style');
-    st.textContent=`
-      .cell,.tile,.block,[data-type]{position:relative}
-      .v13-charge-ring{position:absolute;inset:5px;border-radius:50%;pointer-events:none;background:conic-gradient(#ffd84a var(--p,0%),#ffffff18 0);-webkit-mask:radial-gradient(circle,transparent 56%,#000 58%);mask:radial-gradient(circle,transparent 56%,#000 58%);z-index:7}
-      .v13-charge-fill{--p:0%;display:none}
-      .v13-charge-pct{position:absolute;left:50%;bottom:2px;transform:translateX(-50%);font:700 10px/1 sans-serif;color:#fff;text-shadow:0 1px 2px #000;z-index:9;pointer-events:none}
-      .v13-order{position:absolute;top:2px;left:3px;display:grid;place-items:center;min-width:18px;height:18px;padding:0 3px;border-radius:10px;background:#111d;color:#fff;font:700 11px sans-serif;z-index:10;pointer-events:none}
-      .v13-lock{position:absolute;inset:0;display:none;place-items:center;background:#101826aa;border-radius:inherit;font-size:24px;z-index:8;pointer-events:none}
-      .v13-charging{box-shadow:0 0 14px #67d8ff, inset 0 0 12px #67d8ff55!important}
-      .v13-charged{background:#f4c542!important;color:#222!important;box-shadow:0 0 18px #ffe95e,0 0 30px #ffcb36!important}
-      .v13-locked{filter:saturate(.45) brightness(.72)}
-      .v13-goal-badge{position:absolute;right:2px;top:2px;font:700 11px sans-serif;background:#111c;color:#fff;border-radius:8px;padding:2px 4px;z-index:10}
-      .v13-goal-locked{filter:saturate(.35) brightness(.68)}
-      .v13-goal-active{box-shadow:0 0 18px #65ff9a,0 0 28px #65ff9a77!important;animation:v13Goal 1s ease-in-out infinite alternate}
-      @keyframes v13Goal{to{transform:scale(1.035)}}
-    `;
-    document.head.appendChild(st);
-  }
-
-  function addInfo(){
-    const info=document.createElement('div');
-    info.id='v13-info';
-    info.textContent='Ver.1.3：ライトを番号順に充電し、全充電後にゴールへ送電';
-    info.style.cssText='position:fixed;left:8px;bottom:8px;z-index:9997;background:#07131ddd;color:#fff;border:1px solid #ffffff33;border-radius:9px;padding:6px 9px;font:12px sans-serif;pointer-events:none;max-width:calc(100vw - 16px)';
-    document.body.appendChild(info);
-  }
-
-  window.addEventListener('DOMContentLoaded',()=>{
-    addStyle(); addInfo(); hookStageChanges(); scanLights(); updateGoal();
-    state.running=true; state.last=performance.now(); state.timer=requestAnimationFrame(tick);
-  });
-})();
-</script>
 
 
 <style id="responsive-side-menu-v135">
@@ -495,7 +1807,7 @@ function loop(now){const dt=Math.min(50,now-lastFrame);lastFrame=now;updateCharg
   --safe-bottom:env(safe-area-inset-bottom,0px);
   --safe-left:env(safe-area-inset-left,0px)
 }
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{-webkit-text-size-adjust:;text-size-adjust:}
 button,select,input{touch-action:manipulation}
 
 #mobilePanelButton,
@@ -510,12 +1822,12 @@ button,select,input{touch-action:manipulation}
 
   .app{
     display:block!important;
-    width:100%!important;
+    width:!important;
     max-width:560px!important
   }
 
   .game{
-    width:100%!important;
+    width:!important;
     margin:0!important
   }
 
@@ -614,7 +1926,7 @@ button,select,input{touch-action:manipulation}
 
   #mobileSideContent > .side{
     display:block!important;
-    width:100%!important;
+    width:!important;
     max-width:none!important;
     margin:0!important;
     padding:10px!important;
@@ -747,6 +2059,1434 @@ button,select,input{touch-action:manipulation}
   }else{
     init()
   }
+})();
+</script>
+
+
+<style id="mobile-layout-spacing-v136">
+@media(max-width:760px){
+  /* 固定ボタンに隠れない安全領域 */
+  body{
+    padding-bottom:max(18px,var(--safe-bottom))!important
+  }
+
+  #mobilePanelButton{
+    right:max(10px,var(--safe-right))!important;
+    bottom:max(10px,var(--safe-bottom))!important;
+    width:52px!important;
+    height:52px!important;
+    min-height:52px!important;
+    font-size:21px!important
+  }
+
+  /* 下部メッセージ・ステータスはボタン分の右余白を確保 */
+  .msg,
+  .message,
+  .status,
+  .statusText,
+  .status-text,
+  #message,
+  #status,
+  #statusText{
+    box-sizing:border-box!important;
+    padding-right:68px!important;
+    min-height:54px!important;
+    overflow-wrap:anywhere
+  }
+
+  /* ゲーム本体の不要な下余白を圧縮 */
+  .app{
+    min-height:auto!important;
+    padding-bottom:0!important;
+    margin-bottom:0!important
+  }
+
+  .game{
+    padding-bottom:0!important;
+    margin-bottom:0!important
+  }
+
+  .game > :last-child,
+  .app > .game > :last-child{
+    margin-bottom:0!important
+  }
+
+  /* 盤面を利用可能な横幅いっぱいに近づける */
+  .board,
+  #board,
+  .game-board,
+  #gameBoard{
+    width:min(calc(100vw - 10px),560px)!important;
+    max-width:!important;
+    margin-inline:auto!important
+  }
+
+  /* 下部情報はコンパクトな1枚の帯として扱う */
+  .msg,
+  .message,
+  .status,
+  .statusText,
+  .status-text,
+  #message,
+  #status,
+  #statusText{
+    margin-top:6px!important;
+    margin-bottom:0!important;
+    border-radius:12px!important
+  }
+
+  /* スマホでは空の要素や大きすぎるスペーサーを縮める */
+  .spacer:empty,
+  .bottom-spacer:empty,
+  .bottomSpacer:empty{
+    display:none!important
+  }
+}
+
+/* ボタンと文章が近い端末向け */
+@media(max-width:390px){
+  .msg,
+  .message,
+  .status,
+  .statusText,
+  .status-text,
+  #message,
+  #status,
+  #statusText{
+    padding-right:62px!important;
+    font-size:13px!important
+  }
+
+  #mobilePanelButton{
+    width:48px!important;
+    height:48px!important;
+    min-height:48px!important
+  }
+}
+</style>
+
+<script id="mobile-layout-spacing-v136-js">
+(() => {
+  function findBottomMessage(){
+    const selectors=[
+      "#message","#status","#statusText",
+      ".msg",".message",".status",".statusText",".status-text"
+    ];
+    for(const selector of selectors){
+      const node=document.querySelector(selector);
+      if(node && !node.closest("#mobileSideShell")) return node;
+    }
+
+    const candidates=[...document.querySelectorAll(".game p,.game div,.app p,.app div")];
+    return candidates.reverse().find(node=>{
+      if(node.closest("#mobileSideShell")) return false;
+      const text=(node.textContent||"").trim();
+      const rect=node.getBoundingClientRect();
+      return text.length>3 && text.length<180 && rect.height>0 && rect.top>window.innerHeight*0.45;
+    }) || null;
+  }
+
+  function apply(){
+    const button=document.getElementById("mobilePanelButton");
+    const message=findBottomMessage();
+    if(!button || !message) return;
+
+    message.classList.add("mobile-safe-message");
+
+    const update=()=>{
+      if(window.innerWidth>760){
+        message.style.removeProperty("padding-right");
+        return;
+      }
+      const width=button.getBoundingClientRect().width || 52;
+      message.style.paddingRight=`${Math.ceil(width+18)}px`;
+    };
+
+    update();
+    window.addEventListener("resize",update,{passive:true});
+    window.addEventListener("orientationchange",()=>setTimeout(update,100),{passive:true});
+  }
+
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",apply)
+  }else{
+    apply()
+  }
+})();
+</script>
+
+
+<style id="v141-tall-board">
+@media(max-width:760px){
+  #game{
+    width:auto!important;
+    height:min(calc(100dvh - 12px),calc(100vw * var(--rows-ratio,1.4)))!important;
+    max-width:!important;
+    margin:0 auto!important
+  }
+  .game{display:flex;align-items:center;justify-content:center;min-height:calc(100dvh - 8px)}
+}
+</style>
+<script>
+(() => {
+ const originalBuild=window.buildLevel;
+ function syncRatio(){
+   const game=document.getElementById('game');
+   if(game)game.style.setProperty('--rows-ratio',String((window.ROWS||8)/(window.COLS||6)));
+ }
+ addEventListener('resize',syncRatio,{passive:true});
+ addEventListener('orientationchange',()=>setTimeout(syncRatio,100),{passive:true});
+ addEventListener('DOMContentLoaded',syncRatio);
+})();
+</script>
+
+
+<style id="v1413-centered-layout">
+html,body{width:100%;overflow-x:hidden}
+body{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+.app{
+  width:min(1180px,calc(100vw - 28px))!important;
+  max-width:1180px!important;
+  margin:0 auto!important;
+}
+@media(min-width:761px){
+  .app{
+    display:grid!important;
+    grid-template-columns:minmax(0,760px) minmax(300px,360px)!important;
+    gap:18px!important;
+    align-items:start!important;
+    justify-content:center!important;
+  }
+  .game{
+    width:100%!important;
+    max-width:760px!important;
+    margin:0 auto!important;
+  }
+  .side{
+    width:100%!important;
+    max-width:360px!important;
+    margin:0!important;
+    position:sticky!important;
+    top:12px!important;
+  }
+  #game{
+    display:block;
+    width:auto!important;
+    max-width:100%!important;
+    height:auto!important;
+    margin:0 auto!important;
+  }
+}
+@media(max-width:760px){
+  body{display:block}
+  .app{
+    display:block!important;
+    width:min(100%,560px)!important;
+    max-width:560px!important;
+    margin:0 auto!important;
+  }
+  .game{
+    width:100%!important;
+    margin:0 auto!important;
+  }
+  #game{
+    display:block;
+    max-width:100%!important;
+    height:auto!important;
+    margin:0 auto!important;
+  }
+}
+</style>
+
+
+<style id="v1415-layout-fit">
+@media(min-width:761px){
+  html,body{
+    min-height:100%;
+  }
+
+  body{
+    display:block!important;
+    padding:12px!important;
+    overflow-x:hidden!important;
+  }
+
+  .app{
+    width:min(1120px,calc(100vw - 24px))!important;
+    max-width:1120px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) 330px!important;
+    gap:16px!important;
+    align-items:stretch!important;
+  }
+
+  .game,
+  .side{
+    box-sizing:border-box!important;
+    min-height:0!important;
+    height:auto!important;
+    max-height:none!important;
+  }
+
+  .game{
+    display:flex!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+    overflow:hidden!important;
+  }
+
+  /* 盤面は左枠から絶対にはみ出さない */
+  #game{
+    display:block!important;
+    width:auto!important;
+    height:auto!important;
+    max-width:100%!important;
+    max-height:calc(100vh - 150px)!important;
+    margin:0 auto!important;
+    flex:0 1 auto!important;
+  }
+
+  /* 右メニューはスクロールさせず、その場で収める */
+  .side{
+    position:static!important;
+    overflow:visible!important;
+    padding:12px!important;
+  }
+
+  .side .panel,
+  .side .card{
+    margin-bottom:8px!important;
+    padding:10px!important;
+  }
+
+  .side h1,
+  .side h2,
+  .side h3{
+    margin-top:4px!important;
+    margin-bottom:6px!important;
+  }
+
+  .side p,
+  .side .sub,
+  .side .rule{
+    margin-top:3px!important;
+    margin-bottom:6px!important;
+    line-height:1.35!important;
+  }
+
+  .side .buttons{
+    gap:6px!important;
+  }
+
+  .side button{
+    min-height:38px!important;
+    padding:7px 9px!important;
+  }
+
+  .side .stats{
+    gap:6px!important;
+  }
+
+  .side .stat{
+    padding:8px!important;
+  }
+
+  .side .tabs{
+    gap:5px!important;
+  }
+
+  .side .tabs button{
+    min-height:34px!important;
+    padding:5px 7px!important;
+  }
+}
+
+@media(min-width:761px) and (max-height:760px){
+  .app{
+    grid-template-columns:minmax(0,1fr) 310px!important;
+    gap:12px!important;
+  }
+
+  #game{
+    max-height:calc(100vh - 118px)!important;
+  }
+
+  .side{
+    padding:8px!important;
+    font-size:13px!important;
+  }
+
+  .side .panel,
+  .side .card{
+    margin-bottom:5px!important;
+    padding:7px!important;
+  }
+
+  .side button{
+    min-height:32px!important;
+    padding:5px 7px!important;
+    font-size:12px!important;
+  }
+
+  .side .stat{
+    padding:6px!important;
+  }
+}
+
+@media(max-width:760px){
+  body{
+    display:block!important;
+  }
+
+  .app{
+    width:min(100%,560px)!important;
+    max-width:560px!important;
+    margin:0 auto!important;
+    display:block!important;
+  }
+
+  .game{
+    width:100%!important;
+    overflow:hidden!important;
+  }
+
+  #game{
+    display:block!important;
+    width:auto!important;
+    height:auto!important;
+    max-width:100%!important;
+    max-height:calc(100dvh - 110px)!important;
+    margin:0 auto!important;
+  }
+
+  .side{
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+  }
+}
+</style>
+
+
+<style id="v1416-dynamic-board-fit">
+@media(min-width:761px){
+  body{
+    padding:10px!important;
+  }
+  .app{
+    width:min(1180px,calc(100vw - 20px))!important;
+    max-width:1180px!important;
+    grid-template-columns:minmax(0,1fr) 320px!important;
+    gap:12px!important;
+    align-items:start!important;
+  }
+  .game{
+    padding:8px!important;
+    margin:0!important;
+    overflow:hidden!important;
+  }
+  .side{
+    padding:10px!important;
+    margin:0!important;
+  }
+  #game{
+    display:block!important;
+    margin:0 auto!important;
+    max-width:none!important;
+    max-height:none!important;
+  }
+}
+@media(max-width:760px){
+  body{padding:4px!important}
+  .app{width:100%!important;max-width:560px!important;margin:0 auto!important}
+  .game{padding:4px!important;overflow:hidden!important}
+  #game{display:block!important;margin:0 auto!important;max-width:none!important;max-height:none!important}
+}
+</style>
+<style id="v1418-single-screen-layout">
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+body {
+  box-sizing: border-box !important;
+  padding: 8px !important;
+}
+
+/* PC: play area + minimal status menu in one screen */
+@media (min-width: 761px) {
+  .app {
+    width: min(1180px, calc(100vw - 16px)) !important;
+    height: calc(100dvh - 16px) !important;
+    max-width: 1180px !important;
+    margin: 0 auto !important;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 310px !important;
+    gap: 12px !important;
+    align-items: stretch !important;
+  }
+
+  .game,
+  .side {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+
+  .game {
+    padding: 6px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  #game {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: auto !important;
+  }
+
+  .side {
+    padding: 10px !important;
+    overflow: hidden !important;
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 7px !important;
+  }
+
+  /* Keep only current progress and essential actions */
+  .side > .sub,
+  .side #partIcon,
+  .side #partRule,
+  .side #how,
+  .side #message,
+  .side .legend,
+  .side #validationStatus,
+  .side > .small,
+  .side #playNow,
+  .side #hint {
+    display: none !important;
+  }
+
+  .side h1 {
+    margin: 0 0 2px !important;
+    font-size: 20px !important;
+    line-height: 1.15 !important;
+  }
+
+  .side .ver {
+    font-size: 10px !important;
+  }
+
+  .side .stageTabs {
+    margin: 0 !important;
+    gap: 3px !important;
+    flex: 0 0 auto !important;
+  }
+
+  .side .stageTabs button {
+    min-height: 27px !important;
+    padding: 3px 5px !important;
+    font-size: 10px !important;
+  }
+
+  .side .stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 5px !important;
+    margin: 0 !important;
+  }
+
+  .side .stat {
+    min-height: 0 !important;
+    padding: 7px !important;
+  }
+
+  .side .stat .label {
+    font-size: 10px !important;
+  }
+
+  .side .stat .value {
+    font-size: 19px !important;
+  }
+
+  /* Feature/stage name card: title only */
+  .side .card {
+    margin: 0 !important;
+    padding: 8px !important;
+  }
+
+  .side .partTitle {
+    margin: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .side #partName {
+    font-size: 14px !important;
+    font-weight: 800 !important;
+  }
+
+  /* Goal card: goal only */
+  .side #goal {
+    margin: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.3 !important;
+  }
+
+  .side .buttons {
+    margin-top: auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+  }
+
+  .side .buttons #restart {
+    grid-column: 1 / -1 !important;
+  }
+
+  .side .buttons button {
+    min-height: 36px !important;
+    padding: 6px 7px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Mobile: one-screen play area; side menu remains an overlay */
+@media (max-width: 760px) {
+  body {
+    padding: 4px !important;
+  }
+
+  .app {
+    width: 100% !important;
+    height: calc(100dvh - 8px) !important;
+    max-width: 560px !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  .game {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 4px !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+  }
+
+  #game {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: none !important;
+    max-height: none !important;
+    margin: auto !important;
+  }
+
+  /* Minimal content inside the slide-in menu too */
+  #mobileSideContent .side > .sub,
+  #mobileSideContent .side #partIcon,
+  #mobileSideContent .side #partRule,
+  #mobileSideContent .side #how,
+  #mobileSideContent .side #message,
+  #mobileSideContent .side .legend,
+  #mobileSideContent .side #validationStatus,
+  #mobileSideContent .side > .small,
+  #mobileSideContent .side #playNow,
+  #mobileSideContent .side #hint {
+    display: none !important;
+  }
+
+  #mobileSideContent .side {
+    overflow: visible !important;
+  }
+}
+</style>
+
+<style id="v1419-mobile-width-fix">
+@media (max-width:760px){
+  html,
+  body{
+    width:100%!important;
+    max-width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+  }
+
+  body{
+    box-sizing:border-box!important;
+  }
+
+  .app{
+    width:100vw!important;
+    max-width:100vw!important;
+    height:100dvh!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+    box-sizing:border-box!important;
+  }
+
+  .game{
+    width:100vw!important;
+    max-width:100vw!important;
+    height:100dvh!important;
+    margin:0!important;
+    padding:4px!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+
+  #game{
+    display:block!important;
+    flex:0 0 auto!important;
+    margin:auto!important;
+    max-width:none!important;
+    max-height:none!important;
+    transform:none!important;
+    transform-origin:center center!important;
+  }
+
+  /* 盤面以外の要素が横幅を押し広げないようにする */
+  .game > *,
+  .app > *{
+    min-width:0!important;
+    box-sizing:border-box!important;
+  }
+
+  #mobilePanelButton{
+    right:10px!important;
+    bottom:10px!important;
+  }
+
+  #mobileSideShell{
+    max-width:calc(100vw - 12px)!important;
+    width:min(91vw,410px)!important;
+    box-sizing:border-box!important;
+  }
+}
+</style>
+
+<script id="v1419-mobile-width-fix-js">
+(() => {
+  function fitMobileBoard(){
+    if(!window.matchMedia('(max-width:760px)').matches) return;
+
+    const canvas=document.getElementById('game');
+    const frame=document.querySelector('.game');
+    if(!canvas || !frame || !canvas.width || !canvas.height) return;
+
+    const viewportW=Math.floor(
+      (window.visualViewport && window.visualViewport.width) ||
+      document.documentElement.clientWidth ||
+      window.innerWidth
+    );
+    const viewportH=Math.floor(
+      (window.visualViewport && window.visualViewport.height) ||
+      document.documentElement.clientHeight ||
+      window.innerHeight
+    );
+
+    const horizontalSafety=10;
+    const verticalSafety=12;
+
+    const availableW=Math.max(1, viewportW-horizontalSafety);
+    const availableH=Math.max(1, viewportH-verticalSafety);
+
+    const scale=Math.min(
+      availableW/canvas.width,
+      availableH/canvas.height
+    );
+
+    const width=Math.max(1,Math.floor(canvas.width*scale));
+    const height=Math.max(1,Math.floor(canvas.height*scale));
+
+    canvas.style.setProperty('width',width+'px','important');
+    canvas.style.setProperty('height',height+'px','important');
+    canvas.style.setProperty('max-width',availableW+'px','important');
+
+    frame.style.setProperty('width',viewportW+'px','important');
+    frame.style.setProperty('max-width',viewportW+'px','important');
+  }
+
+  const scheduleFit=()=>{
+    requestAnimationFrame(()=>{
+      requestAnimationFrame(fitMobileBoard)
+    })
+  };
+
+  window.addEventListener('resize',scheduleFit,{passive:true});
+  window.addEventListener('orientationchange',()=>setTimeout(scheduleFit,100),{passive:true});
+
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize',scheduleFit,{passive:true});
+  }
+
+  document.addEventListener('DOMContentLoaded',scheduleFit);
+
+  const canvas=document.getElementById('game');
+  if(canvas){
+    new MutationObserver(scheduleFit).observe(canvas,{
+      attributes:true,
+      attributeFilter:['width','height']
+    });
+  }
+
+  scheduleFit();
+})();
+</script>
+
+
+<style id="v1420-pc-height-fit">
+@media (min-width:761px){
+  html,body{
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    overflow:hidden!important;
+  }
+
+  body{
+    padding:8px!important;
+    box-sizing:border-box!important;
+  }
+
+  .app{
+    width:min(1240px,calc(100vw - 16px))!important;
+    height:calc(100dvh - 16px)!important;
+    max-width:1240px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) 320px!important;
+    gap:12px!important;
+    align-items:stretch!important;
+  }
+
+  .game{
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    padding:4px!important;
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+  }
+
+  #game{
+    display:block!important;
+    width:auto!important;
+    height:auto!important;
+    max-width:none!important;
+    max-height:none!important;
+    margin:auto!important;
+    flex:0 0 auto!important;
+  }
+
+  .side{
+    height:100%!important;
+    min-height:0!important;
+    overflow:hidden!important;
+    box-sizing:border-box!important;
+  }
+}
+</style>
+
+<style id="v1421-universal-board-fit">
+html,body{
+  width:100%!important;
+  height:100%!important;
+  margin:0!important;
+  overflow:hidden!important;
+}
+
+.game{
+  position:relative!important;
+  min-width:0!important;
+  min-height:0!important;
+  overflow:hidden!important;
+}
+
+#game{
+  display:block!important;
+  flex:0 0 auto!important;
+  max-width:none!important;
+  max-height:none!important;
+  margin:auto!important;
+  transform:none!important;
+  transform-origin:center center!important;
+}
+
+@media(min-width:761px){
+  body{
+    padding:8px!important;
+    box-sizing:border-box!important;
+  }
+
+  .app{
+    width:min(1240px,calc(100vw - 16px))!important;
+    height:calc(100dvh - 16px)!important;
+    max-width:1240px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) 320px!important;
+    gap:12px!important;
+    align-items:stretch!important;
+  }
+
+  .game{
+    width:100%!important;
+    height:100%!important;
+    padding:4px!important;
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+
+  .side{
+    height:100%!important;
+    min-height:0!important;
+    overflow:hidden!important;
+  }
+}
+
+@media(max-width:760px){
+  body{
+    padding:0!important;
+    box-sizing:border-box!important;
+  }
+
+  .app{
+    width:100vw!important;
+    height:100dvh!important;
+    max-width:100vw!important;
+    margin:0!important;
+    display:block!important;
+    overflow:hidden!important;
+  }
+
+  .game{
+    width:100vw!important;
+    height:100dvh!important;
+    padding:4px!important;
+    box-sizing:border-box!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+}
+</style>
+
+<style id="v1422-pc-board-fit-final">
+@media (min-width:761px){
+  html,body{
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    overflow:hidden!important;
+  }
+  body{
+    padding:8px!important;
+    box-sizing:border-box!important;
+  }
+  .app{
+    width:min(1280px,calc(100vw - 16px))!important;
+    height:calc(100dvh - 16px)!important;
+    max-width:1280px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) 320px!important;
+    gap:12px!important;
+    align-items:stretch!important;
+    overflow:hidden!important;
+  }
+  .game{
+    width:100%!important;
+    height:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+    padding:4px!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+  }
+  #game{
+    display:block!important;
+    flex:0 0 auto!important;
+    width:auto!important;
+    height:auto!important;
+    max-width:none!important;
+    max-height:none!important;
+    margin:auto!important;
+  }
+  .side{
+    width:320px!important;
+    height:100%!important;
+    min-height:0!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+  }
+}
+</style>
+
+<style id="v1423-mobile-header">
+@media(max-width:760px){
+  html,body{
+    width:100%!important;
+    height:100%!important;
+    margin:0!important;
+    overflow:hidden!important;
+  }
+
+  body{
+    padding:0!important;
+    box-sizing:border-box!important;
+  }
+
+  #mobileGameHeader{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    height:46px;
+    z-index:9600;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:8px;
+    padding:
+      max(4px,env(safe-area-inset-top,0px))
+      max(10px,env(safe-area-inset-right,0px))
+      4px
+      max(10px,env(safe-area-inset-left,0px));
+    box-sizing:border-box;
+    background:rgba(5,20,32,.96);
+    border-bottom:1px solid rgba(120,220,255,.28);
+    box-shadow:0 6px 18px rgba(0,0,0,.28);
+    backdrop-filter:blur(10px)
+  }
+
+  #mobileGameBrand{
+    min-width:0;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-weight:900;
+    letter-spacing:.04em;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+  }
+
+  #mobileGameBrand .bolt{
+    font-size:18px
+  }
+
+  #mobileGameBrand .title{
+    font-size:15px
+  }
+
+  #mobileLevelLabel{
+    margin-left:auto;
+    font-size:13px;
+    font-weight:900;
+    color:#bff7ff;
+    white-space:nowrap
+  }
+
+  #mobileHeaderMenuButton{
+    width:40px;
+    height:36px;
+    min-height:36px;
+    padding:0;
+    display:grid;
+    place-items:center;
+    border-radius:10px;
+    font-size:20px
+  }
+
+  /* 旧下部メニューボタンはスマホでは非表示 */
+  #mobilePanelButton{
+    display:none!important
+  }
+
+  .app{
+    width:100vw!important;
+    max-width:100vw!important;
+    height:100dvh!important;
+    margin:0!important;
+    padding-top:46px!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important
+  }
+
+  .game{
+    width:100vw!important;
+    height:calc(100dvh - 46px)!important;
+    padding:4px!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important
+  }
+
+  #game{
+    display:block!important;
+    width:auto!important;
+    height:auto!important;
+    max-width:none!important;
+    max-height:none!important;
+    margin:auto!important
+  }
+
+  #mobileSideShell{
+    top:46px!important;
+    bottom:0!important;
+    max-height:calc(100dvh - 46px)!important;
+    border-radius:18px 0 0 0!important
+  }
+
+  #mobilePanelBackdrop{
+    top:46px!important
+  }
+}
+</style>
+
+<script id="v1423-mobile-header-js">
+(() => {
+  function initMobileHeader(){
+    if(document.getElementById('mobileGameHeader'))return;
+
+    const header=document.createElement('header');
+    header.id='mobileGameHeader';
+    header.innerHTML=`
+      <div id="mobileGameBrand">
+        <span class="bolt">⚡</span>
+        <span class="title">ELECTRIC LINK</span>
+      </div>
+      <div id="mobileLevelLabel">LV.01</div>
+      <button id="mobileHeaderMenuButton" type="button" aria-label="メニューを開く">☰</button>
+    `;
+    document.body.appendChild(header);
+
+    const levelLabel=document.getElementById('mobileLevelLabel');
+    const menuButton=document.getElementById('mobileHeaderMenuButton');
+
+    function syncLevel(){
+      const source=document.getElementById('stageNo');
+      if(!source)return;
+      const n=parseInt((source.textContent||'1').replace(/\D/g,''),10)||1;
+      levelLabel.textContent='LV.'+String(n).padStart(2,'0')
+    }
+
+    function syncMenuButton(){
+      const shell=document.getElementById('mobileSideShell');
+      if(!shell)return;
+      const open=shell.classList.contains('open');
+      menuButton.textContent=open?'✕':'☰';
+      menuButton.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く')
+    }
+
+    menuButton.addEventListener('click',()=>{
+      const original=document.getElementById('mobilePanelButton');
+      if(original){
+        original.click();
+        setTimeout(syncMenuButton,0);
+        return
+      }
+
+      const shell=document.getElementById('mobileSideShell');
+      const backdrop=document.getElementById('mobilePanelBackdrop');
+      if(!shell||!backdrop)return;
+
+      const open=shell.classList.toggle('open');
+      backdrop.classList.toggle('open',open);
+      document.body.classList.toggle('mobile-panel-open',open);
+      syncMenuButton()
+    });
+
+    const source=document.getElementById('stageNo');
+    if(source){
+      new MutationObserver(syncLevel).observe(source,{
+        childList:true,
+        characterData:true,
+        subtree:true
+      })
+    }
+
+    const shell=document.getElementById('mobileSideShell');
+    if(shell){
+      new MutationObserver(syncMenuButton).observe(shell,{
+        attributes:true,
+        attributeFilter:['class']
+      })
+    }
+
+    syncLevel();
+    syncMenuButton()
+  }
+
+  function fitMobileBoardWithHeader(){
+    return; // Ver.1.4.59: sizing is handled by unifiedBoardFit() only.
+    if(!window.matchMedia('(max-width:760px)').matches)return;
+
+    const canvas=document.getElementById('game');
+    const frame=document.querySelector('.game');
+    if(!canvas||!frame||!canvas.width||!canvas.height)return;
+
+    const vw=
+      (window.visualViewport&&window.visualViewport.width)||
+      document.documentElement.clientWidth||
+      window.innerWidth;
+
+    const vh=
+      (window.visualViewport&&window.visualViewport.height)||
+      document.documentElement.clientHeight||
+      window.innerHeight;
+
+    const availableW=Math.max(1,vw-8);
+    const availableH=Math.max(1,vh-46-8);
+
+    const scale=Math.min(
+      availableW/canvas.width,
+      availableH/canvas.height
+    );
+
+    canvas.style.setProperty('width',Math.floor(canvas.width*scale)+'px','important');
+    canvas.style.setProperty('height',Math.floor(canvas.height*scale)+'px','important')
+  }
+
+  const refit=()=>requestAnimationFrame(()=>requestAnimationFrame(fitMobileBoardWithHeader));
+
+  document.addEventListener('DOMContentLoaded',()=>{
+    initMobileHeader();
+    refit()
+  });
+
+  window.addEventListener('resize',refit,{passive:true});
+  window.addEventListener('orientationchange',()=>setTimeout(refit,100),{passive:true});
+
+  if(window.visualViewport){
+    window.visualViewport.addEventListener('resize',refit,{passive:true})
+  }
+
+  const canvas=document.getElementById('game');
+  if(canvas){
+    new MutationObserver(refit).observe(canvas,{
+      attributes:true,
+      attributeFilter:['width','height']
+    })
+  }
+
+  const frame=document.querySelector('.game');
+  if(frame&&'ResizeObserver'in window){
+    new ResizeObserver(refit).observe(frame)
+  }
+})();
+</script>
+
+
+<style id="v1424-mobile-close-dedupe">
+@media(max-width:760px){
+  /* スマホではヘッダーの☰/×に統一。メニュー内の閉じるボタンは隠す */
+  #mobileSideClose{
+    display:none!important;
+  }
+
+  #mobileSideHeader{
+    justify-content:flex-start!important;
+    min-height:42px!important;
+  }
+
+  #mobileSideHeader h2{
+    margin-right:auto!important;
+  }
+}
+</style>
+
+<script id="v1424-mobile-close-dedupe-js">
+(() => {
+  function syncHeaderMenuButton(){
+    const shell=document.getElementById('mobileSideShell');
+    const button=document.getElementById('mobileHeaderMenuButton');
+    if(!shell||!button)return;
+    const open=shell.classList.contains('open');
+    button.textContent=open?'✕':'☰';
+    button.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');
+  }
+
+  document.addEventListener('DOMContentLoaded',syncHeaderMenuButton);
+
+  const shell=document.getElementById('mobileSideShell');
+  if(shell){
+    new MutationObserver(syncHeaderMenuButton).observe(shell,{
+      attributes:true,
+      attributeFilter:['class']
+    });
+  }
+})();
+</script>
+
+
+
+<style id="v1446-unified-board-fit-style">
+/* Ver.1.4.59: one authoritative canvas sizing layer. */
+#game{
+  display:block!important;
+  width:auto!important;
+  height:auto!important;
+  max-width:none!important;
+  max-height:none!important;
+  min-width:0!important;
+  min-height:0!important;
+  margin:auto!important;
+  flex:0 0 auto!important;
+  transform:none!important;
+  aspect-ratio:auto!important;
+}
+@media(min-width:761px){
+  html,body{width:100%!important;height:100%!important;overflow:hidden!important}
+  body{padding:8px!important}
+  .app{
+    width:min(1280px,calc(100vw - 16px))!important;
+    height:calc(100dvh - 16px)!important;
+    max-width:1280px!important;
+    margin:0 auto!important;
+    display:grid!important;
+    grid-template-columns:minmax(0,1fr) 320px!important;
+    gap:12px!important;
+    align-items:stretch!important;
+    overflow:hidden!important;
+  }
+  .game{
+    width:100%!important;
+    height:100%!important;
+    min-width:0!important;
+    min-height:0!important;
+    padding:4px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+  }
+  .side{height:100%!important;min-height:0!important;overflow:hidden!important}
+}
+@media(max-width:760px){
+  html,body{width:100%!important;height:100%!important;overflow:hidden!important}
+  body{padding:0!important}
+  .app{
+    width:100vw!important;
+    height:100dvh!important;
+    max-width:100vw!important;
+    margin:0!important;
+    padding-top:46px!important;
+    overflow:hidden!important;
+  }
+  .game{
+    width:100vw!important;
+    height:calc(100dvh - 46px)!important;
+    min-height:0!important;
+    padding:4px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    overflow:hidden!important;
+  }
+}
+</style>
+<script id="v1446-unified-board-fit-js">
+(() => {
+  let raf=0;
+  let fitting=false;
+
+  function unifiedBoardFit(){
+    if(fitting)return;
+    const canvas=document.getElementById('game');
+    const frame=document.querySelector('.game');
+    if(!canvas||!frame||!canvas.width||!canvas.height)return;
+
+    fitting=true;
+    try{
+      const cs=getComputedStyle(frame);
+      const padX=(parseFloat(cs.paddingLeft)||0)+(parseFloat(cs.paddingRight)||0);
+      const padY=(parseFloat(cs.paddingTop)||0)+(parseFloat(cs.paddingBottom)||0);
+
+      let availableW=Math.max(1,frame.clientWidth-padX);
+      let availableH=Math.max(1,frame.clientHeight-padY);
+
+      if(window.matchMedia('(max-width:760px)').matches){
+        const vw=(window.visualViewport&&window.visualViewport.width)||document.documentElement.clientWidth||window.innerWidth;
+        const vh=(window.visualViewport&&window.visualViewport.height)||document.documentElement.clientHeight||window.innerHeight;
+        availableW=Math.min(availableW,Math.max(1,vw-8));
+        availableH=Math.min(availableH,Math.max(1,vh-46-8));
+      }
+
+      /*
+        The scale has NO 1.0 ceiling.
+        Therefore a 6x8 board grows until either the frame width or height is full,
+        while a 8x12 board shrinks to remain completely visible.
+      */
+      const scale=Math.max(.1,Math.min(availableW/canvas.width,availableH/canvas.height));
+      const w=Math.max(1,Math.floor(canvas.width*scale));
+      const h=Math.max(1,Math.floor(canvas.height*scale));
+
+      canvas.style.setProperty('width',w+'px','important');
+      canvas.style.setProperty('height',h+'px','important');
+    }finally{
+      fitting=false;
+    }
+  }
+
+  function refit(){
+    cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(()=>requestAnimationFrame(unifiedBoardFit));
+  }
+
+  window.__electricLinkRefitBoard=refit;
+  window.addEventListener('resize',refit,{passive:true});
+  window.addEventListener('orientationchange',()=>setTimeout(refit,120),{passive:true});
+  window.addEventListener('pageshow',refit,{passive:true});
+  if(window.visualViewport)window.visualViewport.addEventListener('resize',refit,{passive:true});
+  document.addEventListener('DOMContentLoaded',refit);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)refit()});
+
+  const canvas=document.getElementById('game');
+  if(canvas){
+    new MutationObserver(refit).observe(canvas,{attributes:true,attributeFilter:['width','height']});
+  }
+  const frame=document.querySelector('.game');
+  if(frame&&'ResizeObserver'in window)new ResizeObserver(refit).observe(frame);
+
+  /* Stage changes update the internal canvas dimensions before this runs. */
+  document.addEventListener('click',()=>setTimeout(refit,0),{passive:true});
+  setTimeout(refit,0);
+  setTimeout(refit,120);
 })();
 </script>
 
